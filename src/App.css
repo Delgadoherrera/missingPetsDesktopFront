@@ -1,5 +1,5 @@
 .MuiAppBar-colorPrimary {
-  background-color: transparent !important;
+  background-color: black !important;
   position: fixed !important;
   z-index: 20;
 }

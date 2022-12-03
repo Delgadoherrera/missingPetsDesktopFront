@@ -26,15 +26,12 @@ export default function Home() {
       {user ? (
         <>
           <PrivateNavbar />
-          {/*        <PetsLost /> */}
-          <SideBar printToast={printToast} />
-          <ViewDataDisplay />
-{/*           <PetLostImageList />
- */}        </>
+        {/*   <SideBar printToast={printToast} />
+          <ViewDataDisplay /> */}
+        </>
       ) : (
         <NavBar />
       )}
-{/*       <img className="portadaPicture" src={Portada} alt="portadaPicture" />
- */}    </div>
+    </div>
   );
 }
