@@ -1,0 +1,26 @@
+.appBarTop {
+  height: 40px;
+  justify-content: center !important;
+}
+
+.avatarNavbar {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.homeBody {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color:white;
+  justify-content: center !important;
+}
+
+.portadaPicture {
+  position: fixed;
+  bottom: 0% !important;
+  left: 60%;
+  width: 100vh;
+  height: 100vh;
+  z-index: -1;
+}

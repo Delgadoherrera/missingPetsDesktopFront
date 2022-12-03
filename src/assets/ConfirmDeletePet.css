@@ -1,0 +1,11 @@
+.confirmDeleteDialog {
+  width: 30% !important;
+  height: 20%;
+
+}
+.buttonDialogDeletePet{
+    color: black !important;
+}
+.confirmDeletePetDialog{
+    background-color: black;
+}

@@ -1,0 +1,23 @@
+.contentCardPetDetail {
+  width: 100%;
+  height: 100%;
+  
+}
+
+.imgPetEditDialog {
+  position: relative;
+  left: 0px;
+}
+
+.detailMascotaDialog{
+    width: 20% !important;
+    text-align: center;
+}
+.detailPetName{
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 20px !important;
+}
+.detailsCardDivColors{
+    font-size: 12px;
+}

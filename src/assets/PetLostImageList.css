@@ -1,0 +1,7 @@
+.divImagesPetLosts {
+  background-color: red !important;
+  position: fixed !important;
+  margin-left: 500px !important;
+  z-index: 50,
+}
+

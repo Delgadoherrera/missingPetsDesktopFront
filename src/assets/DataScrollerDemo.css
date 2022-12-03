@@ -1,0 +1,153 @@
+.datascroller-demo .product-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.datascroller-demo .product-description {
+  margin: 0 0 1rem 0;
+}
+
+.datascroller-demo .product-category-icon {
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+.datascroller-demo .product-category {
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.datascroller-demo .product-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+.datascroller-demo .product-item img {
+  width: 150px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  margin-right: 2rem;
+  border-radius: 40px;
+  object-fit: contain !important;
+  background-color: rgb(255, 255, 255);
+  padding: 2px; 
+}
+
+.datascroller-demo .product-item .product-detail {
+  flex: 1 1 0;
+}
+
+.datascroller-demo .product-item .p-rating {
+  margin: 0 0 0.5rem 0;
+}
+
+.datascroller-demo .product-item .product-price {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  align-self: flex-end;
+}
+
+.datascroller-demo .product-item .product-action {
+  display: flex;
+  flex-direction: column;
+}
+
+.datascroller-demo .product-item .p-button {
+  margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 576px) {
+  .datascroller-demo .product-item {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .datascroller-demo .product-item img {
+    width: 75%;
+    margin: 2rem 0;
+  }
+
+  .datascroller-demo .product-item .product-detail {
+    text-align: center;
+  }
+
+  .datascroller-demo .product-item .product-price {
+    align-self: center;
+  }
+
+  .datascroller-demo .product-item .product-action {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .datascroller-demo .product-item .product-action {
+    margin-top: 2rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.dataLostMyPetList {
+  width: 50%;
+  position: relative;
+  margin: auto;
+  top: 50px;
+  z-index: 2;
+  
+}
+
+.p-datascroller-content {
+  height: fit-content !important;
+  background-color:#dcdbd6 !important;
+  z-index: 1000 !important;
+
+}
+
+@media screen and (min-width: 1200px) {
+  .dataDescriptionListPetLost {
+    text-align: center;
+    margin: auto !important;
+    width: 70%;
+  }
+  .spanDataPetLostList {
+    position: relative;
+    top: 20px;
+    text-align: center !important;
+    font-size: 12px;
+    
+  }
+  .productDetailLostPetList {
+    text-align: center;
+    
+    
+  }
+  .buttonCardLostPetList {
+    background-color: rgba(0, 0, 0, 0.853);
+    border: none;
+    padding: 8px;
+
+  }
+  .cardsLostPetList{
+    margin-bottom: 1px;
+    background-color: rgba(13, 13, 13, 0.184);
+    border-radius:20px !important;
+
+
+  }
+.loadMorePetsPetLostList{
+    background-color: black;
+    border: none;
+    display: none;
+}
+.p-datascroller-header{
+    background-color:transparent !important;
+}
+}
+
+.cardsLostPetList{
+    z-index: 334123 !important;
+}

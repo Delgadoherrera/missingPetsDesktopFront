@@ -1,0 +1,13 @@
+.petFoundDialog{
+    width: 40% !important;
+}
+.formPetRegister{
+    width: 100%;
+}
+.submitFoundPet{
+    background-color: black;
+    border: none;
+}
+.petFoundDialogButtons{
+    color: black !important;
+}

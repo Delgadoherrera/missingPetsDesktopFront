@@ -1,0 +1,18 @@
+.mascotaEncontradaDialogButtons {
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 15px;
+}
+.mascotaEncontradaDialogButtonCancel {
+  color: black !important;
+}
+.buttonFoundPet {
+  background-color: rgba(63, 158, 80, 0.99) !important;
+}
+.dialogMascotasEncontrada {
+  width: 40% !important;
+}
+.headerDialogMascotaEncontrada {
+  text-align: center;
+}

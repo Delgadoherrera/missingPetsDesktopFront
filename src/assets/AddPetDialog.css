@@ -1,0 +1,18 @@
+.addPetDialog{
+    width: 30% !important;
+    height: 80%;
+    background-color: white;
+    text-align: center;
+}
+
+.addPetDialogContent{
+    margin-top: 5%;
+}
+.newPetButton{
+    background-color: black;
+    border: none;
+}
+
+.addPetButtons{
+    color: black !important;
+}
