@@ -26,8 +26,8 @@ export default function Home() {
       {user ? (
         <>
           <PrivateNavbar />
-        {/*   <SideBar printToast={printToast} />
-          <ViewDataDisplay /> */}
+          <SideBar printToast={printToast} />
+          <ViewDataDisplay />
         </>
       ) : (
         <NavBar />

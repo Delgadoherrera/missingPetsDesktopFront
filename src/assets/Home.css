@@ -13,8 +13,8 @@
   flex-direction: column;
   height: 100vh;
   background-color:white;
-  justify-content: center !important;
-}
+/*   justify-content: center !important;
+ */}
 
 .portadaPicture {
   position: fixed;
