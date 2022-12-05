@@ -11,9 +11,9 @@ import "../assets/MascotaEncontradaDialog.css";
 export default function MascotaPerdida({
   idMascotaPerdida,
   state,
-  update,
   updatePets,
-  user,
+  printToast
+ 
 }) {
   const [displayBasic, setDisplayBasic] = useState(false);
   const [displayBasic2, setDisplayBasic2] = useState(false);
@@ -51,8 +51,15 @@ export default function MascotaPerdida({
         state
       )
       .then((response) => {
-        update();
         updatePets();
+
+        printToast({
+          severity: "success",
+          summary: "Mascota",
+          detail: "Mascota encontrada",
+          life: 3000,
+        });
+       
       });
     dialogFuncMap[`${name}`](false);
   };
@@ -62,7 +69,7 @@ export default function MascotaPerdida({
       <div className="encontradasDialogFooter">
         <Button
           value={idMascotaPerdida.idMascota}
-          label="Mascota encontrada"
+          label="Aceptar"
           /* icon="pi pi-check" */ onClick={(e) => enviarCoordenadas(name, e)}
           autoFocus
           className="mascotaEncontradaDialogButtons"
@@ -79,7 +86,6 @@ export default function MascotaPerdida({
   return (
     <div className="dialog-demo">
       <div className="card">
-        <div className="grid flex-column">
             {idMascotaPerdida.status === 1 ? (
               <Button
                 label={'Mascota Encontrada'.toUpperCase()}
@@ -91,7 +97,6 @@ export default function MascotaPerdida({
             ) : (
               <p></p>
             )}
-        </div>
         <Dialog
           contentClassName="contentDialogMascotaEncontrada"
           className="dialogMascotasEncontrada"

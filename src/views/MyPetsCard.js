@@ -60,6 +60,7 @@ export default function MediaCard({ pets, updatePets, printToast, user }) {
                     user={user}
                     idMascotaPerdida={one}
                     updatePets={updatePets}
+                    printToast={printToast}
                   />
                 ) : (
                   <ButtonMascotaPerdida
@@ -67,6 +68,7 @@ export default function MediaCard({ pets, updatePets, printToast, user }) {
                     state={coordenadas}
                     idMascotaPerdida={one}
                     updatePets={updatePets}
+                    printToast={printToast}
                   />
                 )}
               </div>

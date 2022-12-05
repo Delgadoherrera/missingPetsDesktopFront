@@ -8,7 +8,7 @@ import { Button } from "primereact/button";
 import PetFound from '../components/PetFound'
 import '../assets/PetFoundDialog.css'
 
-const PetFoundDialog = ({hideShowPettMsg,updatePets}) => {
+const PetFoundDialog = ({hideShowPettMsg,updatePets, printToast}) => {
   const [displayResponsive, setDisplayResponsive] = useState(true);
   const [position, setPosition] = useState("center");
 
@@ -60,7 +60,7 @@ const PetFoundDialog = ({hideShowPettMsg,updatePets}) => {
           footer={renderFooter("displayResponsive")}
           className='petFoundDialog'
         >
-     <PetFound updatePets={updatePets}/>
+     <PetFound updatePets={updatePets} printToast={printToast}/>
         </Dialog>
       </div>
     </div>

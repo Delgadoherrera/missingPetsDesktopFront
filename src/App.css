@@ -14,7 +14,8 @@
   font-size: 8px !important;
 }
 .p-button {
-  background-color: #11151c7b ;
+  background-color: #494a54dc ;
+border-radius: 40px !important;
   border: none;
   padding: 0;
   width: 100% ;
@@ -37,6 +38,6 @@
 }
 
 .p-button:enabled:hover, .p-button:not(button):not(a):not(.p-disabled):hover {
-  background-color: rgba(64, 0, 255, 0.272);
+  background-color: rgba(201, 177, 190, 0.272);
   color: black !important;
 }

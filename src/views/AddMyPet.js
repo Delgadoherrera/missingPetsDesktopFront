@@ -36,7 +36,7 @@ const AddMyPet = ({printToast,updatePets, user}) => {
         className="button-containerSidePanel"
       />
       {addPetMsg === true ? <AddPetDialog showAddPetMsg={showAddPetMsg} hideShowPettMsg={hideShowPettMsg} printToast={printToast} updatePets={updatePets} user={user}/> : <p></p>}
-      {petFoundMessage === true ? <PetFoundDialog hideShowPettMsg={hideShowPettMsg} updatePets={updatePets}/> : <p></p>}
+      {petFoundMessage === true ? <PetFoundDialog hideShowPettMsg={hideShowPettMsg} updatePets={updatePets} printToast={printToast}/> : <p></p>}
     </div>
   );
 };

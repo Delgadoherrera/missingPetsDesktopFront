@@ -1,21 +1,28 @@
 .cardSideBarMyPetsContent {
-  background-color: rgba(100, 80, 80, 0.172);
+  background-color: rgba(255, 255, 255, 0.352);
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 40px;
+  border-top-left-radius: 10px;
+  width: 9vw;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border-top: 1px solid rgba(0, 0, 0, 0.297);
+
 }
 .buttonFoundPet {
-  font-size: 0.5rem;
+  font-size: 1vh;
   background-color: rgba(120, 137, 120, 0.754) !important;
   padding: 3px;
   position: relative;
-  margin-bottom: 2% !important;
-
+  margin-bottom: 5% !important;
 }
 .avatarMyPets {
-  width: 25px !important;
-  height: 25px !important;
+  width: 4vh !important;
+  height: 4vh !important;
   margin-bottom: 15px;
 }
 .avatarAndToolContainer {
@@ -23,17 +30,19 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items:center!important
-
+  align-items: center !important;
 }
 .cardSideBarMyPets {
-    background-color: rgba(249, 232, 232, 0.163) !important;
-    border-radius: 10px !important;
-
-} 
-.iconEditMyPet{
-    font-size: 0.8rem;
+  background-color: transparent !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
 }
-.foundedPetColourCard{
+.iconEditMyPet {
+  font-size: 2vh;
+  color: rgba(22, 21, 21, 0.54);
+}
+.foundedPetColourCard {
   background-color: rgba(92, 22, 22, 0.582) !important;
+}
+.buttonContainerPetCard {
 }

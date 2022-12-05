@@ -5,8 +5,8 @@
 }
 
 .sideBar {
-  background-color: rgba(61, 51, 153, 0.127);
-  width: 8vw;
+  background-color: rgba(128, 104, 123, 0.271);
+  width: 11vw;
   height: 95vh;
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@
 }
 .namePetMyPetCard {
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 0.8vw;
 }
 .containerSideBar {
   width: 8vw;

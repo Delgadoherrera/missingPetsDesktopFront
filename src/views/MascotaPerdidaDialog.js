@@ -13,7 +13,9 @@ export default function MascotaPerdida({
   idMascotaPerdida,
   state,
   update,
-  updatePets,
+  updatePets,  
+  printToast
+
 }) {
   const [displayBasic, setDisplayBasic] = useState(false);
   const [displayBasic2, setDisplayBasic2] = useState(false);
@@ -77,6 +79,13 @@ export default function MascotaPerdida({
           {}
         )
         .then((response) => {
+          printToast({
+            severity: "success",
+            summary: "Mascota",
+            detail: "Estamos buscando a tu mascota",
+            life: 3000,
+          });
+
           updatePets();
           update();
         });

@@ -14,7 +14,7 @@ import Map from "../components/WrapperMapFindPet";
 import "../assets/PetFound.css";
 import { useAuth0 } from "@auth0/auth0-react";
 
-export default function ReactFinalFormDemo({ updatePets }) {
+export default function ReactFinalFormDemo({ updatePets, printToast }) {
   const [uploaded, setUploaded] = useState(false);
   const [formData, setFormData] = useState(null);
   const [file, setFile] = useState(null);
@@ -200,6 +200,13 @@ export default function ReactFinalFormDemo({ updatePets }) {
           .then((response) => {
             if (response.status === 200) {
               setUploaded(true);
+              printToast({
+                severity: "success",
+                summary: "Mascota",
+                detail: "Mascota encontrada",
+                life: 3000,
+              });
+
               return <BottomNavigation status={uploaded} />;
             } else if (response.status !== 200) {
             }
