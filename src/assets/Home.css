@@ -1,6 +1,6 @@
 .appBarTop {
   justify-content: center !important;
-  background-color: transparent !important;
+  background-color: rgba(255, 0, 0, 0.114) !important;
   height: 5vh;
 }
 
@@ -14,8 +14,16 @@
   height: 5vh;
 }
 .containerHomeDiv {
+  
   display: flex;
   margin: auto;
   flex-direction: row;
   flex-wrap: wrap;
+}
+.css-19r6kue-MuiContainer-root {
+  margin: 0;
+}
+
+.menuItemAppBarPublic {
+  background-color: rgba(255, 0, 0, 0.114) !important;
 }

@@ -38,8 +38,8 @@ function ResponsiveAppBar() {
 
   return (
     <div>
-      <AppBar position="static">
-        <Container maxWidth="xl">
+      <AppBar position="static" className="appBarPublic">
+        <Container maxWidth="x1" className="menuItemAppBarPublic">
           <Toolbar disableGutters>
             {/*                         <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
              */}{" "}
@@ -58,7 +58,7 @@ function ResponsiveAppBar() {
                 textDecoration: "none",
               }}
             ></Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }} className="menuItemAppBarPublic">
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -88,8 +88,8 @@ function ResponsiveAppBar() {
                 }}
               >
                 {pages.map((page, index) => (
-                  <MenuItem key={index} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                  <MenuItem key={index} onClick={handleCloseNavMenu} className='menuItemAppBarPublic'>
+                    <Typography className="menuItemAppBarPublic" textAlign="center">{page}</Typography>
                   </MenuItem>
                 ))}
               </Menu>

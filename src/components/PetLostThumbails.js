@@ -19,7 +19,6 @@ const DataScrollerLoaderDemo = ({ petDistance }) => {
   const [petDetail, setpetFoundDetail] = useState({});
 
   const ds = useRef(null);
-  console.log("mascotasPerdidas", pets, petDistance);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -34,7 +33,7 @@ const DataScrollerLoaderDemo = ({ petDistance }) => {
               latitude: position.coords.latitude,
               distanceSlider: petDistance,
             },
-            distanceSlider: "sarastoa",
+            distanceSlider: petDistance,
           })
           .then((res) => {
             /*       res.json() */

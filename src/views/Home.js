@@ -33,12 +33,11 @@ export default function Home() {
       {user ? (
         <div className="containerSideBar">
           <SideBar user={user} printToast={printToast} />
-         
         </div>
       ) : (
         <p></p>
       )}
-      <ViewDataDisplay />
+      {user ? <ViewDataDisplay /> : <p></p>}
     </div>
   );
 }
