@@ -8,7 +8,7 @@ import Avatar from "@mui/material/Avatar";
 import ButtonMascotaPerdida from "../views/MascotaPerdidaDialog";
 import ButtonMascotaEncontrada from "../views/MascotaEcontradaDialog";
 import MenuDemo from "../components/ButtonToolMyCardPet";
-export default function MediaCard({ pets, updatePets, printToast }) {
+export default function MediaCard({ pets, updatePets, printToast, user }) {
   const [deleteConfirm, setDeleteConfirm] = useState(false);
   const [idMascota, setIdMascota] = useState(0);
   const [coordenadas, setCoordenadas] = useState({
@@ -36,50 +36,41 @@ export default function MediaCard({ pets, updatePets, printToast }) {
   return (
     <div className="componentMyPetsCard">
       <p className="tittleMyPets"> Mis mascotas</p>
-
       {pets.map((one, inex) => {
         return (
-          <Card className="cardMyPets" sx={{ maxWidth: 345 }}>
-            {/*   <CardMedia
-          component="img"
-          height="200"
-          image={`data:image/jpeg;base64,${one.fotoMascota}`}
-          alt="myPet"
-        /> */}
+          <Card className="cardSideBarMyPets">
+            <CardContent className="cardSideBarMyPetsContent">
+              <p className="namePetMyPetCard">{one.nombre}</p>
 
-            <CardContent className="cardContent">
-              <Avatar
-                alt="myPetAvatar"
-                src={`data:image/jpeg;base64,${one.fotoMascota}`}
-                className="avatarMyPets"
-                
-              />
-
-              <Typography
-                gutterBottom
-                variant="h6"
-                component="p"
-                className="myPetName"
-              >
-                <div className="divNameClass">{one.nombre} </div>
-                <div className="divToolsIcon">
-                  <MenuDemo
-                    petToEdit={one}
-                    printToast={printToast}
+              <div className="avatarAndToolContainer">
+                <Avatar
+                  alt="myPetAvatar"
+                  src={`data:image/jpeg;base64,${one.fotoMascota}`}
+                  className="avatarMyPets"
+                />
+                <MenuDemo
+                  petToEdit={one}
+                  printToast={printToast}
+                  updatePets={updatePets}
+                />
+              </div>
+              <div className="buttonContainerPetCard">
+                {one.status === 1 ? (
+                  <ButtonMascotaEncontrada
+                    user={user}
+                    idMascotaPerdida={one}
                     updatePets={updatePets}
                   />
-                </div>
-              </Typography>
+                ) : (
+                  <ButtonMascotaPerdida
+                    user={user}
+                    state={coordenadas}
+                    idMascotaPerdida={one}
+                    updatePets={updatePets}
+                  />
+                )}
+              </div>
             </CardContent>
-            {one.status === 1 ? (
-              <ButtonMascotaEncontrada idMascotaPerdida={one} updatePets={updatePets}/>
-            ) : (
-              <ButtonMascotaPerdida
-                state={coordenadas}
-                idMascotaPerdida={one}
-                updatePets={updatePets}
-              />
-            )}
           </Card>
         );
       })}

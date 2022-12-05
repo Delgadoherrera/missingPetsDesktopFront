@@ -1,12 +1,12 @@
 .ViewDataDisplay {
-  width: 77vw;
+  width: 91vw;
   height: 80vh;
   position: relative;
   margin: auto;
   border: solid 1px rgba(0, 0, 0, 0.125);
   padding: 10px;
-  left: 5%;
   bottom: 0%;
+  z-index: 300;
 }
 .sideBarDataDisplay {
   width: 15%;
@@ -25,12 +25,15 @@
   width: 100%;
   height: 20%;
   text-align: center;
-  padding: 10px;
   margin-top: 1%;
   display: flex;
   justify-content: center;
   align-items: center;
   border: none;
+  font-size: 1.3vh;
+  padding: 0% !important;
+  margin-top: 5px;
+  width: 80% !important;
 }
 
 .controlPanelDataDisplay {
@@ -63,8 +66,8 @@
   display: flex;
   justify-content: center;
 }
-.buttonsSideBarDataDisplay {
-  font-size: 0.8rem;
-  padding: 0% !important;
-  margin-top: 5px;
+.css-g3hgs1-MuiBackdrop-root-MuiModal-backdrop {
+  background-color: black !important;
+  width: fit-content !important;
+  height: fit-content !important;
 }

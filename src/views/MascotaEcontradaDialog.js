@@ -6,9 +6,15 @@ import React, { useState } from "react";
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
 import axios from "axios";
-import '../assets/MascotaEncontradaDialog.css'
+import "../assets/MascotaEncontradaDialog.css";
 
-export default function MascotaPerdida({ idMascotaPerdida, state, update,updatePets }) {
+export default function MascotaPerdida({
+  idMascotaPerdida,
+  state,
+  update,
+  updatePets,
+  user,
+}) {
   const [displayBasic, setDisplayBasic] = useState(false);
   const [displayBasic2, setDisplayBasic2] = useState(false);
   const [displayModal, setDisplayModal] = useState(false);
@@ -46,7 +52,7 @@ export default function MascotaPerdida({ idMascotaPerdida, state, update,updateP
       )
       .then((response) => {
         update();
-        updatePets()
+        updatePets();
       });
     dialogFuncMap[`${name}`](false);
   };
@@ -54,7 +60,7 @@ export default function MascotaPerdida({ idMascotaPerdida, state, update,updateP
   const renderFooter = (name) => {
     return (
       <div className="encontradasDialogFooter">
-         <Button
+        <Button
           value={idMascotaPerdida.idMascota}
           label="Mascota encontrada"
           /* icon="pi pi-check" */ onClick={(e) => enviarCoordenadas(name, e)}
@@ -66,7 +72,6 @@ export default function MascotaPerdida({ idMascotaPerdida, state, update,updateP
           /* icon="pi pi-times" */ onClick={() => onHide(name)}
           className="p-button-text mascotaEncontradaDialogButtonCancel"
         />
-     
       </div>
     );
   };
@@ -75,22 +80,20 @@ export default function MascotaPerdida({ idMascotaPerdida, state, update,updateP
     <div className="dialog-demo">
       <div className="card">
         <div className="grid flex-column">
-          <div className="col">
             {idMascotaPerdida.status === 1 ? (
               <Button
-                label={`ENCONTRE A  ${idMascotaPerdida.nombre}`.toUpperCase()}
+                label={'Mascota Encontrada'.toUpperCase()}
                 /* icon="pi pi-arrow-down" */ onClick={() =>
                   onClick("displayPosition", "top")
                 }
-                className="p-button-warning buttonLost buttonFoundPet"
+                className="buttonFoundPet"
               />
             ) : (
               <p></p>
             )}
-          </div>
         </div>
         <Dialog
-        contentClassName="contentDialogMascotaEncontrada"
+          contentClassName="contentDialogMascotaEncontrada"
           className="dialogMascotasEncontrada"
           headerClassName="headerDialogMascotaEncontrada"
           header={
@@ -107,7 +110,7 @@ export default function MascotaPerdida({ idMascotaPerdida, state, update,updateP
           }
           visible={displayPosition}
           position={position}
-          modal         
+          modal
           footer={renderFooter("displayPosition")}
           onHide={() => onHide("displayPosition")}
           draggable={false}
@@ -115,7 +118,7 @@ export default function MascotaPerdida({ idMascotaPerdida, state, update,updateP
         >
           {/*      <Index state={state} /> */}
 
-   {/*        <img
+          {/*        <img
             alt="picturePets"
             className="imgEncontradaDialog"
             src={`data:image/jpeg;base64,${idMascotaPerdida.fotoMascota}`}

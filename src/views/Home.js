@@ -18,20 +18,27 @@ export default function Home() {
     toast.current.show(data);
   };
 
-  console.log({ user });
-
   return (
-    <div className="homeBody">
+    <div className="containerHomeDiv">
       <Toast ref={toast}></Toast>
+      <div className="divTopNavBar">
+        {user ? (
+          <>
+            <PrivateNavbar />
+          </>
+        ) : (
+          <NavBar />
+        )}
+      </div>
       {user ? (
-        <>
-          <PrivateNavbar />
-          <SideBar printToast={printToast} />
-          <ViewDataDisplay />
-        </>
+        <div className="containerSideBar">
+          <SideBar user={user} printToast={printToast} />
+         
+        </div>
       ) : (
-        <NavBar />
+        <p></p>
       )}
+      <ViewDataDisplay />
     </div>
   );
 }

@@ -1,9 +1,9 @@
 import "../assets/ButtonsSidePanel.css";
 import AddMyPet from "../views/AddMyPet";
-const SidePanelButtons = ({ printToast, updatePets }) => {
+const SidePanelButtons = ({ printToast, updatePets, user }) => {
   return (
     <div>
-      <AddMyPet printToast={printToast} updatePets={updatePets} />
+      <AddMyPet printToast={printToast} updatePets={updatePets} user={user} />
     </div>
   );
 };

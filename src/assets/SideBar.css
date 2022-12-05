@@ -1,29 +1,28 @@
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 820px) {
   .sideBar {
-    display: none;
+    display: none !important;
   }
 }
 
-@media screen and (min-width: 1200px) and (min-height: 680px) {
-  .sideBar {
-    /*     background-color: rgba(91, 82, 82, 0.215);
- */
-    width: 200px;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100% !important;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    z-index: 1;
-    overflow: auto;
-  }
-  .tittleMyPets {
-    text-align: center;
-    font-size: 14px;
-    margin-top: 70px;
-  }
-  .componentMyPetsCard {
-    height: 500px;
-  }
+.sideBar {
+  background-color: rgba(61, 51, 153, 0.127);
+  width: 8vw;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  z-index: 1;
+  overflow: auto;
+  justify-content:flex-start;
+}
+.tittleMyPets {
+  text-align: center;
+  font-size: 14px;
+}
+.namePetMyPetCard {
+  margin: 0;
+  font-size: 0.8rem;
+}
+.containerSideBar {
+  width: 8vw;
 }

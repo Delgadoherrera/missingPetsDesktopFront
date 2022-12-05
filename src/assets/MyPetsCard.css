@@ -1,98 +1,39 @@
+.cardSideBarMyPetsContent {
+  background-color: rgba(100, 80, 80, 0.172);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.buttonFoundPet {
+  font-size: 0.5rem;
+  background-color: rgba(120, 137, 120, 0.754) !important;
+  padding: 3px;
+  position: relative;
+  margin-bottom: 2% !important;
+
+}
 .avatarMyPets {
   width: 25px !important;
   height: 25px !important;
-  object-fit: cover !important;
-  display: block;
-  bottom: 15px;
-  right: 10px;
+  margin-bottom: 15px;
 }
-.cardActionMyPet {
-  justify-content: center;
-}
-.cardMyPets {
-  text-align: center;
-  width: 150px;
-  height: 60px;
-  margin-bottom: 5px;
-  position: relative;
-  left: 24px;
-}
-.cardContent {
-  height: 10%;
-  background-color: rgba(156, 150, 181, 0.289);
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.cardMyPetDescription {
-  height: 65px;
-  position: relative;
-  bottom: 40px;
-  font-size: 10px;
-}
-.myPetName {
-  position: relative;
-  bottom: 38px;
-  font-size: 12px !important;
-  width: 85px;
-  display: flex;
-  flex-direction: column;
-}
-.buttonLost {
-  background-color: #d66953 !important;
-  padding: 2px !important;
-  position: relative;
-  top: 2px;
-  font-size: 0.6rem;
+.avatarAndToolContainer {
   width: 100%;
-  color: white !important;
-  font-weight: 600 !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items:center!important
+
 }
-.divToolsIcon{
-  width: fit-content;
-  height: fit-content;
-  position: relative;
-  left: 110px;
-  bottom: 17px;
+.cardSideBarMyPets {
+    background-color: rgba(249, 232, 232, 0.163) !important;
+    border-radius: 10px !important;
+
+} 
+.iconEditMyPet{
+    font-size: 0.8rem;
 }
-.divNameClass{
-  width: 80px;
-  text-align: center;
-  margin-left: 20px;
+.foundedPetColourCard{
+  background-color: rgba(92, 22, 22, 0.582) !important;
 }
-
-/* .buttonLost{
-  
-  text-decoration: none;
-   color: white;
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   background: rgba(29, 171, 209, 1);
-   padding: 70px 30px;
-   font-family: 'calibri', sans-serif;
-   text-transform: uppercase;
-   border-radius: 50%;
-   animation: animacion 2s linear infinite;
-} */
-
-/* @keyframes animacion {
-  0% {
-    box-shadow: 0 0 0 0 rgba(29, 171, 209, .6),  0 0 0 0 rgba(29, 171, 209, .6);
-  }
-
-  30% {
-    box-shadow: 0 0 0 100px rgba(29, 171, 209, 0), 0 0 0 0 rgba(29, 171, 209, .6);
-  }
-
-  65% {
-    box-shadow: 0 0 0 100px rgba(29, 171, 209, 0), 0 0 0 30px rgba(29, 171, 209, 0);
-  }
-
-  100% {
-    box-shadow: 0 0 0 0 rgba(29, 171, 209, 0), , 0 0 0 30px rgba(29, 171, 209, 0);
-  }
-
-} */

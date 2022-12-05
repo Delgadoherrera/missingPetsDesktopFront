@@ -1,37 +1,16 @@
-.addPetSideButton {
-  width: 150px;
-  font-size: 0.8rem !important;
-  padding: 5px;
-  margin: auto;
-  border-color: transparent !important;
-  top: 50px;
-  left: 23px;
+.containerButtonsSidePanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  height: 100px;
+}
 
-}
-.PetFoundSideButton {
-  background: #12130d;
-  width: 150px;
-  font-size: 0.8rem !important;
-  padding: 5px;
-  margin: auto;
-  top: 60px;
-  left: 23px;
-  border-color: transparent !important;
-}
-.p-button:enabled:hover,
-.p-button:not(button):not(a):not(.p-disabled):hover {
-  background-color: rgba(81, 189, 239, 0.566);
-  color: #ffffff !important;
-  border-color: transparent !important;
-  background: rgba(197, 194, 199, 0.532) !important;
-
-}
-.p-submenu-header {
-  display: none;
-}
-.p-menuitem-text {
-  font-size: 13px !important;
-}
-.p-connected-overlay-enter-done {
-  width: 170px;
+.button-containerSidePanel {
+  margin-top: 4%;
+  padding: 18px !important;
+  width: 90% !important;
+/*   font-size: 0.7rem;
+ */  font-size: 1.2vh;
+  justify-content: center;
 }

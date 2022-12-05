@@ -18,6 +18,7 @@ const KnobDistanceLostPet = ({ setPetDistance }) => {
           
         }}
       />
+      <div>
       <Button
         label="Buscar"
         className="searchButtonPetLost"
@@ -25,6 +26,8 @@ const KnobDistanceLostPet = ({ setPetDistance }) => {
           setPetDistance(value);
         }}
       />
+      </div>
+
     </div>
   );
 };

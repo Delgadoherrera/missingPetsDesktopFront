@@ -2,7 +2,7 @@ import React from "react";
 import MyPetsCard from "./MyPetsCard";
 import "../assets/MyPets.css";
 
-const MyPets = ({ printToast,updatePets,pet }) => {
+const MyPets = ({ printToast,updatePets,pet,user }) => {
 
 
   return (

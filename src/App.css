@@ -1,5 +1,5 @@
 .MuiAppBar-colorPrimary {
-  background-color: black !important;
+  background-color: rgba(0, 0, 0, 0.771) !important;
   position: fixed !important;
   z-index: 20;
 }
@@ -14,13 +14,29 @@
   font-size: 8px !important;
 }
 .p-button {
-  background-color: #11151C ;
+  background-color: #11151c7b ;
+  border: none;
+  padding: 0;
+  width: 100% ;
+  padding: 5px;
 }
 .p-button-label {
   font-weight: 100;
+  padding: 0 !important;
 }
 .p-slider-handle{
-  border-color: #11151C !important;
+  border-color: #24324de0 !important;
   font-size: 10px !important;
 
+}
+.css-46bh2p-MuiCardContent-root:last-child{
+  padding-bottom: 0 !important;
+}
+.css-46bh2p-MuiCardContent-root {
+  padding: 0 !important;
+}
+
+.p-button:enabled:hover, .p-button:not(button):not(a):not(.p-disabled):hover {
+  background-color: rgba(64, 0, 255, 0.272);
+  color: black !important;
 }

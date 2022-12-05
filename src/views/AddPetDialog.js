@@ -8,7 +8,7 @@ import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
 import AddPetForm from "../components/AddPetForm";
 import "../assets/AddPetDialog.css";
-const DialogDemo = ({ showAddPetMsg, hideShowPettMsg,printToast,updatePets }) => {
+const DialogDemo = ({ showAddPetMsg, hideShowPettMsg,printToast,updatePets, user }) => {
   const [displayResponsive, setDisplayResponsive] = useState(true);
   const [position, setPosition] = useState("center");
 

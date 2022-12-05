@@ -8,6 +8,7 @@
   overflow: auto;
   justify-content: space-around;
   background-color: rgba(0, 0, 0, 0.016) !important;
+  align-content: flex-start;
 }
 
 .petCardContentThumbail {
@@ -24,15 +25,14 @@
   margin-bottom: 10px;
   border: solid 1px rgba(0, 0, 0, 0.051) !important;
   border-radius: 40px;
-  
 }
-.divPetImagePetLostThumbail{
+.divPetImagePetLostThumbail {
 }
 .petImageThumbail {
   margin-top: 10px;
   width: 200px !important;
   height: 200px !important;
-  object-fit:cover;
+  object-fit: cover;
   align-self: center;
   padding: 1%;
   border-radius: 30px;
@@ -46,15 +46,15 @@
   margin: 0;
 }
 .buttonCardPetThumbail {
-  background-color: #cecfd549 !important;
+  background-color: #cecfd5ba !important;
   border: none;
   position: relative;
   font-size: 1rem;
   color: black;
-  width: 50%;
+  width: 70% !important;
   height: 100%;
   margin: auto;
-  bottom:40px;
+  bottom: 40px;
   padding: 3px;
 }
 
@@ -67,9 +67,8 @@
 .petCardDetailsDescription {
   width: 100%;
   position: relative;
-  font-size: 0.8rem;
+  font-size: rem;
   height: 50px;
-
 }
 
 .geoAdress {
@@ -81,10 +80,10 @@
 
 .petCardContentThumbailName {
   height: 40px;
-  font-size: 1.5rem;
+  font-size: 17px;
   margin: 0;
 }
-.divGeoAdress{
+.divGeoAdress {
   height: 100%;
   position: relative;
   bottom: 3%;

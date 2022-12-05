@@ -12,8 +12,8 @@ import { classNames } from "primereact/utils";
 import { InputTextarea } from "primereact/inputtextarea";
 import AddAPhoto from "@mui/icons-material/AddAPhoto";
 import { BottomNavigation } from "@mui/material";
-import { useAuth0 } from "@auth0/auth0-react";
 import "../assets/AddPetForm.css";
+import {useAuth0} from '@auth0/auth0-react'
 
 export default function ReactFinalFormDemo({
   showAddPetMsg,
@@ -26,7 +26,7 @@ export default function ReactFinalFormDemo({
   const [file, setFile] = useState(null);
   const [dataReady, setDataReady] = useState(false);
   const [state, setState] = useState({ base64Data: null });
-  const { user } = useAuth0();
+  const {user} = useAuth0();
 
   const petColor = [
     { label: "Negro", value: "Negro" },

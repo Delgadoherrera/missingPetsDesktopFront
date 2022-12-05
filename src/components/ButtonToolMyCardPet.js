@@ -72,7 +72,7 @@ const MenuDemo = ({ petToEdit, printToast, updatePets }) => {
           onClick={(event) => menu.current.toggle(event)}
           aria-controls="popup_menu"
           aria-haspopup
-          class="pi pi-cog"
+          class="pi pi-cog iconEditMyPet"
         ></i>
       </div>
       {petEdit === true ? (
