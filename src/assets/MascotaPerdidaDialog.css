@@ -1,12 +1,11 @@
 .dialogMascotasPerdidas {
   background-color: white !important;
   text-align: center;
-  height: 100%;
+  height: 80vh !important;
   width: 40% !important;
 }
 .googleMapMascotaPerdida {
-  width: 90% !important;
-  height: 72% !important;
+ 
 }
 .mascotaPerdidaButtonDialog {
   background-color: black;
@@ -15,6 +14,5 @@
 }
 
 .contentMapMascotaEncontrada {
-  height: 10vh !important;
 
 }

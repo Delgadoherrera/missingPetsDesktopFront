@@ -10,7 +10,11 @@
 
 .dialogMascotasEncontrada {
   width: 40% !important;
+  text-align: center !important;
+
 }
 .headerDialogMascotaEncontrada {
   text-align: center;
+  text-align: center !important;
+
 }

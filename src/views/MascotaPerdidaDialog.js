@@ -13,9 +13,8 @@ export default function MascotaPerdida({
   idMascotaPerdida,
   state,
   update,
-  updatePets,  
-  printToast
-
+  updatePets,
+  printToast,
 }) {
   const [displayBasic, setDisplayBasic] = useState(false);
   const [displayBasic2, setDisplayBasic2] = useState(false);
@@ -34,6 +33,8 @@ export default function MascotaPerdida({
       latitude: f.lat,
       longitude: f.lng,
     };
+    console.log("position:", sendLocation);
+
     sendLocation.push(newData);
   };
   const dialogFuncMap = {
@@ -61,33 +62,60 @@ export default function MascotaPerdida({
     if (sendLocation.length > 0) {
       let id = e.currentTarget.value;
       axios
-        .post(
-          `https://backend.missingpets.art/mascotas/mascotaPerdidaNewLocation/${id}`,
-          sendLocation,
-          {}
+        .get(
+          `https://maps.googleapis.com/maps/api/geocode/json?latlng=${
+            sendLocation[sendLocation.length - 1].latitude
+          },${
+            sendLocation[sendLocation.length - 1].longitude
+          }%20&key=AIzaSyAWhXxfT0fS3H6QYCOLGSE-QHzeKVWG1Y0`
         )
-        .then((response) => {
-          updatePets();
-          update();
+        .then((data) => {
+          const lugarEncontrado = [
+            data.data.results[0].address_components[1].short_name,
+            data.data.results[0].address_components[0].short_name,
+            data.data.results[0].address_components[2].short_name,
+            data.data.results[0].address_components[4].short_name,
+          ];
+          axios
+            .post(
+              `https://backend.missingpets.art/mascotas/mascotaPerdidaNewLocation/${id}`,
+              sendLocation,
+              lugarEncontrado
+            )
+            .then((response) => {
+              updatePets();
+            });
         });
     } else {
       let id = e.currentTarget.value;
-      axios
-        .post(
-          `https://backend.missingpets.art/mascotas/mascotaPerdida/${id}`,
-          state,
-          {}
-        )
-        .then((response) => {
-          printToast({
-            severity: "success",
-            summary: "Mascota",
-            detail: "Estamos buscando a tu mascota",
-            life: 3000,
-          });
 
-          updatePets();
-          update();
+      axios
+        .get(
+          `https://maps.googleapis.com/maps/api/geocode/json?latlng=${state.latitude},${state.longitude}%20&key=AIzaSyAWhXxfT0fS3H6QYCOLGSE-QHzeKVWG1Y0`
+        )
+        .then((data) => {
+          const lugarEncontrado = [
+            data.data.results[0].address_components[1].short_name,
+            data.data.results[0].address_components[0].short_name,
+            data.data.results[0].address_components[2].short_name,
+            data.data.results[0].address_components[4].short_name,
+          ];
+          axios
+            .post(
+              `https://backend.missingpets.art/mascotas/mascotaPerdida/${id}`,
+              state,
+              lugarEncontrado
+            )
+            .then((response) => {
+              printToast({
+                severity: "success",
+                summary: "Mascota",
+                detail: "Estamos buscando a tu mascota",
+                life: 3000,
+              });
+
+              updatePets();
+            });
         });
     }
     dialogFuncMap[`${name}`](false);
@@ -116,17 +144,17 @@ export default function MascotaPerdida({
     <div className="dialog-demo">
       <div className="card">
         <div className="grid flex-column">
-            {idMascotaPerdida.status !== 1 ? (
-              <Button
-                label={`Mascota perdida`.toUpperCase()}
-                /* icon="pi pi-arrow-down" */ onClick={() =>
-                  onClick("displayPosition", "top")
-                }
-                className="buttonFoundPet foundedPetColourCard"
-              />
-            ) : (
-              <p></p>
-            )}
+          {idMascotaPerdida.status !== 1 ? (
+            <Button
+              label={`Mascota perdida`.toUpperCase()}
+              /* icon="pi pi-arrow-down" */ onClick={() =>
+                onClick("displayPosition", "top")
+              }
+              className="buttonFoundPet foundedPetColourCard"
+            />
+          ) : (
+            <p></p>
+          )}
         </div>
         <Dialog
           className="dialogMascotasPerdidas"
