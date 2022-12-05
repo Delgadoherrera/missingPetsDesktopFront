@@ -79,8 +79,7 @@ export default function MascotaPerdida({
           axios
             .post(
               `https://backend.missingpets.art/mascotas/mascotaPerdidaNewLocation/${id}`,
-              sendLocation,
-              lugarEncontrado
+              { sendLocation, lugarEncontrado }
             )
             .then((response) => {
               updatePets();
@@ -103,8 +102,7 @@ export default function MascotaPerdida({
           axios
             .post(
               `https://backend.missingpets.art/mascotas/mascotaPerdida/${id}`,
-              state,
-              lugarEncontrado
+              { state, lugarEncontrado }
             )
             .then((response) => {
               printToast({
