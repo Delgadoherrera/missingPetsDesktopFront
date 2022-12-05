@@ -18,3 +18,9 @@
   text-align: center !important;
 
 }
+
+.containerMascotaEncontradaCardButton{
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+}

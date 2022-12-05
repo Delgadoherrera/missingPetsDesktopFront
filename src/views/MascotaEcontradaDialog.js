@@ -85,7 +85,9 @@ export default function MascotaPerdida({
 
   return (
     <div className="dialog-demo">
-      <div className="card">
+      <div className="card containerMascotaEncontradaCardButton">
+
+
             {idMascotaPerdida.status === 1 ? (
               <Button
                 label={'Mascota Encontrada'.toUpperCase()}
