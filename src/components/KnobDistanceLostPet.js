@@ -1,7 +1,6 @@
 import { Slider } from "primereact/slider";
 import { useState, useEffect } from "react";
 import { Button } from "primereact/button";
-import "../assets/KnobDistanceLostPet.css";
 
 const KnobDistanceLostPet = ({ setPetDistance }) => {
   const [value, setValue] = useState(4);

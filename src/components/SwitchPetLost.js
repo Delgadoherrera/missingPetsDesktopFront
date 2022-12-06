@@ -1,21 +1,25 @@
 import "primeicons/primeicons.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.css";
-import "primeflex/primeflex.css";
 import Index from "../components/WrapperMap";
-import React, { useState } from "react";
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
 import axios from "axios";
-import "../assets/MascotaPerdidaDialog.css";
+import "primeflex/primeflex.css";
+import MascotaEcontradaDialog from "../views/MascotaEcontradaDialog";
 
-export default function MascotaPerdida({
+import React, { useEffect, useState } from "react";
+import { InputSwitch } from "primereact/inputswitch";
+
+const InputSwitchDemo = ({
+  petToSwitch,
   idMascotaPerdida,
   state,
   update,
   updatePets,
   printToast,
-}) {
+}) => {
+  const [checked1, setChecked1] = useState(false);
   const [displayBasic, setDisplayBasic] = useState(false);
   const [displayBasic2, setDisplayBasic2] = useState(false);
   const [displayModal, setDisplayModal] = useState(false);
@@ -25,7 +29,12 @@ export default function MascotaPerdida({
   const [position, setPosition] = useState("center");
   const [toggle, setToggle] = useState({ update: false });
   const [location, setLocation] = useState([]);
-
+  const [petFound, setPetFound] = useState();
+  useEffect(() => {
+    if (petToSwitch.status === 1) {
+      setChecked1(true);
+    }
+  }, []);
   const sendLocation = [];
 
   const updateLocation = (f) => {
@@ -33,8 +42,6 @@ export default function MascotaPerdida({
       latitude: f.lat,
       longitude: f.lng,
     };
-    console.log("position:", sendLocation);
-
     sendLocation.push(newData);
   };
   const dialogFuncMap = {
@@ -44,6 +51,9 @@ export default function MascotaPerdida({
     displayMaximizable: setDisplayMaximizable,
     displayPosition: setDisplayPosition,
     displayResponsive: setDisplayResponsive,
+  };
+  const showDialogPetFound = () => {
+    setPetFound(true);
   };
 
   const onClick = (name, position) => {
@@ -137,23 +147,21 @@ export default function MascotaPerdida({
       </div>
     );
   };
-
+  console.log(petToSwitch);
   return (
-    <div className="dialog-demo">
-      <div className="card">
-        <div className="grid flex-column">
-          {idMascotaPerdida.status !== 1 ? (
-            <Button
-              label={`Mascota perdida`.toUpperCase()}
-              /* icon="pi pi-arrow-down" */ onClick={() =>
-                onClick("displayPosition", "top")
-              }
-              className="buttonFoundPet foundedPetColourCard"
-            />
-          ) : (
-            <p></p>
-          )}
-        </div>
+    <div>
+      <div className="card divInputSwitch">
+        <InputSwitch
+          checked={checked1}
+          onChange={(e) => {
+            setChecked1(!checked1);
+            onClick("displayPosition", "top");
+            showDialogPetFound();
+          }}
+        />
+        <br></br>
+      </div>
+      {checked1 === true ? (
         <Dialog
           className="dialogMascotasPerdidas"
           contentClassName="contentMapMascotaEncontrada"
@@ -161,8 +169,9 @@ export default function MascotaPerdida({
           header={
             <div>
               <p className="textoBusqueda">
-                Indica el punto donde quieres que busquemos a
-                {idMascotaPerdida.nombre}
+                {" "}
+                Indica el punto donde quieres que busquemos a{" "}
+                {idMascotaPerdida.nombre}{" "}
               </p>
               {/*    <div className='mascotaNombrePerdida'>
                             {idMascotaPerdida.nombre}?
@@ -181,7 +190,17 @@ export default function MascotaPerdida({
           {/* <MapComponent prueba={updateLocation} /> */}
           <Index newLocation={updateLocation} />
         </Dialog>
-      </div>
+      ) : (
+        <p></p>
+      )}
+      {petFound === true && checked1 === false ? (
+        <MascotaEcontradaDialog idMascotaPerdida={petToSwitch} />
+      ) : (
+        <p></p>
+      )}
+      {/*       {checked1 === false? <MascotaEcontradaDialog idMascotaPerdida={petToSwitch}/> : <p></p>}
+       */}{" "}
     </div>
   );
-}
+};
+export default InputSwitchDemo;

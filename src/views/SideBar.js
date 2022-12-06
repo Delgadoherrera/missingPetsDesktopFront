@@ -1,9 +1,9 @@
-import "../assets/SideBar.css";
 import MyPets from "./MyPets";
 import ButtonSidePanel from "../components/ButtonsSidePanel";
 import { useEffect, useState } from "react";
 import { MascotasService } from "../services/MascotasService";
 import { useAuth0 } from "@auth0/auth0-react";
+import '../assets/SideBar.css'
 
 const SideBar = ({ printToast,user }) => {
   const [pet, setPet] = useState([]);

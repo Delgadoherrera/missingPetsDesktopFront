@@ -1,4 +1,3 @@
-import "primeicons/primeicons.css";
 import React, { useState } from "react";
 
 const ControlPanel = () => {

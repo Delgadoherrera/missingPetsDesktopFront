@@ -1,43 +1,79 @@
-.MuiAppBar-colorPrimary {
-  background-color: rgba(0, 0, 0, 0.771) !important;
-  position: fixed !important;
-  z-index: 20;
-}
-
-.iconPhotoUpload {
-  font-size: 50px !important;
-}
-.p-inputwrapper {
-  height: 40px;
-  margin-bottom: 20px;
-  text-align: left;
-  font-size: 8px !important;
+.p-button:enabled:hover,
+.p-button:not(button):not(a):not(.p-disabled):hover {
+  background: #240d132a !important;
+  color: #0f0f0f;
+  border-color: #ffffff;
 }
 .p-button {
-  background-color: #494a54dc ;
-border-radius: 40px !important;
-  border: none;
-  padding: 0;
-  width: 100% ;
-  padding: 5px;
-}
-.p-button-label {
-  font-weight: 100;
-  padding: 0 !important;
-}
-.p-slider-handle{
-  border-color: #24324de0 !important;
-  font-size: 10px !important;
-
-}
-.css-46bh2p-MuiCardContent-root:last-child{
-  padding-bottom: 0 !important;
-}
-.css-46bh2p-MuiCardContent-root {
-  padding: 0 !important;
+  font-weight: 100 !important;
 }
 
-.p-button:enabled:hover, .p-button:not(button):not(a):not(.p-disabled):hover {
-  background-color: rgba(201, 177, 190, 0.272);
-  color: black !important;
+div
+  > div
+  > div:nth-child(1)
+  > div:nth-child(1)
+  > div:nth-child(1)
+  > div
+  > div
+  > div {
+  border-radius: 70px !important;
+  /*   border: 2px solid rgba(0, 0, 0, 0.088);
+ */
+  box-shadow: none !important;
+  background-color: transparent !important;
 }
+div
+  > div
+  > div:nth-child(1)
+  > div:nth-child(1)
+  > div:nth-child(1)
+  > div
+  > div
+  > div
+  > div
+  > div
+  > div:nth-child(2)
+  > div.gm-style-moc {
+  background-color: transparent !important;
+  
+}
+
+.p-dropdown,
+.p-component,
+.p-inputwrapper {
+  font-size: 0.8rem !important;
+}
+
+.p-float-label input:focus ~ label,
+.p-float-label input:-webkit-autofill ~ label,
+.p-float-label input.p-filled ~ label,
+.p-float-label textarea:focus ~ label,
+.p-float-label textarea.p-filled ~ label,
+.p-float-label .p-inputwrapper-focus ~ label,
+.p-float-label .p-inputwrapper-filled ~ label {
+  bottom: 0rem !important;
+  font-size: 12px;
+  
+}
+.p-float-label label {
+  position: absolute;
+  pointer-events: none;
+  top: 0% !important;
+  margin-top: 0rem !important;
+  transition-property: all;
+  transition-timing-function: ease;
+  line-height: 1;
+}
+.p-float-label input:focus ~ label,
+.p-float-label input:-webkit-autofill ~ label,
+.p-float-label input.p-filled ~ label,
+.p-float-label textarea:focus ~ label,
+.p-float-label textarea.p-filled ~ label,
+.p-float-label .p-inputwrapper-focus ~ label,
+.p-float-label .p-inputwrapper-filled ~ label {
+  top: -0rem !important;
+  opacity: 50%;
+}
+
+.p-fluid .p-dropdown .p-dropdown-label {
+font-size: 0.8rem !important;}

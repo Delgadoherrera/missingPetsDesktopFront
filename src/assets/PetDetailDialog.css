@@ -1,23 +1,28 @@
-.contentCardPetDetail {
-  width: 100%;
-  height: 100%;
-  
+.editarMascotaContentDialog{
+    width: 100% !important;
+    height: 100% !important;
+    display: flex;
 }
 
-.imgPetEditDialog {
-  position: relative;
-  left: 0px;
+.imgPetEditDialog{
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+.editarMascotaContentDialog{
+    justify-content: center;
+    
+}
+.editPetFetchButton{
+    background-color: transparent !important;
+    position: relative;
+    top: 60px;
+    color: black;
+    
 }
 
-.detailMascotaDialog{
-    width: 20% !important;
-    text-align: center;
-}
-.detailPetName{
-    font-size: 40px;
-    margin-top: 0;
-    margin-bottom: 20px !important;
-}
-.detailsCardDivColors{
-    font-size: 12px;
+.editarMascotaDialog{
+    background-color: red !important;
+    height: 60% !important;
 }

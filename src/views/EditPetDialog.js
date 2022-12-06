@@ -2,7 +2,6 @@ import "primeicons/primeicons.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.css";
 import "primeflex/primeflex.css";
-import "../assets/EditPetDialog.css";
 import React, { useState } from "react";
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
@@ -13,7 +12,7 @@ const DialogDemo = ({
   updateEditComponent,
   printToast,
   updatePets,
-  hideEditDialog
+  hideEditDialog,
 }) => {
   const [displayResponsive, setDisplayResponsive] = useState(true);
   const [position, setPosition] = useState("center");
@@ -32,7 +31,7 @@ const DialogDemo = ({
   const onHide = (name) => {
     dialogFuncMap[`${name}`](false);
     updateEditComponent(0);
-    hideEditDialog(false)
+    hideEditDialog(false);
   };
 
   const renderFooter = (name) => {
@@ -44,12 +43,12 @@ const DialogDemo = ({
           onClick={() => onHide(name)}
           className="p-button-text cancelButtonDialogEditPet"
         />
-        {/*    <Button
-          label="Yes"
+        <Button
+          label="Aceptar"
           icon="pi pi-check"
           onClick={() => onHide(name)}
           autoFocus
-        /> */}
+        />
       </div>
     );
   };
@@ -61,8 +60,6 @@ const DialogDemo = ({
           header="Editar mascota"
           visible={displayResponsive}
           onHide={() => onHide("displayResponsive")}
-          breakpoints={{ "300px": "75vw" }}
-          style={{ width: "90vw" }}
           footer={renderFooter("displayResponsive")}
           className="editarMascotaDialog"
           contentClassName="editarMascotaContentDialog"
@@ -72,6 +69,7 @@ const DialogDemo = ({
             src={`data:image/jpeg;base64,${petToEdit.fotoMascota}`}
             className="imgPetEditDialog"
           />
+
           <PetEdit
             petToEdit={petToEdit}
             showUpdate={showUpdate}

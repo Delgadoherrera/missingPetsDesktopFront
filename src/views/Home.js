@@ -3,12 +3,12 @@ import { useAuth0 } from "@auth0/auth0-react";
 import PrivateNavbar from "./PrivateNavbar";
 import PetsLost from "./PetsLost";
 import SideBar from "./SideBar";
-import "../assets/Home.css";
 import Portada from "../assets/images/portada.jpg";
 import { useEffect, useState, useRef } from "react";
 import { Toast } from "primereact/toast";
 import PetLostImageList from "../components/PetLostImageList";
 import ViewDataDisplay from "../components/ViewDataDisplay";
+import "../assets/Home.css";
 
 export default function Home() {
   const { user } = useAuth0();
@@ -19,8 +19,7 @@ export default function Home() {
   };
 
   return (
-    <div className="containerHomeDiv">
-      <Toast ref={toast}></Toast>
+    <div className="">
       <div className="divTopNavBar">
         {user ? (
           <>
@@ -30,14 +29,18 @@ export default function Home() {
           <NavBar />
         )}
       </div>
-      {user ? (
-        <div className="containerSideBar">
-          <SideBar user={user} printToast={printToast} />
-        </div>
-      ) : (
-        <p></p>
-      )}
-      {user ? <ViewDataDisplay /> : <p></p>}
+      <div className="containerHomeDiv">
+        <Toast ref={toast}></Toast>
+
+        {user ? (
+          <div className="containerSideBar">
+            <SideBar user={user} printToast={printToast} />
+          </div>
+        ) : (
+          <p></p>
+        )}
+{/*         {user ? <ViewDataDisplay /> : <p></p>}
+ */}      </div>
     </div>
   );
 }

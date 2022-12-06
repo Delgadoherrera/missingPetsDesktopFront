@@ -20,10 +20,12 @@ export default function GoogleMapComponent(props) {
   let [markers, setMarkers] = useState(markersList);
 
   const mapStyles = {
-    width: "37.6vw",
-    height: "50vh",
+    width: "96%",
+    height: "100%",
     borderRadius:'70px',
-    margin:0
+    position:'fixed',
+    margin:0,
+   
   };
 
 
@@ -84,7 +86,7 @@ export default function GoogleMapComponent(props) {
   return (
     <>
 
-      <div className="row d-flex justify-content-center text-center ">
+      <div className="row d-flex justify-content-center text-center containerGoogleMapsMascotaPerdida">
 
         <Map
             className="googleMapMascotaPerdida"

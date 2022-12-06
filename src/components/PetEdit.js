@@ -20,7 +20,7 @@ export default function ReactFinalFormDemo({
   printToast,
   updateEditComponent,
   updatePets,
-  hideEditDialog
+  hideEditDialog,
 }) {
   const [uploaded, setUploaded] = useState(false);
   const [formData, setFormData] = useState(null);
@@ -76,7 +76,7 @@ export default function ReactFinalFormDemo({
         if (response.status === 200) {
           setUploaded(true);
           updateEditComponent(0);
-          hideEditDialog()
+          hideEditDialog();
           printToast({
             severity: "success",
             summary: "Edicion",
@@ -88,7 +88,7 @@ export default function ReactFinalFormDemo({
           return <BottomNavigation status={uploaded} />;
         } else if (response.status !== 200) {
           updateEditComponent(0);
-          hideEditDialog()
+          hideEditDialog();
           console.log("error");
         }
       });
@@ -169,10 +169,9 @@ export default function ReactFinalFormDemo({
   return (
     <div className="form-demo divAddNewPet">
       <div className="flex justify-content-center">
-        <div className="card">
+        <div className="card petEditCard">
           {/*                 <h5 className="text-center">Registrar mascota</h5> */}
           <Form
-      
             onSubmit={onSubmit}
             initialValues={{
               nombre: petToEdit.nombre,
@@ -287,6 +286,8 @@ export default function ReactFinalFormDemo({
                     <div className="field petEditForm">
                       <span className="p-float-label">
                         <InputTextarea
+                        className="petDialogTextArea"
+                        
                           maxLength={70}
                           id="descripcionMascota"
                           {...input}
@@ -301,16 +302,13 @@ export default function ReactFinalFormDemo({
                     </div>
                   )}
                 />
-                <Button
-                  type="submit"
-                  label="Editar datos de mi mascota"
-                  className="editPetFetchButton petEditForm" /* onClick={onSubmit} */
-                />
-                <Button
-                  label="Cancelar"
-                  className="editPetFetchButton petEditForm"
-                  onClick={(e) => cancel()}
-                />
+                <div>
+                  <Button
+                    type="submit"
+                    label="Editar datos de mi mascota"
+                    className="editPetFetchButton petEditForm" /* onClick={onSubmit} */
+                  />
+                </div>
               </form>
             )}
           />

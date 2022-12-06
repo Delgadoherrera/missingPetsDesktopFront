@@ -8,7 +8,6 @@ import { Button } from "primereact/button";
 import { InputTextarea } from "primereact/inputtextarea";
 import { Form, Field } from "react-final-form";
 import AddAPhoto from "@mui/icons-material/AddAPhoto";
-import '../assets/ContactoMascotaEncontrada.css'
 import axios from "axios";
 import {useAuth0} from '@auth0/auth0-react'
 

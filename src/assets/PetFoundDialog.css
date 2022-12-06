@@ -1,13 +1,34 @@
-.petFoundDialog{
-    width: 40% !important;
+.googleMapContent {
+  width: 300px !important;
+  height: 300px !important;
+  position: relative !important;
+  border: 3px solid rgba(0, 0, 0, 0.166);
 }
-.formPetRegister{
-    width: 100%;
+.mapaMascotaEncontrada {
+  border-radius: 30px;
+  margin-right: 40px;
 }
-.submitFoundPet{
-    background-color: black;
-    border: none;
+.formPetFound {
+  width: 100% !important;
 }
-.petFoundDialogButtons{
-    color: black !important;
+.bodyPetFound {
+}
+.petFoundDialog {
+  width: 50vw !important;
+}
+.gmnoprint {
+  display: none;
+}
+.gm-control-active {
+  display: none;
+}
+#fotoMascota {
+  display: none;
+}
+.field {
+  height: 25px;
+}
+
+.formPetRegister {
+  text-align: left;
 }

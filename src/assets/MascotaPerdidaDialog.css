@@ -1,18 +1,23 @@
-.dialogMascotasPerdidas {
-  background-color: white !important;
-  text-align: center;
-  height: 80vh !important;
-  width: 40% !important;
-}
 .googleMapMascotaPerdida {
- 
+  height: 50% !important;
+  width: 100%;
+  margin-top: 3%;
 }
-.mascotaPerdidaButtonDialog {
-  background-color: black;
-  border: none;
-  
-}
+.dialogMascotasPerdidas {
+  padding: 0px;
+  height: 70%;
+  margin: auto !important;
+  text-align: center;
 
+}
 .contentMapMascotaEncontrada {
-
+}
+.containerGoogleMapsMascotaPerdida {
+  height: fit-content;
+}
+.divAddNewPet{
+}
+.petDialogTextArea{
+  height: 100px !important;
+  
 }

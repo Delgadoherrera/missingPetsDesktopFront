@@ -2,10 +2,9 @@ import "primeicons/primeicons.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.css";
 import "primeflex/primeflex.css";
-import "../assets/PetDetailDialog.css";
 import React, { useState } from "react";
 import { Dialog } from "primereact/dialog";
-import { Button } from "primereact/button";
+import '../assets/PetDetailDialog.css'
 import { Image } from 'primereact/image';
 
 const DialogDemo = ({petToEdit, hideDialog}) => {
@@ -50,6 +49,7 @@ const DialogDemo = ({petToEdit, hideDialog}) => {
   return (
     <div className="dialog-demo">
       <div className="card">
+      
         <Dialog
           header="Detalles de la mascota"
           visible={displayResponsive}
@@ -61,7 +61,7 @@ const DialogDemo = ({petToEdit, hideDialog}) => {
           contentClassName="editarMascotaContentDialog"
         >
         <div className="contentCardPetDetail">
-            <h4 className="mb-1 detailPetName">{petToEdit.nombre}</h4>
+            <h4 className="mb-1 detailPetName"> {petToEdit.nombre}</h4>
             <p className="mt-0 mb-3 petDescriptionCard">{petToEdit.descripcion}</p>
 
             <div className="detailsCardDivColors">

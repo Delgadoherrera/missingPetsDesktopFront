@@ -5,10 +5,10 @@ import "primeflex/primeflex.css";
 import React, { useState } from "react";
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
-import PetFound from '../components/PetFound'
+import PetFound from "../components/PetFound";
 import '../assets/PetFoundDialog.css'
 
-const PetFoundDialog = ({hideShowPettMsg,updatePets, printToast}) => {
+const PetFoundDialog = ({ hideShowPettMsg, updatePets, printToast }) => {
   const [displayResponsive, setDisplayResponsive] = useState(true);
   const [position, setPosition] = useState("center");
 
@@ -26,7 +26,7 @@ const PetFoundDialog = ({hideShowPettMsg,updatePets, printToast}) => {
 
   const onHide = (name) => {
     dialogFuncMap[`${name}`](false);
-    hideShowPettMsg()
+    hideShowPettMsg();
   };
 
   const renderFooter = (name) => {
@@ -38,7 +38,7 @@ const PetFoundDialog = ({hideShowPettMsg,updatePets, printToast}) => {
           onClick={() => onHide(name)}
           className="p-button-text petFoundDialogButtons"
         />
-     {/*    <Button
+        {/*    <Button
           label="Yes"
           icon="pi pi-check"
           onClick={() => onHide(name)}
@@ -50,17 +50,17 @@ const PetFoundDialog = ({hideShowPettMsg,updatePets, printToast}) => {
 
   return (
     <div className="dialog-demo">
-      <div className="card">    
+      <div className="card">
         <Dialog
           header="Encontré una mascota"
           visible={displayResponsive}
           onHide={() => onHide("displayResponsive")}
           breakpoints={{ "300px": "75vw" }}
-          style={{ width: "90vw", textAlign:"center" }}
+          style={{ width: "90vw", textAlign: "center" }}
           footer={renderFooter("displayResponsive")}
-          className='petFoundDialog'
+          className="petFoundDialog"
         >
-     <PetFound updatePets={updatePets} printToast={printToast}/>
+          <PetFound updatePets={updatePets} printToast={printToast} />
         </Dialog>
       </div>
     </div>

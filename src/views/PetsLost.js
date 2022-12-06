@@ -5,7 +5,6 @@ import { Carousel } from "primereact/carousel";
 import { Button } from "primereact/button";
 import ContactoMascotaEncontrada from "./ContactoMascotaEncontrada";
 import axios from "axios";
-import "../assets/PetsLost.css";
 import PetDetailDialog from "./PetDetailDialog";
 
 export default function MascotasPerdidas() {

@@ -1,28 +1,10 @@
-@media screen and (max-width: 820px) {
-  .sideBar {
-    display: none !important;
-  }
+.sideBar{
+    height: 93vh;
+    width: 10vw;
+    overflow: auto;
+    padding: 10px;
 }
 
-.sideBar {
-  background-color: rgba(128, 104, 123, 0.271);
-  width: 11vw;
-  height: 95vh;
-  display: flex;
-  flex-direction: column;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  z-index: 1;
-  overflow: auto;
-  justify-content:flex-start;
-}
-.tittleMyPets {
-  text-align: center;
-  font-size: 14px;
-}
-.namePetMyPetCard {
-  margin: 0;
-  font-size: 0.8vw;
-}
-.containerSideBar {
-  width: 8vw;
+.containerSideBar{
+    width: 10vw;
 }

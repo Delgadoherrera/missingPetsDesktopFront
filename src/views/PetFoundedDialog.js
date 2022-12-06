@@ -7,7 +7,6 @@ import React, { useState } from "react";
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
 import PetFound from '../components/PetFound'
-/* import './DialogDemo.css'; */
 
 const DialogDemo = () => {
   const [displayResponsive, setDisplayResponsive] = useState(true);

@@ -1,11 +1,10 @@
-import "../assets/ViewDataDisplay.css";
 import { useEffect, useState } from "react";
 import { Button } from "primereact/button";
-import "../assets/ControlPanelDataDisplay1.css";
 import ControlPanelDataDisplay1 from "./ControlPanelDataDisplay1";
 import PetLostThumbails from "./PetLostThumbails";
 import KnobDistanceLostPet from "./KnobDistanceLostPet";
 import Mensajes from '../components/Mensajes'
+import '../assets/ViewDataDisplay.css'
 
 const ViewPetsDisplay = () => {
   const [screenDataDisplay, setScreenDataDisplay] = useState("");

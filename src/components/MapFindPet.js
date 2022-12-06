@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
-import '../assets/MapFindMyPet.css'
 const GoogleMapComponent = (props) => {
   const [state, setState] = useState({
     longitude: 0,
@@ -28,8 +27,8 @@ const GoogleMapComponent = (props) => {
   ];
   let [markers, setMarkers] = useState(markersList);
   const mapStyles = {
-    width: "98vw",
-    height: "20vh",
+    width: "100%",
+    height: "100%",
   };
 
   let onMarkerDragEnd = (coord, index, markers) => {

@@ -1,55 +1,60 @@
 .cardSideBarMyPetsContent {
-  background-color: rgba(255, 255, 255, 0.352);
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-/*   border-bottom-right-radius: 40px;
-  border-bottom-left-radius: 20px;
-  border-top-right-radius: 40px;
-  border-top-left-radius: 10px; */
-  width: 100%;
-  margin: auto;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
-    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-  border-top: 1px solid rgba(0, 0, 0, 0.297);
+  justify-content: center;
+  text-align: center;
+/*   border-top-left-radius: 20px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 20px; */
+  background-color: transparent !important;
+  max-height: 150px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.255);
 }
-.buttonFoundPet {
-  font-size: 0.7rem;
-  background-color: rgba(120, 137, 120, 0.754) !important;
-  padding: 3px;
-  position: relative;
+.componentMyPetsCard {
+  text-align: center;
+}
+
+.avatarAndToolContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100%;
-  width: 100% !important;
-  margin-bottom: 5% !important;
+  align-items: center;
 }
 .avatarMyPets {
-  width: 4vh !important;
-  height: 4vh !important;
-  margin-bottom: 15px;
+  min-width: 40px !important;
+  min-height: 40px !important;
 }
-.avatarAndToolContainer {
-  width: 100%;
+.p-inputswitch-slider {
+  width: 100% !important;
+  height: 100%;
+  bottom: 0px;
+}
+.divInputSwitch {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center !important;
-}
-.cardSideBarMyPets {
-  background-color: transparent !important;
-  border-radius: 10px !important;
-  box-shadow: none !important;
+  justify-content: center;
 }
 .iconEditMyPet {
-  font-size: 2vh;
-  color: rgba(22, 21, 21, 0.54);
+  color: rgba(0, 0, 0, 0.506);
+  font-size: 1.3rem;
+  position: relative;
+  top: 10px;
 }
-.foundedPetColourCard {
-  background-color: rgba(92, 22, 22, 0.582) !important;
+
+.css-bhp9pd-MuiPaper-root-MuiCard-root {
+  box-shadow: none !important;
 }
-.buttonContainerPetCard {
-  display: flex;
+.namePetMyPetCard {
+  font-size: 0.9rem;
 }
-.flex-column {
-  align-content: center;
-  
+.p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+  background: #6fc271;
+}
+.p-inputswitch .p-inputswitch-slider {
+  background: #947676;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  border-radius: 30px;
 }

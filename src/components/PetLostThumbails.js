@@ -5,10 +5,9 @@ import "primeflex/primeflex.css";
 import React, { useState, useEffect, useRef } from "react";
 import { DataScroller } from "primereact/datascroller";
 import { Button } from "primereact/button";
-import "../assets/DataScrollerDemo.css";
 import axios from "axios";
 import ContactoMascotaEncontrada from "../views/ContactoMascotaEncontrada";
-import "../assets/PetLostThumbails.css";
+import '../assets/PetLostThumbails.css'
 const DataScrollerLoaderDemo = ({ petDistance }) => {
   const [pets, setPets] = useState([]);
   const [state, setState] = useState({

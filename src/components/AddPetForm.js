@@ -12,7 +12,6 @@ import { classNames } from "primereact/utils";
 import { InputTextarea } from "primereact/inputtextarea";
 import AddAPhoto from "@mui/icons-material/AddAPhoto";
 import { BottomNavigation } from "@mui/material";
-import "../assets/AddPetForm.css";
 import {useAuth0} from '@auth0/auth0-react'
 
 export default function ReactFinalFormDemo({
@@ -177,7 +176,6 @@ export default function ReactFinalFormDemo({
                     maxLength={11}
                     id="nombre"
                     {...input}
-                    autoFocus
                     className={classNames({
                       "p-invalid": isFormFieldValid(meta),
                     })}

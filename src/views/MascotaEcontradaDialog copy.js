@@ -18,7 +18,7 @@ export default function MascotaPerdida({
   const [displayBasic2, setDisplayBasic2] = useState(false);
   const [displayModal, setDisplayModal] = useState(false);
   const [displayMaximizable, setDisplayMaximizable] = useState(false);
-  const [displayPosition, setDisplayPosition] = useState(true);
+  const [displayPosition, setDisplayPosition] = useState(false);
   const [displayResponsive, setDisplayResponsive] = useState(false);
   const [position, setPosition] = useState("center");
 
@@ -85,6 +85,19 @@ export default function MascotaPerdida({
   return (
     <div className="dialog-demo">
       <div className="card containerMascotaEncontradaCardButton">
+
+
+            {idMascotaPerdida.status === 1 ? (
+              <Button
+                label={'Mascota Encontrada'.toUpperCase()}
+                /* icon="pi pi-arrow-down" */ onClick={() =>
+                  onClick("displayPosition", "top")
+                }
+                className="buttonFoundPet"
+              />
+            ) : (
+              <p></p>
+            )}
         <Dialog
           contentClassName="contentDialogMascotaEncontrada"
           className="dialogMascotasEncontrada"

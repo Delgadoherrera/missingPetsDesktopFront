@@ -4,7 +4,7 @@
   position: relative;
   margin: auto;
   padding: 10px;
-  z-index: 300;
+  z-index: 2;
 }
 .sideBarDataDisplay {
   width: 15%;

@@ -11,7 +11,6 @@ import { InputTextarea } from "primereact/inputtextarea";
 import AddAPhoto from "@mui/icons-material/AddAPhoto";
 import { BottomNavigation } from "@mui/material";
 import Map from "../components/WrapperMapFindPet";
-import "../assets/PetFound.css";
 import { useAuth0 } from "@auth0/auth0-react";
 
 export default function ReactFinalFormDemo({ updatePets, printToast }) {
@@ -224,8 +223,10 @@ export default function ReactFinalFormDemo({ updatePets, printToast }) {
   return (
     <div className="form-demo formPetFound">
       <div className="flex justify-content-center bodyPetFound">
+      <Map newLocation={locationUpdate} />
+
         <div className="card formPetRegister">
-          <Map newLocation={locationUpdate} />
+         
           <p className="tittleMap"> Indica donde encontraste la mascota</p>
           <Form
             onSubmit={onSubmit}
@@ -320,7 +321,6 @@ export default function ReactFinalFormDemo({ updatePets, printToast }) {
                           id="descripcionMascota"
                           maxLength={70}
                           {...input}
-                          placeholder={"Descripcion precisa"}
                         />
                         <label
                           className="descripcionMascota"

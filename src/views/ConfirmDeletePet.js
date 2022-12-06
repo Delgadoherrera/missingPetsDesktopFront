@@ -2,7 +2,6 @@ import "primeicons/primeicons.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.css";
 import "primeflex/primeflex.css";
-import "../assets/ConfirmDeletePet.css";
 import React, { useState } from "react";
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
@@ -78,8 +77,6 @@ const DialogDemo = ({ petToDelete, updatePets, printToast, hideDialog }) => {
           header="¿Deseas quitar a tu mascota?"
           visible={displayResponsive}
           onHide={() => onHide("displayResponsive")}
-          breakpoints={{ "300px": "75vw" }}
-          style={{ width: "80vw" }}
           footer={renderFooter("displayResponsive")}
           headerClassName="headerDeletePetDialog"
           contentClassName="contentDeletePetDialog"
