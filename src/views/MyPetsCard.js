@@ -34,10 +34,11 @@ export default function MediaCard({ pets, updatePets, printToast, user }) {
       }
     );
   }, []);
-
+console.log(pets)
   return (
     <div className="componentMyPetsCard">
-      <p className="tittleMyPets"> Mis mascotas</p>
+    {pets.length < 0 ?<p> Mis mascotas</p> : <p></p>}
+{/*       <p className="tittleMyPets"> Mis mascotas</p> */}
       {pets.map((one, inex) => {
         return (
           <Card className="cardSideBarMyPets">
