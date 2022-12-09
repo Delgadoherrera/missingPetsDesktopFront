@@ -3,9 +3,8 @@ import ButtonSidePanel from "../components/ButtonsSidePanel";
 import { useEffect, useState } from "react";
 import { MascotasService } from "../services/MascotasService";
 import { useAuth0 } from "@auth0/auth0-react";
-import '../assets/SideBar.css'
 
-const SideBar = ({ printToast,user }) => {
+const SideBar = ({ printToast, user, setManageViews, manageViews,setRefreshPets }) => {
   const [pet, setPet] = useState([]);
   const [refreshPet, setRefreshPet] = useState(false);
   const getAllPets = new MascotasService();
@@ -19,17 +18,14 @@ const SideBar = ({ printToast,user }) => {
     setRefreshPet(!refreshPet);
   };
   return (
-    <div className="sideBar">
+    <div className="sideBar_column">
       <ButtonSidePanel
         printToast={printToast}
         updatePets={updatePets}
         user={user}
-      />
-      <MyPets
-        printToast={printToast}
-        pet={pet}
-        updatePets={updatePets}
-        user={user}
+        setManageViews={setManageViews}
+        manageViews={manageViews}
+        setRefreshPets={setRefreshPets}
       />
     </div>
   );

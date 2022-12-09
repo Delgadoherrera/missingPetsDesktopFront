@@ -11,24 +11,15 @@ export default function MascotaPerdida({
   idMascotaPerdida,
   state,
   updatePets,
-  printToast
- 
+  printToast,
+  setRefreshPets,
 }) {
-  const [displayBasic, setDisplayBasic] = useState(false);
-  const [displayBasic2, setDisplayBasic2] = useState(false);
-  const [displayModal, setDisplayModal] = useState(false);
-  const [displayMaximizable, setDisplayMaximizable] = useState(false);
   const [displayPosition, setDisplayPosition] = useState(true);
-  const [displayResponsive, setDisplayResponsive] = useState(false);
   const [position, setPosition] = useState("center");
 
   const dialogFuncMap = {
-    displayBasic: setDisplayBasic,
-    displayBasic2: setDisplayBasic2,
-    displayModal: setDisplayModal,
-    displayMaximizable: setDisplayMaximizable,
+
     displayPosition: setDisplayPosition,
-    displayResponsive: setDisplayResponsive,
   };
 
   const onClick = (name, position) => {
@@ -50,15 +41,13 @@ export default function MascotaPerdida({
         state
       )
       .then((response) => {
-        updatePets();
-
+        setRefreshPets();
         printToast({
           severity: "success",
           summary: "Mascota",
           detail: "Mascota encontrada",
           life: 3000,
         });
-       
       });
     dialogFuncMap[`${name}`](false);
   };
@@ -92,9 +81,8 @@ export default function MascotaPerdida({
           header={
             <div>
               <p className="">
-                {" "}
                 {idMascotaPerdida.nombre} se quitará de la lista de mascotas
-                perdidas. Felicidades!{" "}
+                perdidas. Felicidades!
               </p>
               <div className="mascotaNombreEncontrada">
                 {/*   {idMascotaPerdida.nombre} */}

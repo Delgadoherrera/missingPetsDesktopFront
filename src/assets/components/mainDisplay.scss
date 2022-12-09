@@ -1,0 +1,12 @@
+.MainDisplay_content {
+  height: 85vh;
+  width: 87vw;
+  overflow: auto;
+  margin: auto;
+  .tittleMascotasPerdidas {
+    text-align: center;
+  }
+  .divInputSwitch {
+    background-color: $secondary;
+  }
+}

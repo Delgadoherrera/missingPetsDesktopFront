@@ -8,7 +8,6 @@ import ButtonMascotaPerdida from "../views/MascotaPerdidaDialog";
 import ButtonMascotaEncontrada from "../views/MascotaEcontradaDialog";
 import MenuDemo from "../components/ButtonToolMyCardPet";
 import SwitchPetLost from "../components/SwitchPetLost";
-import "../assets/MyPetsCard.css";
 
 export default function MediaCard({ pets, updatePets, printToast, user }) {
   const [deleteConfirm, setDeleteConfirm] = useState(false);
@@ -34,11 +33,11 @@ export default function MediaCard({ pets, updatePets, printToast, user }) {
       }
     );
   }, []);
-console.log(pets)
+  console.log(pets);
   return (
     <div className="componentMyPetsCard">
-    {pets.length < 0 ?<p> Mis mascotas</p> : <p></p>}
-{/*       <p className="tittleMyPets"> Mis mascotas</p> */}
+      {pets.length < 0 ? <p> Mis mascotas</p> : <p></p>}
+      {/*       <p className="tittleMyPets"> Mis mascotas</p> */}
       {pets.map((one, inex) => {
         return (
           <Card className="cardSideBarMyPets">
@@ -64,18 +63,17 @@ console.log(pets)
                   updatePets={updatePets}
                   printToast={printToast}
                   petToSwitch={one}
-                 
-                />
-              </div>
-
-              {/*   <div className="buttonContainerPetCard">
-                {one.status === 1 ? (
-                  <ButtonMascotaEncontrada
+                />      <ButtonMascotaEncontrada
                     user={user}
                     idMascotaPerdida={one}
                     updatePets={updatePets}
                     printToast={printToast}
                   />
+              </div>
+
+     {/*          <div className="buttonContainerPetCard">
+                {one.status === 1 ? (
+            
                 ) : (
                   <ButtonMascotaPerdida
                     user={user}

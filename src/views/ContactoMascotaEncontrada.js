@@ -62,7 +62,7 @@ export default function MascotaPerdida({ state, idMascotaPerdida, setDialog }) {
     return <div></div>;
   };
   return (
-    <div className="dialog-demo dialogMascotasPerdidas">
+    <div className="dialog-demo">
       <Dialog
         className="dialogMascotasPerdidas"
         header={

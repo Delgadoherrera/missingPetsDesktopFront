@@ -4,7 +4,6 @@ import "primereact/resources/primereact.css";
 import "primeflex/primeflex.css";
 import React, { useState } from "react";
 import { Dialog } from "primereact/dialog";
-import '../assets/PetDetailDialog.css'
 import { Image } from 'primereact/image';
 
 const DialogDemo = ({petToEdit, hideDialog}) => {

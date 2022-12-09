@@ -1,0 +1,23 @@
+.petFound_formPetFound {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+}
+.googleMapContent {
+  position: relative !important;
+}
+.gmnoprint{
+  display: none;
+}
+.PetFoundFormContainer {
+  div {
+    margin: 0;
+  }
+  padding: 20px;
+
+}
+

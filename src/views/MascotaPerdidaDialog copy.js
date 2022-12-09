@@ -11,10 +11,9 @@ import axios from "axios";
 export default function MascotaPerdida({
   idMascotaPerdida,
   state,
-  hideDialog,
+  update,
   updatePets,
   printToast,
-  setRefreshPets,
 }) {
   const [displayBasic, setDisplayBasic] = useState(false);
   const [displayBasic2, setDisplayBasic2] = useState(false);
@@ -82,7 +81,7 @@ export default function MascotaPerdida({
               { sendLocation, lugarEncontrado }
             )
             .then((response) => {
-              setRefreshPets()
+              updatePets();
             });
         });
     } else {
@@ -111,7 +110,7 @@ export default function MascotaPerdida({
                 detail: "Estamos buscando a tu mascota",
                 life: 3000,
               });
-              setRefreshPets()
+
               updatePets();
             });
         });
@@ -124,10 +123,7 @@ export default function MascotaPerdida({
       <div className="footerDiv">
         <Button
           label="Cancelar"
-          /* icon="pi pi-times" */ onClick={() => {
-            onHide(name);
-            hideDialog(false);
-          }}
+          /* icon="pi pi-times" */ onClick={() => onHide(name)}
           className="mascotaPerdidaButtonDialog"
         />
         <Button
@@ -144,7 +140,22 @@ export default function MascotaPerdida({
   return (
     <div className="dialog-demo">
       <div className="card">
+        <div className="grid flex-column">
+          {idMascotaPerdida.status !== 1 ? (
+            <Button
+              label={`Mascota perdida`.toUpperCase()}
+              /* icon="pi pi-arrow-down" */ onClick={() =>
+                onClick("displayPosition", "top")
+              }
+              className="buttonFoundPet foundedPetColourCard"
+            />
+          ) : (
+            <p></p>
+          )}
+        </div>
         <Dialog
+          className="dialogMascotasPerdidas"
+          contentClassName="contentMapMascotaEncontrada"
           closable={false}
           header={
             <div>
@@ -160,12 +171,9 @@ export default function MascotaPerdida({
           visible={true}
           position={position}
           modal
-          style={{ width: "70vw", height:"500px" }}
+          style={{ width: "70vw" }}
           footer={renderFooter("displayPosition")}
-          onHide={() => {
-            onHide("displayPosition");
-            hideDialog(false);
-          }}
+          onHide={() => onHide("displayPosition")}
           draggable={false}
           resizable={false}
         >

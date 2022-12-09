@@ -4,14 +4,13 @@ import ControlPanelDataDisplay1 from "./ControlPanelDataDisplay1";
 import PetLostThumbails from "./PetLostThumbails";
 import KnobDistanceLostPet from "./KnobDistanceLostPet";
 import Mensajes from '../components/Mensajes'
-import '../assets/ViewDataDisplay.css'
 
 const ViewPetsDisplay = () => {
   const [screenDataDisplay, setScreenDataDisplay] = useState("");
-  const [petDistance, setPetDistance]= useState(4)
+  const [petDistance, setPetDistance]= useState(100)
 
   return (
-    <div className="ViewDataDisplay">
+    <div className="ViewDataDisplay_masterDiv">
       <div className="sideBarDataDisplay">
         <div className="buttonsContainerSideBarDataDisplay">
           <Button
@@ -38,12 +37,8 @@ const ViewPetsDisplay = () => {
         <div className="controlBottomPanelDataDisplay"> </div>
       </div>
       <div className="screenDataDisplay">
-        {screenDataDisplay === "PetLostThumbails" ? (
           <PetLostThumbails petDistance={petDistance} />
-        ) : (
-          <p> </p>
-        )}
-
+    
         {screenDataDisplay === "messages" ? (
           <Mensajes />
         ) : (

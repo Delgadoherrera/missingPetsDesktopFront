@@ -21,9 +21,9 @@ export default function GoogleMapComponent(props) {
 
   const mapStyles = {
     width: "96%",
-    height: "100%",
+    height: "50%",
     borderRadius:'70px',
-    position:'fixed',
+    position:'relative',
     margin:0,
    
   };

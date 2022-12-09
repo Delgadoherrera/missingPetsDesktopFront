@@ -9,7 +9,7 @@ import { Toast } from "primereact/toast";
 import EditPetDialog from "../views/EditPetDialog";
 import CoonfirmDeletePet from "../views/ConfirmDeletePet";
 
-const MenuDemo = ({ petToEdit, printToast, updatePets }) => {
+const MenuDemo = ({ petToEdit, printToast, updatePets,setRefreshPets }) => {
   const menu = useRef(null);
   const toast = useRef(null);
   const [petEdit, setPetEdit] = useState(false);
@@ -21,9 +21,9 @@ const MenuDemo = ({ petToEdit, printToast, updatePets }) => {
   const hideDeleteDialog = () => {
     setdeletePetDialog(false);
   };
-  const hideEditDialog=()=>{
-    setPetEdit(false)
-  }
+  const hideEditDialog = () => {
+    setPetEdit(false);
+  };
 
   const items = [
     {
@@ -64,24 +64,24 @@ const MenuDemo = ({ petToEdit, printToast, updatePets }) => {
 
   return (
     <div>
-      <Toast ref={toast}></Toast>
+   
 
-      <div className="card">
-        <Menu model={items} popup ref={menu} id="popup_menu" />
-        <i
-          onClick={(event) => menu.current.toggle(event)}
-          aria-controls="popup_menu"
-          aria-haspopup
-          class="pi pi-cog iconEditMyPet"
-        ></i>
-      </div>
+      <Menu model={items} popup ref={menu} id="popup_menu" />
+      <Toast ref={toast}></Toast>
+      <i
+        onClick={(event) => menu.current.toggle(event)}
+        aria-controls="popup_menu"
+        aria-haspopup
+        class="pi pi-cog iconEditMyPet"
+      ></i>
       {petEdit === true ? (
         <EditPetDialog
           petToEdit={petToEdit}
           hideEditDialog={hideEditDialog}
           updateEditComponent={updateEditComponent}
           printToast={printToast}
-          updatePets={updatePets}
+          updatePets={updatePets}  
+
         />
       ) : (
         <p> </p>

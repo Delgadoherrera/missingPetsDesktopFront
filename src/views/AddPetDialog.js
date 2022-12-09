@@ -7,14 +7,20 @@ import React, { useState } from "react";
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
 import AddPetForm from "../components/AddPetForm";
-const DialogDemo = ({ showAddPetMsg, hideShowPettMsg,printToast,updatePets, user }) => {
+const DialogDemo = ({
+  showAddPetMsg,
+  hideShowPettMsg,
+  printToast,
+  updatePets,
+  setRefreshPets,
+  closeDialog,
+}) => {
   const [displayResponsive, setDisplayResponsive] = useState(true);
   const [position, setPosition] = useState("center");
 
   const dialogFuncMap = {
     displayResponsive: setDisplayResponsive,
   };
-
 
   const onClick = (name, position) => {
     dialogFuncMap[`${name}`](true);
@@ -26,7 +32,9 @@ const DialogDemo = ({ showAddPetMsg, hideShowPettMsg,printToast,updatePets, user
 
   const onHide = (name) => {
     dialogFuncMap[`${name}`](false);
-    hideShowPettMsg();
+    closeDialog(false)
+    /*     hideShowPettMsg();
+     */
   };
 
   const renderFooter = (name) => {
@@ -54,18 +62,21 @@ const DialogDemo = ({ showAddPetMsg, hideShowPettMsg,printToast,updatePets, user
         <Dialog
           header="Agregar a tu mascota"
           visible={displayResponsive}
-          onHide={() => onHide("displayResponsive")}
-          breakpoints={{ "300px": "75vw" }}
-          style={{ width: "90vw" }}
+          onHide={() => {
+            onHide("displayResponsive");
+            closeDialog(false);
+          }}
           footer={renderFooter("displayResponsive")}
           className="addPetDialog"
-          contentClassName='addPetDialogContent'
+          contentClassName="addPetDialogContent"
         >
           <AddPetForm
             showAddPetMsg={showAddPetMsg}
             hideShowPettMsg={hideShowPettMsg}
             printToast={printToast}
             updatePets={updatePets}
+            setRefreshPets={setRefreshPets}
+            closeDialog={closeDialog}
           />
         </Dialog>
       </div>

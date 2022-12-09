@@ -7,8 +7,7 @@ import { DataScroller } from "primereact/datascroller";
 import { Button } from "primereact/button";
 import axios from "axios";
 import ContactoMascotaEncontrada from "../views/ContactoMascotaEncontrada";
-import '../assets/PetLostThumbails.css'
-const DataScrollerLoaderDemo = ({ petDistance }) => {
+const DataScrollerLoaderDemo = ({ petDistance, manageViews, refreshPets }) => {
   const [pets, setPets] = useState([]);
   const [state, setState] = useState({
     longitude: 0,
@@ -51,7 +50,7 @@ const DataScrollerLoaderDemo = ({ petDistance }) => {
         enableHighAccuracy: true,
       }
     );
-  }, [petDistance]);
+  }, [refreshPets]);
   const petFounded = (data) => {
     setDialogFounded(true);
     setpetFoundDetail(data.e);
@@ -63,6 +62,7 @@ const DataScrollerLoaderDemo = ({ petDistance }) => {
         Mascotas perdidas en tu zona
       </p> */}
 
+      <p className="tittleMascotasPerdidas"> Mascotas perdidas en tu zona</p>
       {pets.length > 0 ? (
         <div className="contentPetThumbails">
           {pets.map((one, key) => {
@@ -75,53 +75,58 @@ const DataScrollerLoaderDemo = ({ petDistance }) => {
                     alt="myPet"
                   />
                 </div>
-                <div>
-                  <p className="petCardContentThumbailName"> {one.nombre}</p>
-                </div>
-                <p className="petCardDetails">
-                  Color principal: {one.colorPrimario}
-                </p>
-                <p className="petCardDetails">
-                  {" "}
-                  Color secundario: {one.colorSecundario}
-                </p>
-                <p className="petCardDetails">
-                  Peso aproximado: {one.pesoAproximado}
-                </p>
-                <div>
-                  <p className="petCardDetailsDescription">{one.descripcion}</p>
-                </div>
-                <div className="divGeoAdress">
-                  {one.geoAdress === "No está perdida" ? (
-                    <p className="geoAdress">Perdida en: {one.geoAdress} </p>
-                  ) : (
-                    <p className="geoAdress">Encontrada en: {one.geoAdress} </p>
-                  )}{" "}
+                <div className="cardLostPetContentData">
+                  <div>
+                    <p className="petCardContentThumbailName"> {one.nombre}</p>
+                  </div>
+                  {/*      <p className="petCardDetails">
+                    Color principal: {one.colorPrimario}
+                  </p>
+                  <p className="petCardDetails">
+                    Color secundario: {one.colorSecundario}
+                  </p>
+                  <p className="petCardDetails">
+                    Peso aproximado: {one.pesoAproximado}
+                  </p>
+                  <div>
+                    <p className="petCardDetailsDescription">
+                      {one.descripcion}
+                    </p>
+                  </div> */}
+                  <div className="divGeoAdress">
+                    {one.geoAdress === "No está perdida" ? (
+                      <p className="geoAdress">Perdida en: {one.geoAdress} </p>
+                    ) : (
+                      <div className="geoAdressDiv">
+                        <p className="geoAdress">
+                          Encontrada en: {one.geoAdress}
+                        </p>
+                      </div>
+                    )}
+                  </div>
                 </div>
 
-                <div className="car-buttons mt-5">
-                  {one.status === 3 ? (
-                    <Button
-                      onClick={() => petFounded({ e: one })}
-                      className="p-button p-button-rounded mr-2 buttonCardPetThumbail"
-                      label="Es mi mascota"
-                    />
-                  ) : (
-                    <Button
-                      onClick={() => petFounded({ e: one })}
-                      className="p-button p-button-rounded mr-2 buttonCardPetThumbail"
-                      label={`Encontré ${one.nombre}`}
-                    />
-                  )}
-                  {dialogFounded === true ? (
-                    <ContactoMascotaEncontrada
-                      idMascotaPerdida={petDetail}
-                      setDialog={setDialogFounded}
-                    />
-                  ) : (
-                    <p></p>
-                  )}
-                </div>
+                {one.status === 3 ? (
+                  <Button
+                    onClick={() => petFounded({ e: one })}
+                    className="buttonCardPetThumbail"
+                    label="Es mi mascota"
+                  />
+                ) : (
+                  <Button
+                    onClick={() => petFounded({ e: one })}
+                    className="buttonCardPetThumbail"
+                    label={`Encontré ${one.nombre}`}
+                  />
+                )}
+                {dialogFounded === true ? (
+                  <ContactoMascotaEncontrada
+                    idMascotaPerdida={petDetail}
+                    setDialog={setDialogFounded}
+                  />
+                ) : (
+                  <p></p>
+                )}
               </div>
             );
           })}

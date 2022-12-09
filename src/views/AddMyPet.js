@@ -5,15 +5,17 @@ import AddPetDialog from "./AddPetDialog";
 import { useState, useEffect } from "react";
 import PetFound from "../components/PetFound";
 import PetFoundDialog from "./PetFoundDialog";
-import "../assets/SideBarButtons.css";
 
-const AddMyPet = ({ printToast, updatePets, user }) => {
+const AddMyPet = ({
+  printToast,
+  updatePets,
+  setManageViews,
+  manageViews,
+  setRefreshPets,
+}) => {
   const [addPetMsg, setaddPetMsg] = useState(false);
   const [petFoundMessage, setPetFoundMessage] = useState(false);
 
-  const showAddPetMsg = () => {
-    setaddPetMsg(true);
-  };
   const showPetFoundedMsg = () => {
     setPetFoundMessage(true);
   };
@@ -23,41 +25,56 @@ const AddMyPet = ({ printToast, updatePets, user }) => {
   };
 
   return (
-    <div className="containerButtonsSidePanel">
-      <div>
+    <div className="addMyPet_containerButtonsSidePanel">
+      <Button
+        onClick={() => setManageViews("Mascotas perdidas")}
+        label="Mascotas perdidas"
+        className="button-containerSidePanel"
+      />
+      <Button
+        onClick={() => showPetFoundedMsg()}
+        label="Encontré una mascota"
+        className="button-containerSidePanel"
+      />
+
+      <Button
+        onClick={() => setManageViews("Adopta una mascota")}
+        label="Adopta una mascota"
+        className="button-containerSidePanel"
+      />
+      <Button
+        onClick={() => setManageViews("Mis mascotas")}
+        label="Mis mascotas"
+        className="button-containerSidePanel"
+      />
+      {manageViews === "Mis mascotas" ? (
         <Button
-          onClick={() => showAddPetMsg()}
-          label="Agregar a mi mascota"
-          className="button-containerSidePanel"
+          onClick={() => setaddPetMsg(true)}
+          label="Agregar mascota"
+          className="button-containerSidePanel subMenuItem"
         />
-      </div>
-      <div>
-        <Button
-          onClick={() => showPetFoundedMsg()}
-          label="Encontré una mascota"
-          className="button-containerSidePanel"
+      ) : (
+        <p></p>
+      )}
+      {addPetMsg === true ? (
+        <AddPetDialog
+          setRefreshPets={setRefreshPets}
+          closeDialog={setaddPetMsg}
         />
-        {addPetMsg === true ? (
-          <AddPetDialog
-            showAddPetMsg={showAddPetMsg}
-            hideShowPettMsg={hideShowPettMsg}
-            printToast={printToast}
-            updatePets={updatePets}
-            user={user}
-          />
-        ) : (
-          <p></p>
-        )}
-        {petFoundMessage === true ? (
-          <PetFoundDialog
-            hideShowPettMsg={hideShowPettMsg}
-            updatePets={updatePets}
-            printToast={printToast}
-          />
-        ) : (
-          <p></p>
-        )}
-      </div>
+      ) : (
+        <p></p>
+      )}
+      {petFoundMessage === true ? (
+        <PetFoundDialog
+          hideShowPettMsg={hideShowPettMsg}
+          updatePets={updatePets}
+          printToast={printToast}
+          setRefreshPets={setRefreshPets}
+          closeDialog={setPetFoundMessage}
+        />
+      ) : (
+        <p></p>
+      )}
     </div>
   );
 };

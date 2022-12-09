@@ -214,27 +214,6 @@ export default function ReactFinalFormDemo({
                 )}
               />
               <Field
-                name="descripcionMascota"
-                render={({ input }) => (
-                  <div className="field petEditForm">
-                    <span className="p-float-label">
-                      <InputTextarea
-                        className="petDialogTextArea"
-                        maxLength={70}
-                        id="descripcionMascota"
-                        {...input}
-                        placeholder={
-                          "Descripcion precisa, 50 caracteres maximo"
-                        }
-                      />
-                      <label htmlFor="descripcionMascota">
-                        Descripcion de tu mascota
-                      </label>
-                    </span>
-                  </div>
-                )}
-              />
-              <Field
                 name="tipoMascota"
                 render={({ input }) => (
                   <div className="field petEditForm">
@@ -301,7 +280,27 @@ export default function ReactFinalFormDemo({
                   </div>
                 )}
               />
-
+              <Field
+                name="descripcionMascota"
+                render={({ input }) => (
+                  <div className="field petEditForm">
+                    <span className="p-float-label">
+                      <InputTextarea
+                        className="petDialogTextArea"
+                        maxLength={70}
+                        id="descripcionMascota"
+                        {...input}
+                        placeholder={
+                          "Descripcion precisa, 50 caracteres maximo"
+                        }
+                      />
+                      <label htmlFor="descripcionMascota">
+                        Descripcion de tu mascota
+                      </label>
+                    </span>
+                  </div>
+                )}
+              />
               <div>
                 <Button
                   type="submit"

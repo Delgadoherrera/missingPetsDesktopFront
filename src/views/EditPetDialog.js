@@ -61,14 +61,9 @@ const DialogDemo = ({
           visible={displayResponsive}
           onHide={() => onHide("displayResponsive")}
           footer={renderFooter("displayResponsive")}
-          className="editarMascotaDialog"
-          contentClassName="editarMascotaContentDialog"
+          className="editPetDialog"
         >
-          <img
-            alt="myPetImg"
-            src={`data:image/jpeg;base64,${petToEdit.fotoMascota}`}
-            className="imgPetEditDialog"
-          />
+     
 
           <PetEdit
             petToEdit={petToEdit}

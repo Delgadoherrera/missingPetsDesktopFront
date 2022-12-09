@@ -13,7 +13,7 @@ import { BottomNavigation } from "@mui/material";
 import Map from "../components/WrapperMapFindPet";
 import { useAuth0 } from "@auth0/auth0-react";
 
-export default function ReactFinalFormDemo({ updatePets, printToast }) {
+export default function ReactFinalFormDemo({ closeDialog, printToast,setRefreshPets }) {
   const [uploaded, setUploaded] = useState(false);
   const [formData, setFormData] = useState(null);
   const [file, setFile] = useState(null);
@@ -199,6 +199,8 @@ export default function ReactFinalFormDemo({ updatePets, printToast }) {
           .then((response) => {
             if (response.status === 200) {
               setUploaded(true);
+              setRefreshPets()
+              closeDialog(false)
               printToast({
                 severity: "success",
                 summary: "Mascota",
@@ -212,7 +214,7 @@ export default function ReactFinalFormDemo({ updatePets, printToast }) {
           });
       });
   };
-
+console.log(setRefreshPets, 'setRefreshPets')
   const isFormFieldValid = (meta) => !!(meta.touched && meta.error);
   const getFormErrorMessage = (meta) => {
     return (
@@ -221,155 +223,145 @@ export default function ReactFinalFormDemo({ updatePets, printToast }) {
   };
 
   return (
-    <div className="form-demo formPetFound">
-      <div className="flex justify-content-center bodyPetFound">
-      <Map newLocation={locationUpdate} />
-
-        <div className="card formPetRegister">
-         
-          <p className="tittleMap"> Indica donde encontraste la mascota</p>
-          <Form
-            onSubmit={onSubmit}
-            initialValues={{
-              nombre: "",
-              colorPrimario: "",
-              colorSecundario: "",
-              pesoAproximado: "",
-              descripcionMascota: "",
-              tipoMascota: null,
-            }}
-            validate={validate}
-            render={({ handleSubmit }) => (
-              <form onSubmit={handleSubmit} className="p-fluid formPetFound">
-                <Field
-                  name="tipoMascota"
-                  render={({ input }) => (
-                    <div className="field">
-                      <span className="p-float-label">
-                        <Dropdown
-                          id="tipoMascota"
-                          {...input}
-                          options={petType}
-                          optionLabel="label"
-                        />
-                        <label htmlFor="tipoMascota">Tipo de mascota</label>
-                      </span>
-                    </div>
-                  )}
-                />
-                <Field
-                  name="pesoAproximado"
-                  render={({ input }) => (
-                    <div className="field">
-                      <span className="p-float-label">
-                        <Dropdown
-                          id="pesoAproximado"
-                          {...input}
-                          options={pesoAproximado}
-                          optionLabel="label"
-                        />
-                        <label htmlFor="pesoAproximado">
-                          Peso aproximado de la mascota
-                        </label>
-                      </span>
-                    </div>
-                  )}
-                />
-                <Field
-                  name="colorPrimario"
-                  render={({ input }) => (
-                    <div className="field">
-                      <span className="p-float-label">
-                        <Dropdown
-                          id="colorPrimario"
-                          {...input}
-                          options={petColor}
-                          optionLabel="label"
-                        />
-                        <label htmlFor="colorPrimario">Color primario</label>
-                      </span>
-                    </div>
-                  )}
-                />
-
-                <Field
-                  name="colorSecundario"
-                  render={({ input }) => (
-                    <div className="field">
-                      <span className="p-float-label">
-                        <Dropdown
-                          id="colorSecundario"
-                          {...input}
-                          options={petColor}
-                          optionLabel="label"
-                        />
-                        <label htmlFor="colorSecundario">
-                          Color secundario
-                        </label>
-                      </span>
-                    </div>
-                  )}
-                />
-                <Field
-                  name="descripcionMascota"
-                  className="descripcionMascota"
-                  render={({ input }) => (
-                    <div className="field">
-                      <span className="p-float-label">
-                        <InputTextarea
-                          className="descripcionMascota"
-                          id="descripcionMascota"
-                          maxLength={70}
-                          {...input}
-                        />
-                        <label
-                          className="descripcionMascota"
-                          htmlFor="descripcionMascota"
-                        >
-                          Descripcion de la mascota encontrada
-                        </label>
-                      </span>
-                    </div>
-                  )}
-                />
-                <p className="adTextPetFound">
-                  Sube una foto de la mascota encontrada:
-                </p>
-
-                <Field
-                  name="fotoMascota"
-                  render={({ input }) => (
-                    <div className="field">
-                      <input
-                        required
-                        onChange={(e) => {
-                          handleFile(e);
-                        }}
-                        type="file"
-                        id="fotoMascota"
-                        name="file"
-                      ></input>
-                      <label
-                        className="circle"
-                        htmlFor="fotoMascota"
-                        name="file"
-                      >
-                        <AddAPhoto className="iconPhotoUpload petFoundPhotoIcon" />
+    <div className="form-demo petFound_formPetFound">
+        <Map newLocation={locationUpdate} />
+      <div className="PetFoundFormContainer">
+        <Form
+          onSubmit={onSubmit}
+          initialValues={{
+            nombre: "",
+            colorPrimario: "",
+            colorSecundario: "",
+            pesoAproximado: "",
+            descripcionMascota: "",
+            tipoMascota: null,
+          }}
+          validate={validate}
+          render={({ handleSubmit }) => (
+            <form onSubmit={handleSubmit} className="p-fluid formPetFound">
+              <Field
+                name="tipoMascota"
+                render={({ input }) => (
+                  <div className="field">
+                    <span className="p-float-label">
+                      <Dropdown
+                        id="tipoMascota"
+                        {...input}
+                        options={petType}
+                        optionLabel="label"
+                      />
+                      <label htmlFor="tipoMascota">Tipo de mascota</label>
+                    </span>
+                  </div>
+                )}
+              />
+              <Field
+                name="pesoAproximado"
+                render={({ input }) => (
+                  <div className="field">
+                    <span className="p-float-label">
+                      <Dropdown
+                        id="pesoAproximado"
+                        {...input}
+                        options={pesoAproximado}
+                        optionLabel="label"
+                      />
+                      <label htmlFor="pesoAproximado">
+                        Peso aproximado de la mascota
                       </label>
-                    </div>
-                  )}
-                />
+                    </span>
+                  </div>
+                )}
+              />
+              <Field
+                name="colorPrimario"
+                render={({ input }) => (
+                  <div className="field">
+                    <span className="p-float-label">
+                      <Dropdown
+                        id="colorPrimario"
+                        {...input}
+                        options={petColor}
+                        optionLabel="label"
+                      />
+                      <label htmlFor="colorPrimario">Color primario</label>
+                    </span>
+                  </div>
+                )}
+              />
 
-                <Button
-                  type="submit"
-                  label="Cargar mascota encontrada"
-                  className="mt-2 submitFoundPet"
-                />
-              </form>
-            )}
-          />
-        </div>
+              <Field
+                name="colorSecundario"
+                render={({ input }) => (
+                  <div className="field">
+                    <span className="p-float-label">
+                      <Dropdown
+                        id="colorSecundario"
+                        {...input}
+                        options={petColor}
+                        optionLabel="label"
+                      />
+                      <label htmlFor="colorSecundario">Color secundario</label>
+                    </span>
+                  </div>
+                )}
+              />
+              <Field
+                name="descripcionMascota"
+                className="descripcionMascota"
+                render={({ input }) => (
+                  <div className="field">
+                    <span className="p-float-label">
+                      <InputTextarea
+                        className="descripcionMascota"
+                        id="descripcionMascota"
+                        maxLength={70}
+                        {...input}
+                      />
+                      <label
+                        className="descripcionMascota"
+                        htmlFor="descripcionMascota"
+                      >
+                        Descripcion de la mascota encontrada
+                      </label>
+                    </span>
+                  </div>
+                )}
+              />
+              <p className="adTextPetFound">
+                Sube una foto de la mascota encontrada:
+              </p>
+
+              <Field
+                name="fotoMascota"
+                render={({ input }) => (
+                  <div className="field">
+                    <input
+                      required
+                      onChange={(e) => {
+                        handleFile(e);
+                      }}
+                      type="file"
+                      id="fotoMascota"
+                      name="file"
+                    ></input>
+                    <label className="circle" htmlFor="fotoMascota" name="file">
+                      <AddAPhoto className="iconPhotoUpload petFoundPhotoIcon" />
+                    </label>
+
+                    <Button
+                      type="submit"
+                      label="Cargar mascota encontrada"
+                      className=""
+                    />
+                  </div>
+                )}
+              />
+            </form>
+          )}
+        />
       </div>
+
     </div>
   );
 }

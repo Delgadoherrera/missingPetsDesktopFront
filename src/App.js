@@ -5,7 +5,6 @@ import PublicRoute from './components/router/PublicRoute'
 import PrivateRoute from './components/router/PrivateRoute'
 import Private from './views/Private'
 import Home from './views/Home'
-import './App.css'
 
 function App() {
   return (

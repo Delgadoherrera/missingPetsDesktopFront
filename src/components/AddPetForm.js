@@ -19,6 +19,8 @@ export default function ReactFinalFormDemo({
   printToast,
   hideShowPettMsg,
   updatePets,
+  setRefreshPets,
+  closeDialog
 }) {
   const [uploaded, setUploaded] = useState(false);
   const [formData, setFormData] = useState(null);
@@ -73,15 +75,15 @@ export default function ReactFinalFormDemo({
       .then((response) => {
         if (response.status === 200) {
           setUploaded(true);
-          showAddPetMsg();
-          hideShowPettMsg(0);
-          printToast({
+/*           printToast({
             severity: "success",
             summary: "Mascota",
             detail: "Mascota agregada",
             life: 3000,
           });
-          updatePets();
+          updatePets(); */
+          setRefreshPets()
+          closeDialog(false)
 
           return <BottomNavigation status={uploaded} />;
         } else if (response.status !== 200) {

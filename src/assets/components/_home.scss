@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Arsenal&family=Poiret+One&display=swap");
+.home_masterDiv {
+  height: 100vh;
+  width: 100%;
+
+  .css-hip9hq-MuiPaper-root-MuiAppBar-root {
+    background-color: $dark !important;
+  }
+  .p-button {
+    background-color: transparent !important;
+    font-family: "Poiret One", cursive;
+  }
+  .p-button:focus {
+    outline: 0 none;
+    outline-offset: 0;
+    /*     box-shadow: 0 0 0 0.2rem #040f3c;
+
+ */
+  
+    box-shadow: none;
+  }
+  .css-1mclfdm-MuiContainer-root {
+    height: 6vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .css-19r6kue-MuiContainer-root {
+    height: 6vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.home_container {
+  background-color: $white;
+  font-family: "Arsenal", sans-serif;
+  font-weight: 100;
+  p {
+    color: $dark;
+    /* 
+    &:hover {
+      background-color: blue;
+    } */
+  }
+  display: flex;
+}
+
+.p-button {
+  background-color: $primary !important;
+  border: none;
+  margin-bottom: 1%;
+}
+.petFoundDialogButtons{
+  background-color: transparent!important;
+}
+p,
+.css-1q39md6-MuiButtonBase-root-MuiButton-root,
+textarea,
+input,
+.p-dropdown,
+.p-component,
+.p-inputtext,
+.p-inputwrapper,
+.p-inputwrapper-filled {
+  font-family: "Arsenal", sans-serif !important;
+}

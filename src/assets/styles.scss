@@ -1,0 +1,17 @@
+//UI
+
+@import "./base/settings";
+
+//componentes
+
+@import "./components/home";
+@import './components/sideBar';
+@import './components/mainDisplay.scss';
+@import './components//cardMyPets';
+@import './components/petFound';
+@import './components/editPet';
+@import './components/petFoundDialog';
+
+body{
+    margin: 0;
+}

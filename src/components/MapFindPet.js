@@ -27,8 +27,10 @@ const GoogleMapComponent = (props) => {
   ];
   let [markers, setMarkers] = useState(markersList);
   const mapStyles = {
-    width: "100%",
-    height: "100%",
+    width: "400px",
+    height: "400px",
+    borderRadius: "70px",
+    position: "relative",
   };
 
   let onMarkerDragEnd = (coord, index, markers) => {
@@ -59,24 +61,18 @@ const GoogleMapComponent = (props) => {
       />
     ));
   return (
-    <>
-      <div>
-        <div className="row d-flex justifyyy-content-center text-center mapaMascotaEncontrada">
-          <Map
-            className="googleMapContent"
-            google={props.google}
-            zoom={13}
-      
-            center={{
-              lat: state.latitude,
-              lng: state.longitude,
-            }}
-          >
-            {myMarkers}
-          </Map>
-        </div>
-      </div>
-    </>
+    <Map
+      className="googleMapContent"
+      google={props.google}
+      zoom={13}
+      style={mapStyles}
+      center={{
+        lat: state.latitude,
+        lng: state.longitude,
+      }}
+    >
+      {myMarkers}
+    </Map>
   );
 };
 export default GoogleApiWrapper({
