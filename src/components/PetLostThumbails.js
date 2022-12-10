@@ -3,11 +3,11 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.css";
 import "primeflex/primeflex.css";
 import React, { useState, useEffect, useRef } from "react";
-import { DataScroller } from "primereact/datascroller";
+import KnobDistanceLostPet from "./KnobDistanceLostPet";
 import { Button } from "primereact/button";
 import axios from "axios";
 import ContactoMascotaEncontrada from "../views/ContactoMascotaEncontrada";
-const DataScrollerLoaderDemo = ({ petDistance, manageViews, refreshPets }) => {
+const DataScrollerLoaderDemo = ({ manageViews, refreshPets }) => {
   const [pets, setPets] = useState([]);
   const [state, setState] = useState({
     longitude: 0,
@@ -15,46 +15,52 @@ const DataScrollerLoaderDemo = ({ petDistance, manageViews, refreshPets }) => {
   });
   const [dialogFounded, setDialogFounded] = useState(false);
   const [petDetail, setpetFoundDetail] = useState({});
+  const [petDistance, setPetDistance] = useState(4);
 
   const ds = useRef(null);
 
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-      async function (position) {
-        await axios
-          .get("https://backend.missingpets.art/mascotas/mascotasPerdidas", {
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-              "Access-Control-Allow-Origin": "*",
-              longitude: position.coords.longitude,
-              latitude: position.coords.latitude,
+  useEffect(
+    () => {
+      navigator.geolocation.getCurrentPosition(
+        async function (position) {
+          await axios
+            .get("https://backend.missingpets.art/mascotas/mascotasPerdidas", {
+              headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                longitude: position.coords.longitude,
+                latitude: position.coords.latitude,
+                distanceSlider: petDistance,
+              },
               distanceSlider: petDistance,
-            },
-            distanceSlider: petDistance,
-          })
-          .then((res) => {
-            /*       res.json() */
-            setPets(res.data.data);
-          });
+            })
+            .then((res) => {
+              /*       res.json() */
+              setPets(res.data.data);
+            });
 
-        setState({
-          longitude: position.coords.longitude,
-          latitude: position.coords.latitude,
-        });
-      },
-      function (error) {
-        console.error("Error Code = " + error.code + " - " + error.message);
-      },
-      {
-        enableHighAccuracy: true,
-      }
-    );
-  }, [refreshPets]);
+          setState({
+            longitude: position.coords.longitude,
+            latitude: position.coords.latitude,
+          });
+        },
+        function (error) {
+          console.error("Error Code = " + error.code + " - " + error.message);
+        },
+        {
+          enableHighAccuracy: true,
+        }
+      );
+    },
+    [petDistance],
+    [refreshPets]
+  );
   const petFounded = (data) => {
     setDialogFounded(true);
     setpetFoundDetail(data.e);
   };
+  console.log(petDistance);
 
   return (
     <>
@@ -63,6 +69,7 @@ const DataScrollerLoaderDemo = ({ petDistance, manageViews, refreshPets }) => {
       </p> */}
 
       <p className="tittleMascotasPerdidas"> Mascotas perdidas en tu zona</p>
+      <KnobDistanceLostPet setPetDistance={setPetDistance} />
       {pets.length > 0 ? (
         <div className="contentPetThumbails">
           {pets.map((one, key) => {

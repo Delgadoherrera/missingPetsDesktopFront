@@ -16,7 +16,7 @@
     /*     box-shadow: 0 0 0 0.2rem #040f3c;
 
  */
-  
+
     box-shadow: none;
   }
   .css-1mclfdm-MuiContainer-root {
@@ -45,14 +45,16 @@
   }
   display: flex;
 }
-
+.p-button-icon, .p-c{
+  color: $white !important;
+}
 .p-button {
   background-color: $primary !important;
   border: none;
   margin-bottom: 1%;
 }
-.petFoundDialogButtons{
-  background-color: transparent!important;
+.petFoundDialogButtons {
+  background-color: transparent !important;
 }
 p,
 .css-1q39md6-MuiButtonBase-root-MuiButton-root,

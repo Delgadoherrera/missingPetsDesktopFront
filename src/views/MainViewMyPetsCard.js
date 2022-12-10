@@ -50,8 +50,8 @@ const MainViewMyPetCards = ({ user, setRefreshPets, refreshPets }) => {
       </p> */}
 
       <p className="tittleMascotasPerdidas"> Mis mascotas</p>
-      <div className="MainViewMyPetCards_controlPanel"></div>
-
+{/*       <div className="MainViewMyPetCards_controlPanel"></div>
+ */}
       {pet.length > 0 ? (
         <div className="contentPetThumbails">
           {pet.map((one, key) => {

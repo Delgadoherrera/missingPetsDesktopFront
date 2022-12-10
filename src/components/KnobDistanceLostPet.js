@@ -6,7 +6,7 @@ const KnobDistanceLostPet = ({ setPetDistance }) => {
   const [value, setValue] = useState(4);
 
   return (
-    <div>
+    <div className="petDistanceKnob">
       <h5>Kilometros: {value}</h5>
       <Slider
       max={100}
@@ -21,7 +21,8 @@ const KnobDistanceLostPet = ({ setPetDistance }) => {
       <Button
         label="Buscar"
         className="searchButtonPetLost"
-        onClick={() => {
+        onClick={(e) => {
+          console.log('fetch')
           setPetDistance(value);
         }}
       />

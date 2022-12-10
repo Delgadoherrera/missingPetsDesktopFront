@@ -1,0 +1,19 @@
+.petDistanceKnob {
+  width: 50%;
+  margin: auto;
+  padding: 20px;
+  box-shadow: $secondary 0px 2px 8px 0px !important;
+  box-shadow: $secondary 0px 48px 100px 0px;
+  margin-bottom: 10px;
+  .p-slider-horizontal {
+    background-color: $primary;
+  }
+  .p-slider-range {
+    background-color: $secondary !important;
+  }
+  .searchButtonPetLost {
+    background-color: $primary !important;
+    border: 1px $primary solid !important;
+    margin-top: 1%;
+  }
+}
