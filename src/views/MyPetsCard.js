@@ -33,7 +33,6 @@ export default function MediaCard({ pets, updatePets, printToast, user }) {
       }
     );
   }, []);
-  console.log(pets);
   return (
     <div className="componentMyPetsCard">
       {pets.length < 0 ? <p> Mis mascotas</p> : <p></p>}

@@ -125,14 +125,16 @@ const InputSwitchDemo = ({
       {petToSearch === true ? (
           <MascotaPerdidaDialog
             idMascotaPerdida={petToSwitch}
-            hideDialog={setPetToSearch}
+            setPetToSearch={setPetToSearch}
             setRefreshPets={setRefreshPets}
+            state={state}
+            printToast={printToast}
           />
         ) : (
           <p></p>
         )}
         {petFound === true ? (
-          <MascotaEcontradaDialog idMascotaPerdida={petToSwitch} setRefreshPets={setRefreshPets} />
+          <MascotaEcontradaDialog idMascotaPerdida={petToSwitch} setRefreshPets={setRefreshPets} printToast={printToast} />
         ) : (
           <p> </p>
         )}

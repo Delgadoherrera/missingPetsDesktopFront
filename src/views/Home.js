@@ -50,7 +50,7 @@ export default function Home() {
         ) : (
           <p></p>
         )}
-        <MainDisplay manageViews={manageViews} user={user} setRefreshPets={setRefreshPets} refreshPets={refreshPets}/>
+        <MainDisplay manageViews={manageViews} user={user} setRefreshPets={setRefreshPets} refreshPets={refreshPets} printToast={printToast}/>
       </div>
     </div>
   );

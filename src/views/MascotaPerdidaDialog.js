@@ -11,8 +11,7 @@ import axios from "axios";
 export default function MascotaPerdida({
   idMascotaPerdida,
   state,
-  hideDialog,
-  updatePets,
+  setPetToSearch,
   printToast,
   setRefreshPets,
 }) {
@@ -82,7 +81,8 @@ export default function MascotaPerdida({
               { sendLocation, lugarEncontrado }
             )
             .then((response) => {
-              setRefreshPets()
+              setPetToSearch(false);
+              setRefreshPets();
             });
         });
     } else {
@@ -111,8 +111,7 @@ export default function MascotaPerdida({
                 detail: "Estamos buscando a tu mascota",
                 life: 3000,
               });
-              setRefreshPets()
-              updatePets();
+              setPetToSearch(false);
             });
         });
     }
@@ -126,7 +125,7 @@ export default function MascotaPerdida({
           label="Cancelar"
           /* icon="pi pi-times" */ onClick={() => {
             onHide(name);
-            hideDialog(false);
+            setPetToSearch(false);
           }}
           className="mascotaPerdidaButtonDialog"
         />
@@ -160,11 +159,11 @@ export default function MascotaPerdida({
           visible={true}
           position={position}
           modal
-          style={{ width: "70vw", height:"500px" }}
+          style={{ width: "70vw", height: "500px" }}
           footer={renderFooter("displayPosition")}
           onHide={() => {
             onHide("displayPosition");
-            hideDialog(false);
+            setPetToSearch(false);
           }}
           draggable={false}
           resizable={false}

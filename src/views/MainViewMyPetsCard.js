@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { MascotasService } from "../services/MascotasService";
 import SwitchPetLost from "../components/SwitchPetLost";
 import ButtonToolMyCardPet from "../components/ButtonToolMyCardPet";
-const MainViewMyPetCards = ({ user, setRefreshPets, refreshPets }) => {
+const MainViewMyPetCards = ({ user, setRefreshPets, refreshPets,printToast }) => {
   const [pet, setPet] = useState([]);
   const [refreshPet, setRefreshPet] = useState(false);
   const [coordenadas, setCoordenadas] = useState({
@@ -88,10 +88,11 @@ const MainViewMyPetCards = ({ user, setRefreshPets, refreshPets }) => {
                       idMascotaPerdida={one}
                       petToSwitch={one}
                       setRefreshPets={setRefreshPets}
+                      printToast={printToast}
                     />
                   </div>
                 </div>
-                <ButtonToolMyCardPet petToEdit={one} setRefreshPets={setRefreshPets} />
+                <ButtonToolMyCardPet petToEdit={one} setRefreshPets={setRefreshPets} printToast={printToast} />
               </div>
             );
           })}

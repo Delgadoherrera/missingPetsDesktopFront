@@ -3,6 +3,7 @@
   height: 100vh;
   width: 100%;
 
+ 
   .css-hip9hq-MuiPaper-root-MuiAppBar-root {
     background-color: $dark !important;
   }
@@ -66,4 +67,14 @@ input,
 .p-inputwrapper,
 .p-inputwrapper-filled {
   font-family: "Arsenal", sans-serif !important;
+}
+#fotoMascota{
+  display: none;
+}
+.addPetDialog {
+  width: 30%;
+}
+.p-dialog{
+  text-align: center;
+  width: 40% !important;
 }
