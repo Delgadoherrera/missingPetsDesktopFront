@@ -13,7 +13,7 @@ export default function MascotaPerdida({
   state,
   setPetToSearch,
   printToast,
-  setRefreshPets,
+  setRefreshPets
 }) {
   const [displayBasic, setDisplayBasic] = useState(false);
   const [displayBasic2, setDisplayBasic2] = useState(false);
@@ -112,6 +112,8 @@ export default function MascotaPerdida({
                 life: 3000,
               });
               setPetToSearch(false);
+              setRefreshPets();
+
             });
         });
     }

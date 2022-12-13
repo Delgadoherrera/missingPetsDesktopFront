@@ -9,12 +9,16 @@ import MainDisplay from "./MainDisplay";
 
 export default function Home() {
   const [manageViews, setManageViews] = useState("");
+  const  [navBarSelector, setNavbarSelector]=useState('')
   const [refreshPets, setUpdatePets]=useState(false)
   const { user } = useAuth0();
   const toast = useRef(null);
 
-  console.log(refreshPets)
 
+  const setSelector=(j)=>{
+    setNavbarSelector(j)
+    console.log(j)
+  }
   const setRefreshPets=()=>{
     setUpdatePets(!refreshPets)
   }
@@ -28,7 +32,7 @@ export default function Home() {
       <div className="divTopNavBar">
         {user ? (
           <>
-            <PrivateNavbar />
+            <PrivateNavbar setSelector={setManageViews}/>
           </>
         ) : (
           <NavBar />
@@ -50,7 +54,7 @@ export default function Home() {
         ) : (
           <p></p>
         )}
-        <MainDisplay manageViews={manageViews} user={user} setRefreshPets={setRefreshPets} refreshPets={refreshPets} printToast={printToast}/>
+        <MainDisplay manageViews={manageViews} user={user} setRefreshPets={setRefreshPets} refreshPets={refreshPets} printToast={printToast} navBarSelector={navBarSelector}/>
       </div>
     </div>
   );

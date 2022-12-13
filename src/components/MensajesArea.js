@@ -61,7 +61,7 @@ export default function App({ idReceptor, updateComponent}) {
           autoFocus
         />
 
-        <p className="backToMessages" onClick={(e) => console.log('actualizar compo')}>
+        <p className="backToMessages" onClick={(e) => updateComponent()}>
           Volver a mensajes
         </p>
 

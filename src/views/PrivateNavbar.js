@@ -17,7 +17,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 const pages = ["Mascotas", "Mensajes", "Demo"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-function ResponsiveAppBar() {
+function ResponsiveAppBar({setSelector}) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [optSelected, setOptSelected] = React.useState(null);
@@ -30,11 +30,13 @@ function ResponsiveAppBar() {
   };
 
   const handleOpenUserMenu = (event) => {
+
     setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = (event) => {
     setOptSelected(event.currentTarget.ariaLabel);
+    setSelector(event.currentTarget.ariaLabel)
     setAnchorElNav(null);
   };
 
@@ -45,6 +47,7 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
+  console.log(optSelected)
   return (
     <div>
       <AppBar position="static" className="appBarTop">

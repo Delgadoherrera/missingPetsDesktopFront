@@ -1,15 +1,23 @@
 import PetLostThumbails from "../components/PetLostThumbails";
 import { useEffect, useState } from "react";
-import MainViewMyPetsCard from './MainViewMyPetsCard'
+import MainViewMyPetsCard from "./MainViewMyPetsCard";
+import Mensajes from "../components/Mensajes";
 
-const MainDisplay = ({manageViews, user,setRefreshPets,refreshPets, printToast}) => {
+const MainDisplay = ({
+  manageViews,
+  user,
+  setRefreshPets,
+  refreshPets,
+  printToast,
+  navBarSelector,
+}) => {
   const [petDistance, setPetDistance] = useState(100);
   const [view, setView] = useState("");
 
-  const getView=(data)=>{
+  const getView = (data) => {
     setView(data);
-  }
-/*   useEffect(()=>{
+  };
+  /*   useEffect(()=>{
     if (manageViews === 'Mis Mascotas'){
 
     }
@@ -19,15 +27,29 @@ const MainDisplay = ({manageViews, user,setRefreshPets,refreshPets, printToast})
     <div className="MainDisplay_content">
       <div className="MainDisplay_view">
         {manageViews === "Mis mascotas" ? (
-          <MainViewMyPetsCard petDistance={petDistance} manageViews={manageViews} user={user} setRefreshPets={setRefreshPets} refreshPets={refreshPets} printToast={printToast}/>
+          <MainViewMyPetsCard
+            petDistance={petDistance}
+            manageViews={manageViews}
+            user={user}
+            setRefreshPets={setRefreshPets}
+            refreshPets={refreshPets}
+            printToast={printToast}
+          />
         ) : (
           <p></p>
         )}
         {manageViews === "Mascotas perdidas" ? (
-          <PetLostThumbails petDistance={petDistance} manageViews={manageViews} refreshPets={refreshPets} printToast={printToast}/>
+          <PetLostThumbails
+            petDistance={petDistance}
+            manageViews={manageViews}
+            refreshPets={refreshPets}
+            printToast={printToast}
+          />
         ) : (
           <p></p>
         )}
+
+        {manageViews === "Mensajes" ? <Mensajes /> : <p></p>}
       </div>
     </div>
   );
