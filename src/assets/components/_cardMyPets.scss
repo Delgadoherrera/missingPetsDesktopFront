@@ -8,6 +8,11 @@
   width: 20%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
+  .addPetButtonMyPets {
+    background-color: red !important;
+    color: black !important;
+  }
+
   .buttonCardPetThumbail {
     background-color: $primary !important;
     width: 120px;
@@ -70,12 +75,18 @@
   background-color: $thing !important;
   height: 135px;
 }
-.geoAdressDiv {
-}
 
 .MainViewMyPetCards_controlPanel {
   margin: auto;
   width: 90%;
   height: 7vh;
   background-color: $primary;
+}
+
+.addPetButtonMyPets {
+  color: $primary !important;
+  width: fit-content;
+  margin: auto;
+  align-self: center;
+  position: fixed;
 }

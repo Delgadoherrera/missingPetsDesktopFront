@@ -352,7 +352,7 @@ console.log(setRefreshPets, 'setRefreshPets')
                     <Button
                       type="submit"
                       label="Cargar mascota encontrada"
-                      className=""
+                      className="cargarMascotaEncontrada"
                     />
                   </div>
                 )}

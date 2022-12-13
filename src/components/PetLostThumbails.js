@@ -7,6 +7,8 @@ import KnobDistanceLostPet from "./KnobDistanceLostPet";
 import { Button } from "primereact/button";
 import axios from "axios";
 import ContactoMascotaEncontrada from "../views/ContactoMascotaEncontrada";
+
+import { useAuth0 } from "@auth0/auth0-react";
 const DataScrollerLoaderDemo = ({ manageViews, refreshPets }) => {
   const [pets, setPets] = useState([]);
   const [state, setState] = useState({
@@ -16,6 +18,11 @@ const DataScrollerLoaderDemo = ({ manageViews, refreshPets }) => {
   const [dialogFounded, setDialogFounded] = useState(false);
   const [petDetail, setpetFoundDetail] = useState({});
   const [petDistance, setPetDistance] = useState(4);
+  const { loginWithRedirect } = useAuth0();
+
+  const { user } = useAuth0();
+
+  console.log("usuario", user);
 
   const ds = useRef(null);
 
@@ -60,14 +67,9 @@ const DataScrollerLoaderDemo = ({ manageViews, refreshPets }) => {
     setDialogFounded(true);
     setpetFoundDetail(data.e);
   };
-  console.log(petDistance);
 
   return (
     <>
-      {/*     <p className="tittleContentDataDisplayPetLost">
-        Mascotas perdidas en tu zona
-      </p> */}
-
       <p className="tittleMascotasPerdidas"> Mascotas perdidas en tu zona</p>
       <KnobDistanceLostPet setPetDistance={setPetDistance} />
       {pets.length > 0 ? (
@@ -115,7 +117,9 @@ const DataScrollerLoaderDemo = ({ manageViews, refreshPets }) => {
 
                 {one.status === 3 ? (
                   <Button
-                    onClick={() => petFounded({ e: one })}
+                    onClick={() => {
+                      petFounded({ e: one });
+                    }}
                     className="buttonCardPetThumbail"
                     label="Es mi mascota"
                   />
@@ -126,11 +130,24 @@ const DataScrollerLoaderDemo = ({ manageViews, refreshPets }) => {
                     label={`Encontré ${one.nombre}`}
                   />
                 )}
-                {dialogFounded === true ? (
-                  <ContactoMascotaEncontrada
-                    idMascotaPerdida={petDetail}
-                    setDialog={setDialogFounded}
-                  />
+
+                {user === undefined ? (
+                  <>{dialogFounded === true ? loginWithRedirect() : <p></p>}</>
+                ) : (
+                  <p></p>
+                )}
+
+                {user !== undefined ? (
+                  <>
+                    {dialogFounded === true ? (
+                      <ContactoMascotaEncontrada
+                        idMascotaPerdida={petDetail}
+                        setDialog={setDialogFounded}
+                      />
+                    ) : (
+                      console.log("logueate")
+                    )}
+                  </>
                 ) : (
                   <p></p>
                 )}

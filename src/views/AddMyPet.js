@@ -42,7 +42,7 @@ const AddMyPet = ({
         label="Adopta una mascota"
         className="button-containerSidePanel"
       />
-      <Button
+      {/* <Button
         onClick={() => setManageViews("Mis mascotas")}
         label="Mis mascotas"
         className="button-containerSidePanel"
@@ -55,7 +55,7 @@ const AddMyPet = ({
         />
       ) : (
         <p></p>
-      )}
+      )} */}
       {addPetMsg === true ? (
         <AddPetDialog
           setRefreshPets={setRefreshPets}

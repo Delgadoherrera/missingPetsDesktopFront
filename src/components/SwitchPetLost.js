@@ -121,42 +121,56 @@ const InputSwitchDemo = ({
     );
   };
   return (
-      <div className="card divInputSwitch">
+    <div className="card divInputSwitch">
       {petToSearch === true ? (
-          <MascotaPerdidaDialog
-            idMascotaPerdida={petToSwitch}
-            setPetToSearch={setPetToSearch}
-            setRefreshPets={setRefreshPets}
-            state={state}
-            printToast={printToast}
-          />
-        ) : (
-          <p></p>
-        )}
-        {petFound === true ? (
-          <MascotaEcontradaDialog idMascotaPerdida={petToSwitch} setRefreshPets={setRefreshPets} printToast={printToast} />
-        ) : (
-          <p> </p>
-        )}
-        {petToSwitch.status === 0 ? (
-          <Button
-            label={` ¿${petToSwitch.nombre} se ha perdido? `}
-            /* icon="pi pi-times" */ onClick={() => setPetToSearch(true)}
-            className="mascotaPerdidaButtonDialog"
-          />
-        ) : (
-          <p> </p>
-        )}
-        {petToSwitch.status === 1 ? (
-          <Button
-            label={` Encontré a ${petToSwitch.nombre} `}
-            /* icon="pi pi-times" */ onClick={() => setPetFound(true)}
-            className="mascotaPerdidaButtonDialog"
-          />
-        ) : (
-          <p></p>
-        )}
-   
+        <MascotaPerdidaDialog
+          idMascotaPerdida={petToSwitch}
+          setPetToSearch={setPetToSearch}
+          setRefreshPets={setRefreshPets}
+          state={state}
+          printToast={printToast}
+        />
+      ) : (
+        <p></p>
+      )}
+      {petFound === true ? (
+        <MascotaEcontradaDialog
+          idMascotaPerdida={petToSwitch}
+          setRefreshPets={setRefreshPets}
+          printToast={printToast}
+        />
+      ) : (
+        <p> </p>
+      )}
+      {petToSwitch.status === 0 ? (
+        <Button
+          label={` ¿${petToSwitch.nombre} se ha perdido? `}
+          /* icon="pi pi-times" */ onClick={() => setPetToSearch(true)}
+          className="mascotaPerdidaButtonDialog"
+        />
+      ) : (
+        <p> </p>
+      )}
+      {petToSwitch.status === 1 ? (
+        <Button
+          label={` Encontré a ${petToSwitch.nombre} `}
+          /* icon="pi pi-times" */ onClick={() => setPetFound(true)}
+          className="mascotaPerdidaButtonDialog"
+        />
+      ) : (
+        <p></p>
+      )}
+      {petToSwitch.status === 4 ? (
+        <Button
+          label={` En adopcion `}
+          /* icon="pi pi-times" */ onClick={() =>
+            console.log("La mascota esta en adopcion")
+          }
+          className="mascptaEnAdopcionButtonCardMyPets"
+        />
+      ) : (
+        <p></p>
+      )}
     </div>
   );
 };

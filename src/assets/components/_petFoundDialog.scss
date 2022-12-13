@@ -1,9 +1,13 @@
-.dialogMascotasPerdidas{
-    background-color: red !important;    
-    width: 50% !important;
-    text-align: center;
+.dialogMascotasPerdidas {
+  background-color: red !important;
+  width: 50% !important;
+  text-align: center;
 
-    .textArea{
-        width: 100% !important;
-    }
+  .textArea {
+    width: 100% !important;
+  }
+ 
 }
+.cargarMascotaEncontrada {
+    background-color: $primary;
+  }

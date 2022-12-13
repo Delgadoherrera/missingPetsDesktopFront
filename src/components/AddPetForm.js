@@ -102,12 +102,12 @@ export default function ReactFinalFormDemo({
   const handleFile = (e) => {
     let file = e.target.files[0];
 
-    if (file.size > 70000000) {
-      alert(`El archivo no puede ser mayor a 7mb`);
+    if (file.size > 20000000) {
+      alert(`El archivo no puede ser mayor a 2mb`);
       return null;
     }
 
-    if (file.size < 70000000) {
+    if (file.size < 20000000) {
       const reader = new FileReader();
       reader.onload = handleReaderLoaded.bind(this);
       reader.readAsBinaryString(file);

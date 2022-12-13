@@ -8,12 +8,16 @@ import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
 import EditPetDialog from "../views/EditPetDialog";
 import CoonfirmDeletePet from "../views/ConfirmDeletePet";
+import ConfirmarAdopcionDialog from "../views/ConfirmarAdopcionDialog";
+import ConfirmarQuitarAdopcionDialog from "../views/ConfirmarQuitarAdopcionDialog";
 
-const MenuDemo = ({ petToEdit, printToast, updatePets,setRefreshPets }) => {
+const MenuDemo = ({ petToEdit, printToast, updatePets, setRefreshPets }) => {
   const menu = useRef(null);
   const toast = useRef(null);
   const [petEdit, setPetEdit] = useState(false);
   const [deletePetDialog, setdeletePetDialog] = useState(false);
+  const [adoptar, setAdoptar] = useState(false);
+  const [quitarAdoptar, setQuitarAdoptar] = useState(false);
 
   const updateEditComponent = () => {
     setPetEdit(true);
@@ -23,6 +27,13 @@ const MenuDemo = ({ petToEdit, printToast, updatePets,setRefreshPets }) => {
   };
   const hideEditDialog = () => {
     setPetEdit(false);
+  };
+
+  const hideAdopcionDialog = () => {
+    setAdoptar(false);
+  };
+  const hideQuitarAdoptarDialog = () => {
+    setQuitarAdoptar(false);
   };
 
   const items = [
@@ -44,28 +55,34 @@ const MenuDemo = ({ petToEdit, printToast, updatePets,setRefreshPets }) => {
         },
       ],
     },
-    {
-      items: [
-        {
-          label: "Dar en adopción",
-          icon: "pi pi-external-link",
-          url: "https://reactjs.org/",
+
+    petToEdit.status !== 4
+      ? {
+          items: [
+            {
+              label: "Dar en adopción",
+              icon: "pi pi-external-link",
+              command: () => {
+                setAdoptar(true);
+              },
+            },
+          ],
+        }
+      : {
+          items: [
+            {
+              label: "Quitar de adopción",
+              icon: "pi pi-external-link",
+              command: () => {
+                setQuitarAdoptar(true);
+              },
+            },
+          ],
         },
-        /*      {
-          label: "Router",
-          icon: "pi pi-upload",
-          command: (e) => {
-            window.location.hash = "/fileupload";
-          },
-        }, */
-      ],
-    },
   ];
 
   return (
     <div>
-   
-
       <Menu model={items} popup ref={menu} id="popup_menu" />
       <Toast ref={toast}></Toast>
       <i
@@ -80,8 +97,7 @@ const MenuDemo = ({ petToEdit, printToast, updatePets,setRefreshPets }) => {
           hideEditDialog={hideEditDialog}
           updateEditComponent={updateEditComponent}
           printToast={printToast}
-          updatePets={updatePets}  
-
+          updatePets={updatePets}
         />
       ) : (
         <p> </p>
@@ -92,6 +108,28 @@ const MenuDemo = ({ petToEdit, printToast, updatePets,setRefreshPets }) => {
           hideDialog={hideDeleteDialog}
           petToDelete={petToEdit}
           updatePets={updatePets}
+          printToast={printToast}
+        />
+      ) : (
+        <p></p>
+      )}
+
+      {adoptar ? (
+        <ConfirmarAdopcionDialog
+          hideDialog={hideAdopcionDialog}
+          petToDelete={petToEdit}
+          updatePets={setRefreshPets}
+          printToast={printToast}
+        />
+      ) : (
+        <p></p>
+      )}
+
+      {quitarAdoptar ? (
+        <ConfirmarQuitarAdopcionDialog
+          hideDialog={hideQuitarAdoptarDialog}
+          petToDelete={petToEdit}
+          updatePets={setRefreshPets}
           printToast={printToast}
         />
       ) : (

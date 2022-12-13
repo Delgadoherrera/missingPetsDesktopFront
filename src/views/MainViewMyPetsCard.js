@@ -1,10 +1,20 @@
 import { useEffect, useState } from "react";
 import { MascotasService } from "../services/MascotasService";
 import SwitchPetLost from "../components/SwitchPetLost";
+import { Button } from "primereact/button";
+import AddPetDialog from "./AddPetDialog";
+
 import ButtonToolMyCardPet from "../components/ButtonToolMyCardPet";
-const MainViewMyPetCards = ({ user, setRefreshPets, refreshPets,printToast }) => {
+const MainViewMyPetCards = ({
+  user,
+  setRefreshPets,
+  refreshPets,
+  printToast,
+}) => {
   const [pet, setPet] = useState([]);
   const [refreshPet, setRefreshPet] = useState(false);
+  const [addPetMsg, setaddPetMsg] = useState(false);
+
   const [coordenadas, setCoordenadas] = useState({
     longitude: 0,
     latitude: 0,
@@ -34,23 +44,27 @@ const MainViewMyPetCards = ({ user, setRefreshPets, refreshPets,printToast }) =>
     });
   }, [refreshPets]);
 
-/*   useEffect(() => {
-    if (refreshPets === true) {
-      console.log('USFX ES TRUE')
-      getAllPets.getMyPets(user.email).then((data) => {
-        setPet(data);
-      });
-      setRefreshPet(false)
-    }
-  }, []); */
   return (
     <>
+    
       {/*     <p className="tittleContentDataDisplayPetLost">
         Mascotas perdidas en tu zona
       </p> */}
+      
+      <Button
+        onClick={() => setaddPetMsg(true)}
+        label="Agregar mascota"
+        className="addPetButtonMyPets"
+      />
+      
 
-      <p className="tittleMascotasPerdidas"> Mis mascotas</p>
-{/*       <div className="MainViewMyPetCards_controlPanel"></div>
+      {/*       <div className="MainViewMyPetCards_controlPanel"></div>
+       */}
+{/*       {pet.length > 0 ? (
+        <div className="tittleMascotasPerdidas"> Mis mascotas</div>
+      ) : (
+        <p></p>
+      )}
  */}
       {pet.length > 0 ? (
         <div className="contentPetThumbails">
@@ -92,10 +106,24 @@ const MainViewMyPetCards = ({ user, setRefreshPets, refreshPets,printToast }) =>
                     />
                   </div>
                 </div>
-                <ButtonToolMyCardPet petToEdit={one} setRefreshPets={setRefreshPets} printToast={printToast} />
+                <ButtonToolMyCardPet
+                  petToEdit={one}
+                  setRefreshPets={setRefreshPets}
+                  printToast={printToast}
+                />
               </div>
             );
+            
           })}
+          {addPetMsg === true ? (
+        <AddPetDialog
+          setRefreshPets={setRefreshPets}
+          closeDialog={setaddPetMsg}
+        />
+      ) : (
+        <p></p>
+      )}
+          
         </div>
       ) : (
         <p> Cargando...</p>

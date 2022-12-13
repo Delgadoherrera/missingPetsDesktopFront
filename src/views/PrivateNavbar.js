@@ -14,7 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import BottomNavigation from "../views/BottomNavigation";
 import { useAuth0 } from "@auth0/auth0-react";
 
-const pages = ["Mascotas", "Mensajes", "Demo"];
+const pages = ["Mis mascotas", "Mensajes", "Demo"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function ResponsiveAppBar({setSelector}) {

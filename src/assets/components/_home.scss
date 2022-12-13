@@ -2,8 +2,17 @@
 .home_masterDiv {
   height: 100vh;
   width: 100%;
+  .mascotaPerdidaButtonDialog {
+    color: $white;
+  }
+  .avatarNavbar {
+    top: 0px !important;
+  }
 
- 
+  .button-containerSidePanel {
+    color: $white;
+  }
+
   .css-hip9hq-MuiPaper-root-MuiAppBar-root {
     background-color: $dark !important;
   }
@@ -46,11 +55,12 @@
   }
   display: flex;
 }
-.p-button-icon, .p-c{
-  color: $white !important;
-}
+/* .p-button-icon, .p-c{
+  color: $white;
+}  */
 .p-button {
-  background-color: $primary !important;
+  /*   background-color: $primary;
+ */
   border: none;
   margin-bottom: 1%;
 }
@@ -68,13 +78,17 @@ input,
 .p-inputwrapper-filled {
   font-family: "Arsenal", sans-serif !important;
 }
-#fotoMascota{
+#fotoMascota {
   display: none;
 }
 .addPetDialog {
   width: 30%;
 }
-.p-dialog{
+.p-dialog {
   text-align: center;
   width: 40% !important;
+}
+.newPetButton {
+  background-color: $primary;
+  color: $white;
 }

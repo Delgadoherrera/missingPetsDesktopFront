@@ -8,7 +8,7 @@ import { Toast } from "primereact/toast";
 import MainDisplay from "./MainDisplay";
 
 export default function Home() {
-  const [manageViews, setManageViews] = useState("");
+  const [manageViews, setManageViews] = useState("Mascotas perdidas");
   const  [navBarSelector, setNavbarSelector]=useState('')
   const [refreshPets, setUpdatePets]=useState(false)
   const { user } = useAuth0();
