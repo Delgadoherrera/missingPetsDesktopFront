@@ -2,7 +2,7 @@ import "primeicons/primeicons.css";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.css";
 import "primeflex/primeflex.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Dialog } from "primereact/dialog";
 import { Button } from "primereact/button";
 import axios from "axios";
@@ -10,14 +10,34 @@ import axios from "axios";
 const DialogDemo = ({ petToDelete, updatePets, printToast, hideDialog }) => {
   const [displayResponsive, setDisplayResponsive] = useState(true);
   const [position, setPosition] = useState("center");
-  console.log(petToDelete);
+  const [state, setState] = useState({
+    longitude: 0,
+    latitude: 0,
+  });
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      async function (position) {
+        setState({
+          longitude: position.coords.longitude,
+          latitude: position.coords.latitude,
+        });
+      },
+      function (error) {
+        console.error("Error Code = " + error.code + " - " + error.message);
+      },
+      {
+        enableHighAccuracy: true,
+      }
+    );
+  }, []);
 
+  console.log(state);
   const fetchDelete = (e) => {
     axios
       .post(
         `https://backend.missingpets.art/mascotas/adopcion/${petToDelete.idMascota}`,
 
-        { adoptar: true }
+        { adoptar: true, latitude: state.latitude, longitude: state.longitude }
       )
       .then(() => {
         printToast({
@@ -26,7 +46,7 @@ const DialogDemo = ({ petToDelete, updatePets, printToast, hideDialog }) => {
           detail: " Mascota en adopción",
           life: 3000,
         });
-        updatePets()
+        updatePets();
       })
       .catch((error) => console.error("Error:", error));
   };
