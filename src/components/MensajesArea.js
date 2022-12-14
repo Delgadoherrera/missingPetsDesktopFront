@@ -76,7 +76,7 @@ export default function App({ idReceptor, updateComponent}) {
               }`}
             >
               {message.emailEmisor === user.email ? (
-                <p>
+                <p className="contentChatByMe">
                   <span className="spanName"> {user.name}:</span>
                   {message.mensaje}
                 </p>

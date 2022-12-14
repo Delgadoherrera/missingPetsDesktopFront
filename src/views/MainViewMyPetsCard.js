@@ -46,21 +46,21 @@ const MainViewMyPetCards = ({
 
   return (
     <>
-    
       {/*     <p className="tittleContentDataDisplayPetLost">
         Mascotas perdidas en tu zona
       </p> */}
-      
-      <Button
-        onClick={() => setaddPetMsg(true)}
-        label="Agregar mascota"
-        className="addPetButtonMyPets"
-      />
-      
+      <div className="addPetButtonMyPetsContainer">
+        {" "}
+        <Button
+          onClick={() => setaddPetMsg(true)}
+          label="Agregar mascota"
+          className="addPetButtonMyPets"
+        />
+      </div>
 
       {/*       <div className="MainViewMyPetCards_controlPanel"></div>
        */}
-{/*       {pet.length > 0 ? (
+      {/*       {pet.length > 0 ? (
         <div className="tittleMascotasPerdidas"> Mis mascotas</div>
       ) : (
         <p></p>
@@ -113,17 +113,15 @@ const MainViewMyPetCards = ({
                 />
               </div>
             );
-            
           })}
           {addPetMsg === true ? (
-        <AddPetDialog
-          setRefreshPets={setRefreshPets}
-          closeDialog={setaddPetMsg}
-        />
-      ) : (
-        <p></p>
-      )}
-          
+            <AddPetDialog
+              setRefreshPets={setRefreshPets}
+              closeDialog={setaddPetMsg}
+            />
+          ) : (
+            <p></p>
+          )}
         </div>
       ) : (
         <p> Cargando...</p>

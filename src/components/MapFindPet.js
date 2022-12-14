@@ -32,7 +32,12 @@ const GoogleMapComponent = (props) => {
     borderRadius: "70px",
     position: "relative",
   };
-
+  const mapStylesMobile = {
+    width: "300px",
+    height: "200px",
+    borderRadius: "20px",
+    position: "relative",
+  };
   let onMarkerDragEnd = (coord, index, markers) => {
     const { latLng } = coord;
     const lat = latLng.lat();
@@ -62,10 +67,14 @@ const GoogleMapComponent = (props) => {
     ));
   return (
     <Map
-      className="googleMapContent"
+      className={
+        window.screen.width < 800
+          ? "googleMapContentMobile"
+          : "googleMapContent"
+      }
       google={props.google}
       zoom={13}
-      style={mapStyles}
+      style={window.screen.width < 800 ? mapStylesMobile : mapStyles}
       center={{
         lat: state.latitude,
         lng: state.longitude,

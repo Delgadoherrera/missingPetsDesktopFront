@@ -24,45 +24,19 @@
 
   .addMyPet_containerButtonsSidePanel {
     height: 100% !important;
-
-    .subMenuItem{
-      color: $white;
-      position: relative;
-      margin: 0;
-      bottom: 8%;
-      font-size: 0.8rem;
-    }
   }
   .button-containerSidePanel {
-    margin-top: 10px;
     width: 100%;
     border-color: $main;
-    padding: 10px;
     border: none;
     margin: auto;
+    font-size: 1rem;
+    position: relative;
+    margin-top: 0px !important;
+    min-height: 20px;
   }
 }
 .containerSideBar {
   width: 12vw !important;
 }
 
-.css-1wlk0hk-MuiAvatar-root {
-  width: 40px !important;
-  height: 40px !important;
-  object-fit: cover !important;
-  position: relative;
-  bottom: 0.5rem;
-  margin: auto;
-}
-
-.cardSideBarMyPets {
-  background-color: $white !important;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  border-radius: 120px !important;
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-}

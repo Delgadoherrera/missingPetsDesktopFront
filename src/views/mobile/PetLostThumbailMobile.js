@@ -3,10 +3,10 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.css";
 import "primeflex/primeflex.css";
 import React, { useState, useEffect, useRef } from "react";
-import KnobDistanceLostPet from "./KnobDistanceLostPet";
+import KnobDistanceLostPet from "../../views/mobile/KnobDistanceLostPetMobile";
 import { Button } from "primereact/button";
 import axios from "axios";
-import ContactoAdopcion from "../views/ContactoAdopcion";
+import ContactoMascotaEncontrada from "../../views/ContactoMascotaEncontrada";
 
 import { useAuth0 } from "@auth0/auth0-react";
 const DataScrollerLoaderDemo = ({ manageViews, refreshPets }) => {
@@ -31,20 +31,17 @@ const DataScrollerLoaderDemo = ({ manageViews, refreshPets }) => {
       navigator.geolocation.getCurrentPosition(
         async function (position) {
           await axios
-            .get(
-              "https://backend.missingpets.art/mascotas/mascotasEnAdopcion",
-              {
-                headers: {
-                  Accept: "application/json",
-                  "Content-Type": "application/json",
-                  "Access-Control-Allow-Origin": "*",
-                  longitude: position.coords.longitude,
-                  latitude: position.coords.latitude,
-                  distanceSlider: petDistance,
-                },
+            .get("https://backend.missingpets.art/mascotas/mascotasPerdidas", {
+              headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                longitude: position.coords.longitude,
+                latitude: position.coords.latitude,
                 distanceSlider: petDistance,
-              }
-            )
+              },
+              distanceSlider: petDistance,
+            })
             .then((res) => {
               /*       res.json() */
               setPets(res.data.data);
@@ -73,25 +70,26 @@ const DataScrollerLoaderDemo = ({ manageViews, refreshPets }) => {
 
   return (
     <>
-      <p className="tittleMascotasPerdidas"> Mascotas en adopcion en tu zona</p>
       <KnobDistanceLostPet setPetDistance={setPetDistance} />
+      <p className="tittleMascotasPerdidas"> Mascotas perdidas en tu zona</p>
+
       {pets.length > 0 ? (
-        <div className="contentPetThumbails">
+        <div className="contentPetThumbailsMobile">
           {pets.map((one, key) => {
             return (
-              <div className="petCardContentThumbail mascotaAdoptar">
-                <div className="divPetImagePetLostThumbail">
+              <div className="petCardContentThumbailMobile">
+                <div className="divPetImagePetLostThumbailMobile">
                   <img
-                    className="petImageThumbail"
+                    className="petImageThumbailMobile"
                     src={`data:image/jpeg;base64,${one.fotoMascota}`}
                     alt="myPet"
                   />
                 </div>
-                <div className="cardMascotaAdoptar">
+                <div className="cardLostPetContentData">
                   <div>
-                    <p className=" petCardContentThumbailName"> {one.nombre}</p>
+                    <p className="petCardContentThumbailName"> {one.nombre}</p>
                   </div>
-                  <p className="petCardDetails">
+                  {/*      <p className="petCardDetails">
                     Color principal: {one.colorPrimario}
                   </p>
                   <p className="petCardDetails">
@@ -104,8 +102,8 @@ const DataScrollerLoaderDemo = ({ manageViews, refreshPets }) => {
                     <p className="petCardDetailsDescription">
                       {one.descripcion}
                     </p>
-                  </div>
-                  {/*   <div className="divGeoAdress">
+                  </div> */}
+                  <div className="divGeoAdress">
                     {one.geoAdress === "No está perdida" ? (
                       <p className="geoAdress">Perdida en: {one.geoAdress} </p>
                     ) : (
@@ -115,19 +113,23 @@ const DataScrollerLoaderDemo = ({ manageViews, refreshPets }) => {
                         </p>
                       </div>
                     )}
-                  </div> */}
+                  </div>
                 </div>
 
-                {one.status === 4 ? (
+                {one.status === 3 ? (
                   <Button
                     onClick={() => {
                       petFounded({ e: one });
                     }}
-                    className="buttonCardPetThumbail"
-                    label="Adoptar"
+                    className="buttonCardPetThumbailMobile"
+                    label="Es mi mascota"
                   />
                 ) : (
-                  <p></p>
+                  <Button
+                    onClick={() => petFounded({ e: one })}
+                    className="buttonCardPetThumbailMobile"
+                    label={`Encontré ${one.nombre}`}
+                  />
                 )}
 
                 {user === undefined ? (
@@ -139,7 +141,7 @@ const DataScrollerLoaderDemo = ({ manageViews, refreshPets }) => {
                 {user !== undefined ? (
                   <>
                     {dialogFounded === true ? (
-                      <ContactoAdopcion
+                      <ContactoMascotaEncontrada
                         idMascotaPerdida={petDetail}
                         setDialog={setDialogFounded}
                       />

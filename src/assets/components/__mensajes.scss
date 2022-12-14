@@ -1,10 +1,14 @@
+.contactoMensajesInfo {
+  text-align: center;
+}
+
 .mensajesDiv {
   background-color: $primary;
+  border-radius: 10px;
 }
-.mensajesArea {
-  background-color: $secondary;
-  height: 90%;
-  color: $primary;
+.contentChatByMe {
+  color: $thing !important;
+  font-size: 1rem;
 }
 
 .sendMessage {
@@ -22,20 +26,10 @@
   height: 500px;
 }
 
-.divMsg {
-  background-color: $white;
-  margin-top: 60px;
-  padding: 30px;
-  height: 91vh !important;
-  position: relative !important;
-  text-align: center !important;
-}
-
 .formChat {
-  background-color: $secondary;
+  background-color: $white;
   height: auto;
   width: 100%;
-  color: $primary;
   position: fixed;
   bottom: 47px;
   right: 0px !important;
@@ -45,14 +39,18 @@
 
 .writeAMessage {
   position: relative;
-  top: 98.5% !important;
+  top: 99% !important;
   width: 100%;
   height: 50px;
-  border-radius: 10px;
+  color: $primary !important;
+  background-color: $white;
+  border-color: $dark;
+  border: solid 2px;
+  padding: 4px;
 }
 
 .bg-sky-70 {
-  background-color: rgba(211, 188, 177, 0.295);
+  background-color: $primary;
   border-radius: 10px;
   padding: 20px;
   color: white;
@@ -61,13 +59,8 @@
 
 .spanName {
   margin-right: 5px;
-  font-size: 20px;
-}
-
-.volverChat {
-  color: white;
-  font-size: 60px;
-  z-index: 50;
+  font-size: 1rem;
+  color: $white;
 }
 
 .chatMsgContainer {
@@ -79,12 +72,6 @@
   scroll-behavior: smooth;
   width: 100%;
   margin: auto !important;
-}
-
-.pi-backward {
-  color: $secondary !important;
-  font-size: 20px !important;
-  margin-left: 90% !important;
 }
 
 .spanNameUser {
@@ -100,8 +87,8 @@
 }
 
 .backToMessages {
-  font-size: 25px;
-  color: black;
+  font-size: 1rem;
+  color: $dark !important;
   text-align: center !important;
   padding: 1.5%;
   border-radius: 40px;
@@ -109,14 +96,12 @@
   position: relative;
   bottom: 40px !important;
 }
-.contactoMensajesInfo {
-  text-align: center;
-  color: $primary;
-  font-size: 25px;
-}
 
 .mensajesDiv {
-  width: 100% !important;
+  width: 30% !important;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
 }
 .mensajesButton {
   width: 100% !important;
@@ -128,11 +113,13 @@
     margin-bottom: 5px;
   }
   .formChat {
-    width: 30%;
+    width: 20%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
   }
 }
 .conversationSpan {
   margin-right: 20px !important;
+  color: $dark;
 }
 .conversationNotMe {
   position: relative !important;
