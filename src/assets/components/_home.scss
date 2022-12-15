@@ -11,11 +11,9 @@
     top: 0px !important;
   }
 
-  .mascptaEnAdopcionButtonCardMyPets{
+  .mascptaEnAdopcionButtonCardMyPets {
     font-size: 1rem;
     min-height: 15px !important;
-
-
   }
 
   .button-containerSidePanel {
@@ -35,7 +33,7 @@
     /*     box-shadow: 0 0 0 0.2rem #040f3c;
 
  */
- 
+
     box-shadow: none;
   }
   .css-1mclfdm-MuiContainer-root {
@@ -104,6 +102,17 @@ input,
 .petCardDetails {
   margin-top: 2px !important;
 }
-.sendMsg{
+.sendMsg {
   background-color: $primary;
+}
+@media screen and (max-width: 800px) {
+  .addPetDialog {
+    width: 100% !important;
+  }
+  .p-dialog {
+    text-align: center;
+    width: 100% !important;
+    display: flex !important;
+
+  }
 }
