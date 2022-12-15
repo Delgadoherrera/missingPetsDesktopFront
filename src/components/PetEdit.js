@@ -180,6 +180,7 @@ export default function ReactFinalFormDemo({
             nombre: petToEdit.nombre,
             colorPrimario: petToEdit.colorPrimario,
             colorSecundario: petToEdit.colorSecundario,
+            pesoAproximado: petToEdit.pesoAproximado,
             descripcionMascota: petToEdit.descripcion,
             tipoMascota: petToEdit.tipoMascota,
           }}

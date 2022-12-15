@@ -1,8 +1,8 @@
 import PetLostThumbails from "../../views/mobile/PetLostThumbailMobile";
 import { useEffect, useState } from "react";
-import MainViewMyPetsCard from "../MainViewMyPetsCard";
+import MainViewMyPetsCard from "../../views/mobile/MainViewMyPetsCardMobile";
 import Mensajes from "../../components/Mensajes";
-import MascotasEnAdopcion from "../../components/MascotasEnAdopcion";
+import MascotasEnAdopcion from "../../views/mobile/MascotasEnAdopcionMobile";
 import PetFound from '../../views/mobile/PetFoundMobile'
 
 const MainDisplay = ({

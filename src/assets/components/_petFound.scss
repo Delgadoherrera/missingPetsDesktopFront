@@ -4,20 +4,48 @@
   height: 100%;
   margin: auto;
   justify-content: space-between;
-  text-align: center;
   align-items: center;
+  text-align: left;
 }
 .googleMapContent {
   position: relative !important;
 }
-.gmnoprint{
+.gmnoprint {
   display: none;
 }
 .PetFoundFormContainer {
+  text-align: left;
   div {
     margin: 0;
   }
   padding: 20px;
+  label {
+    top: -0rem;
+    font-size: 12px;
+    margin-top: 0%;
+  }
 
+  .adTextPetFound{
+    text-align: center;
+  }
 }
 
+
+@media screen and (max-width: 800px) {
+  .petFound_formPetFound {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+  }
+  .PetFoundFormContainer {
+    div {
+      margin: 0;
+    }
+    padding: 5%;
+  }
+}

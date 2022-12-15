@@ -9,11 +9,35 @@
     padding: 0 !important;
     color: $dark;
   }
-}
 
+  .p-menuitem-text {
+    color: $dark !important;
+    font-size: 1rem !important;
+    font-weight: 100;
+    padding: 10px !important;
+  }
+}
+.p-tabmenu .p-tabmenu-nav .p-tabmenuitem.p-highlight .p-menuitem-link {
+  background-color: $white !important;
+  border-color: $dark !important;
+  color: $secondary !important;
+  transition: none !important;
+}
 .contentPetThumbailsMobile {
   margin-top: 0%;
 
+  .mascptaEnAdopcionButtonCardMyPets {
+    background-color: $primary !important;
+    width: 300px !important;
+  }
+
+  .iconEditMyPetMobile {
+    font-size: 1.5rem;
+    opacity: 70%;
+  }
+  .mascotaPerdidaButtonDialog {
+    background-color: $primary !important;
+  }
   .petCardContentThumbailMobile {
     display: flex;
     flex-direction: column;
@@ -22,6 +46,10 @@
     text-align: center;
     margin-top: 1%;
     border-bottom: 1px $dark solid;
+
+    .mascotaPerdidaButtonDialog {
+      border-radius: 30px !important;
+    }
 
     .petImageThumbailMobile {
       margin-top: 6%;
@@ -73,7 +101,24 @@
     justify-content: center;
   }
 
-  .cargarMascotaEncontrada{
+  .cargarMascotaEncontrada {
     background-color: $primary !important;
   }
+}
+
+.addPetButtonMyPetsContainer {
+  margin-top: 6% !important;
+  width: 50%;
+  background-color: $secondary !important;
+  border-radius: 10px;
+  padding: 0;
+  color: red !important;
+}
+
+.addPetButtonMyPetsContainer {
+  width: 100% !important;
+  background-color: transparent !important;
+}
+.addPetButtonMyPetsMobile {
+  color: $primary !important;
 }

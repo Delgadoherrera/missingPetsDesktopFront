@@ -163,6 +163,7 @@ const InputSwitchDemo = ({
       {petToSwitch.status === 4 ? (
         <Button
           label={` En adopcion `}
+          disabled
           /* icon="pi pi-times" */ onClick={() =>
             console.log("La mascota esta en adopcion")
           }

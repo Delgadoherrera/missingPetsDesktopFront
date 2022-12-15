@@ -1,7 +1,7 @@
 .imgPetEditDialog {
   width: 250px !important;
   height: 250px !important;
-  object-fit:cover !important;
+  object-fit: cover !important;
   border-radius: 50px;
   width: 50% !important;
 }
@@ -24,8 +24,7 @@
   textArea {
     margin-top: 3%;
   }
-  label{
-    
+  label {
   }
   div {
     margin: 0;
@@ -33,5 +32,44 @@
 
   label {
     font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  label {
+    animation: none !important;
+  }
+
+  .p-float-label input:focus ~ label,
+  .p-float-label input:-webkit-autofill ~ label,
+  .p-float-label input.p-filled ~ label,
+  .p-float-label textarea:focus ~ label,
+  .p-float-label textarea.p-filled ~ label,
+  .p-float-label .p-inputwrapper-focus ~ label,
+  .p-float-label .p-inputwrapper-filled ~ label {
+    top: -0rem;
+    font-size: 12px;
+  }
+  .petEditContainerForm input,
+  .petEditContainerForm span,
+  .petEditContainerForm div,
+  .petEditContainerForm label,
+  .petEditContainerForm textArea {
+/*     margin-top: 0%;
+ */  }
+
+  .editPetFetchButton {
+    position: relative;
+    top: 40px;
+  }
+  .editPetDialog {
+    text-align: center;
+    width: 100% !important;
+    font-size: 0.8rem !important;
+  }
+  .imgPetEditDialog {
+    width: 200px !important;
+    height: 200px !important;
+    object-fit: cover !important;
+    border-radius: 50px;
   }
 }

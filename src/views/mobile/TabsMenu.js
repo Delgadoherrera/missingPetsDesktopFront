@@ -22,7 +22,7 @@ const TabMenuDemo = ({
   const items = [
     { label: "Mascotas perdidas" },
     { label: "Encontre una mascota" },
-    { label: "Adoptar una mascota" },
+    { label: "Adopta una mascota" },
     { label: "Mis mascotas" },
   ];
 
@@ -32,7 +32,7 @@ const TabMenuDemo = ({
     } else if (activeIndex === 1) {
       setManageViews("Encontre una mascota");
     } else if (activeIndex === 2) {
-      setManageViews("Adoptar una mascota");
+      setManageViews("Adopta una mascota");
     } else if (activeIndex === 3) {
       setManageViews("Mis mascotas");
     }

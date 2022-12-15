@@ -11,3 +11,20 @@
 .cargarMascotaEncontrada {
     background-color: $primary;
   }
+
+
+  @media screen and (max-width:800px){
+    .dialogMascotasPerdidas {
+      background-color: red !important;
+      width: 100% !important;
+      text-align: center;
+    
+      .textArea {
+        width: 100% !important;
+      }
+     
+    }
+    .confirmDeleteDialog {
+      width: 100% !important;
+    }
+  }
