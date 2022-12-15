@@ -78,7 +78,7 @@ const MainViewMyPetCards = ({
                     alt="myPet"
                   />
                 </div>
-                <div className="cardLostPetContentData">
+                <div className="cardLostPetContentDataMobile">
                   <div>
                     <p className="petCardContentThumbailNameMobile"> {one.nombre}</p>
                   </div>

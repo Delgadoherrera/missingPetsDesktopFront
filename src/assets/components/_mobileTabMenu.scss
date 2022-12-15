@@ -28,7 +28,10 @@
 
   .mascptaEnAdopcionButtonCardMyPets {
     background-color: $primary !important;
-    width: 300px !important;
+    width: 220px !important;
+    padding: 15px;
+    border-radius: 220px;
+    background-color: $dark !important;
   }
 
   .iconEditMyPetMobile {
@@ -37,6 +40,9 @@
   }
   .mascotaPerdidaButtonDialog {
     background-color: $primary !important;
+    padding: 15px;
+    border-radius: 30px !important;
+    width: 220px;
   }
   .petCardContentThumbailMobile {
     display: flex;
@@ -47,14 +53,10 @@
     margin-top: 1%;
     border-bottom: 1px $dark solid;
 
-    .mascotaPerdidaButtonDialog {
-      border-radius: 30px !important;
-    }
-
     .petImageThumbailMobile {
       margin-top: 6%;
-      width: 250px;
-      height: 250px;
+      width: 200px;
+      height: 200px;
       object-fit: cover;
       border-radius: 40px;
     }
@@ -64,6 +66,10 @@
     margin-bottom: 0;
     position: relative !important;
     top: 20px !important;
+  }
+  .iconEditMyPetMobile {
+    position: relative;
+    margin-top: 15px;
   }
 }
 .petDistanceKnobMobile {
@@ -123,6 +129,10 @@
   color: $primary !important;
 }
 
-.googleMapContentMobileMascotaPerdida{
+.googleMapContentMobileMascotaPerdida {
   left: 0px !important;
+}
+
+.petCardContentThumbailNameMobile {
+  font-size: 1.3rem;
 }
