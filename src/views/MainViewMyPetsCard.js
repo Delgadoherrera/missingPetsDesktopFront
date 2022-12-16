@@ -56,7 +56,14 @@ const MainViewMyPetCards = ({
           className="addPetButtonMyPets"
         />
       </div>
-
+      {addPetMsg === true ? (
+        <AddPetDialog
+          setRefreshPets={setRefreshPets}
+          closeDialog={setaddPetMsg}
+        />
+      ) : (
+        <p></p>
+      )}
       {pet.length > 0 ? (
         <div className="contentPetThumbails">
           {pet.map((one, key) => {
@@ -108,14 +115,6 @@ const MainViewMyPetCards = ({
         </div>
       ) : (
         <p> Cargando...</p>
-      )}
-      {addPetMsg === true ? (
-        <AddPetDialog
-          setRefreshPets={setRefreshPets}
-          closeDialog={setaddPetMsg}
-        />
-      ) : (
-        <p></p>
       )}
     </>
   );
