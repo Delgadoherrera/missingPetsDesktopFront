@@ -84,6 +84,9 @@ export default function Home() {
           setManageViews={setManageViews}
           manageViews={manageViews}
           setRefreshPets={setRefreshPets}
+          refreshPets={refreshPets}
+          navBarSelector={navBarSelector}
+
         />
       ) : (
         <p></p>

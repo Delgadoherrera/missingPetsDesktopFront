@@ -66,7 +66,7 @@ const MainViewMyPetCards = ({
         <p></p>
       )}
  */}
-      {pet.length > 0 ? (
+      {pet.length >= 0 ? (
         <div className="contentPetThumbailsMobile">
           {pet.map((one, key) => {
             return (
