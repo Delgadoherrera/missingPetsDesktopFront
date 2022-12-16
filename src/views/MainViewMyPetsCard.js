@@ -50,7 +50,6 @@ const MainViewMyPetCards = ({
         Mascotas perdidas en tu zona
       </p> */}
       <div className="addPetButtonMyPetsContainer">
-        {" "}
         <Button
           onClick={() => setaddPetMsg(true)}
           label="Agregar mascota"
@@ -58,14 +57,6 @@ const MainViewMyPetCards = ({
         />
       </div>
 
-      {/*       <div className="MainViewMyPetCards_controlPanel"></div>
-       */}
-      {/*       {pet.length > 0 ? (
-        <div className="tittleMascotasPerdidas"> Mis mascotas</div>
-      ) : (
-        <p></p>
-      )}
- */}
       {pet.length > 0 ? (
         <div className="contentPetThumbails">
           {pet.map((one, key) => {
@@ -114,17 +105,17 @@ const MainViewMyPetCards = ({
               </div>
             );
           })}
-          {addPetMsg === true ? (
-            <AddPetDialog
-              setRefreshPets={setRefreshPets}
-              closeDialog={setaddPetMsg}
-            />
-          ) : (
-            <p></p>
-          )}
         </div>
       ) : (
         <p> Cargando...</p>
+      )}
+      {addPetMsg === true ? (
+        <AddPetDialog
+          setRefreshPets={setRefreshPets}
+          closeDialog={setaddPetMsg}
+        />
+      ) : (
+        <p></p>
       )}
     </>
   );
