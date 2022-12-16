@@ -3,9 +3,10 @@
   height: 100vh;
   width: 100%;
   .mascotaPerdidaButtonDialog {
-    color: $white;
+    color: $dark;
     font-size: 1rem;
     min-height: 15px !important;
+    background-color: $primary;
   }
   .avatarNavbar {
     top: 0px !important;
@@ -14,6 +15,8 @@
   .mascptaEnAdopcionButtonCardMyPets {
     font-size: 1rem;
     min-height: 15px !important;
+    color: $dark;
+    background-color: $primary;
   }
 
   .button-containerSidePanel {
@@ -24,8 +27,8 @@
     background-color: $dark !important;
   }
   .p-button {
-    background-color: transparent !important;
     font-family: "Poiret One", cursive;
+    background-color: $secondary;
   }
   .p-button:focus {
     outline: 0 none;
@@ -91,10 +94,10 @@ input,
 .addPetDialog {
   width: 30%;
 }
-.p-dialog {
+/* .p-dialog {
   text-align: center;
   width: 40% !important;
-}
+} */
 .newPetButton {
   background-color: $primary;
   color: $white;
@@ -113,6 +116,22 @@ input,
     text-align: center;
     width: 100% !important;
     display: flex !important;
-
+  }
+}
+@media screen and (min-width: 800px) and (max-width: 1600) {
+  .addPetDialog {
+    width: 100% !important;
+  }
+  .p-dialog {
+    text-align: center;
+    width: 100% !important;
+    display: flex !important;
+  }
+  .petFound_formPetFound {
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .petFoundDialog {
+    width: 100% !important;
   }
 }

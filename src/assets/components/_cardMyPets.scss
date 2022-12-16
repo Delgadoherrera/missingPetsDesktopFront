@@ -6,6 +6,7 @@
   text-align: center;
   border-radius: 5%;
   width: 20%;
+
   /*   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
  */
   box-shadow: rgba(136, 136, 142, 0.25) 0px 50px 100px -20px,
@@ -13,7 +14,6 @@
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 
   .addPetButtonMyPets {
-    background-color: red !important;
     color: black !important;
   }
 
@@ -93,6 +93,7 @@
   .addPetButtonMyPets {
     color: $dark;
     border-radius: 20px;
+    background-color: $primary;
   }
 }
 .mascotaAdoptar {
@@ -113,3 +114,5 @@
     font-family: "Arsenal", sans-serif;
   }
 }
+
+

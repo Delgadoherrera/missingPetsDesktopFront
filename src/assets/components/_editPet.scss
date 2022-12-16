@@ -73,3 +73,11 @@
     border-radius: 50px;
   }
 }
+
+@media screen and (min-width: 800px) and (max-width:1200px) {
+  .editPetDialog {
+    text-align: center;
+    width: 100% !important;
+    font-size: 0.8rem !important;
+  }
+}
