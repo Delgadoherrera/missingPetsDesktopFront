@@ -14,7 +14,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 const pages = ["Iniciar Sesion / Registrate" /* "Demo" */];
 const settings = [/* "Profile", "Account", "Dashboard" */ "Logout"];
 
-function ResponsiveAppBar() {
+function ResponsiveAppBar({ setSelector }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [selected, setSelected] = React.useState(null);
@@ -28,6 +28,9 @@ function ResponsiveAppBar() {
   };
 
   const handleCloseNavMenu = (event) => {
+    console.log(event.currentTarget.ariaLabel)
+    setSelector(event.target.innerText);
+
     setAnchorElNav(null);
     setSelected(event.target.innerText);
   };
@@ -58,7 +61,10 @@ function ResponsiveAppBar() {
                 textDecoration: "none",
               }}
             ></Typography>
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }} className="menuItemAppBarPublic">
+            <Box
+              sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
+              className="menuItemAppBarPublic"
+            >
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -88,8 +94,19 @@ function ResponsiveAppBar() {
                 }}
               >
                 {pages.map((page, index) => (
-                  <MenuItem key={index} onClick={handleCloseNavMenu} className='menuItemAppBarPublic'>
-                    <Typography className="menuItemAppBarPublic" textAlign="center">{page}</Typography>
+                  <MenuItem
+                    key={index}
+                    onClick={handleCloseNavMenu}
+                    className="menuItemAppBarPublic"
+                    aria-label={page}
+
+                  >
+                    <Typography
+                      className="menuItemAppBarPublic"
+                      textAlign="center"
+                    >
+                      {page}
+                    </Typography>
                   </MenuItem>
                 ))}
               </Menu>
@@ -160,7 +177,7 @@ function ResponsiveAppBar() {
       ) : (
         <p> </p>
       )}
-      {selected === "Iniciar Sesion / registrate" ? (
+      {selected === "Iniciar Sesion / Registrate" ? (
         loginWithRedirect()
       ) : (
         <p> </p>

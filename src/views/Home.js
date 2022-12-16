@@ -33,9 +33,7 @@ export default function Home() {
   useEffect(() => {
     setViewPort(width);
   }, [width]);
-  console.log('manageviews',manageViews)
 
-  console.log(viewPort);
   return (
     <div className="home_masterDiv">
       <div className="divTopNavBar">
@@ -44,7 +42,7 @@ export default function Home() {
             <PrivateNavbar setSelector={setManageViews} />
           </>
         ) : (
-          <NavBar />
+          <NavBar setSelector={setManageViews}/>
         )}
       </div>
 
