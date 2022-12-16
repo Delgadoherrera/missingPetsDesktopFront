@@ -77,21 +77,19 @@ export default function Mensajes() {
         filteredMessages.map((one, index) => {
           console.log("one", one);
           return (
-            <div className="mensajesDiv">
-              <Button
-                key={index}
-                type="button"
-                label={` Mensaje de: ${one}`}
-                icon="pi pi-users"
-                className="mensajesButton" /* badge="1" */
-                badgeClassName="mensajesButton"
-                aria-label={one}
-                value={idUnicos[index]}
-                onClick={(e) => {
-                  clicOnMessages(e);
-                }}
-              />
-            </div>
+            <Button
+              key={index}
+              type="button"
+              label={` Mensaje de: ${one}`}
+              icon="pi pi-users"
+              className="mensajesButton" /* badge="1" */
+              badgeClassName="mensajesButton"
+              aria-label={one}
+              value={idUnicos[index]}
+              onClick={(e) => {
+                clicOnMessages(e);
+              }}
+            />
           );
         })
       ) : (

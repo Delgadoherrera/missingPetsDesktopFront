@@ -24,19 +24,45 @@
 
   .addMyPet_containerButtonsSidePanel {
     height: 100% !important;
-  }
-  .button-containerSidePanel {
-    width: 100%;
-    border-color: $main;
-    border: none;
-    margin: auto;
-    font-size: 1rem;
-    position: relative;
-    margin-top: 0px !important;
-    min-height: 20px;
+
+    span {
+      border-radius: 0px !important;
+    }
+    button {
+      padding: 40px !important;
+    }
+    .p-button:enabled:active,
+    .p-button:not(button):not(a):not(.p-disabled):active {
+      background: transparent  !important;
+      border-color: transparent !important;
+      background-color: transparent !important;
+      margin: 0;
+    }
+    .p-button:enabled:hover,
+    .p-button:not(button):not(a):not(.p-disabled):hover {
+      background: transparent !important;
+      border-color: transparent !important;
+      opacity: 60%;
+      color: black !important;
+
+    }
+    .button-containerSidePanel {
+      width: 100%;
+      border: none;
+      margin: auto;
+      font-size: 1rem;
+      position: relative;
+      margin-top: 0px !important;
+      min-height: 20px;
+      background-color: transparent !important;
+      border-radius: none !important;
+      padding: 10px !important;
+      border-radius: 0px;
+      height: 60px;
+      
+    }
   }
 }
 .containerSideBar {
   width: 12vw !important;
 }
-

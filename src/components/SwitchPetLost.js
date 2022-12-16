@@ -155,7 +155,7 @@ const InputSwitchDemo = ({
         <Button
           label={` Encontré a ${petToSwitch.nombre} `}
           /* icon="pi pi-times" */ onClick={() => setPetFound(true)}
-          className="mascotaPerdidaButtonDialog"
+          className="mascotaPerdidaButtonDialog bubbly-button"
         />
       ) : (
         <p></p>
