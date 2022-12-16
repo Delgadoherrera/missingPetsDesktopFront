@@ -13,7 +13,11 @@ import { BottomNavigation } from "@mui/material";
 import Map from "../components/WrapperMapFindPet";
 import { useAuth0 } from "@auth0/auth0-react";
 
-export default function ReactFinalFormDemo({ closeDialog, printToast,setRefreshPets }) {
+export default function ReactFinalFormDemo({
+  closeDialog,
+  printToast,
+  setRefreshPets,
+}) {
   const [uploaded, setUploaded] = useState(false);
   const [formData, setFormData] = useState(null);
   const [file, setFile] = useState(null);
@@ -169,7 +173,6 @@ export default function ReactFinalFormDemo({ closeDialog, printToast,setRefreshP
     const finalData = new FormData();
     finalData.append("file", JSON.stringify(base64));
     finalData.append("formDatas", JSON.stringify(newData));
-    console.log("CON NUEVA COORDENADA");
     await axios
       .get(
         `https://maps.googleapis.com/maps/api/geocode/json?latlng=${newData.newLatitude},${newData.newLongitude}%20&key=AIzaSyAWhXxfT0fS3H6QYCOLGSE-QHzeKVWG1Y0`
@@ -199,22 +202,22 @@ export default function ReactFinalFormDemo({ closeDialog, printToast,setRefreshP
           .then((response) => {
             if (response.status === 200) {
               setUploaded(true);
-              setRefreshPets()
-              closeDialog(false)
+              setRefreshPets();
               printToast({
                 severity: "success",
                 summary: "Mascota",
-                detail: "Mascota encontrada",
+                detail: "Haz encontrado una mascota",
                 life: 3000,
               });
+              closeDialog();
 
               return <BottomNavigation status={uploaded} />;
             } else if (response.status !== 200) {
+              closeDialog();
             }
           });
       });
   };
-console.log(setRefreshPets, 'setRefreshPets')
   const isFormFieldValid = (meta) => !!(meta.touched && meta.error);
   const getFormErrorMessage = (meta) => {
     return (
@@ -224,7 +227,7 @@ console.log(setRefreshPets, 'setRefreshPets')
 
   return (
     <div className="form-demo petFound_formPetFound">
-        <Map newLocation={locationUpdate} />
+      <Map newLocation={locationUpdate} />
       <div className="PetFoundFormContainer">
         <Form
           onSubmit={onSubmit}
@@ -361,7 +364,6 @@ console.log(setRefreshPets, 'setRefreshPets')
           )}
         />
       </div>
-
     </div>
   );
 }

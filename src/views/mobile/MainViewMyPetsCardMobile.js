@@ -87,7 +87,8 @@ const MainViewMyPetCards = ({
                     Color principal: {one.colorPrimario}
                   </p>
                   <p className="petCardDetails">
-                    Color secundario: {one.colorSecundario}
+                  
+                    Color secundario: {one.colorSecundario}  
                   </p>
                   <p className="petCardDetails">
                     Peso aproximado: {one.pesoAproximado}

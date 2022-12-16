@@ -28,7 +28,6 @@ function ResponsiveAppBar({ setSelector }) {
   };
 
   const handleCloseNavMenu = (event) => {
-    console.log(event.currentTarget.ariaLabel)
     setSelector(event.target.innerText);
 
     setAnchorElNav(null);

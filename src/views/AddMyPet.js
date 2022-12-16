@@ -70,7 +70,7 @@ const AddMyPet = ({
           updatePets={updatePets}
           printToast={printToast}
           setRefreshPets={setRefreshPets}
-          closeDialog={setPetFoundMessage}
+          closeDialog={hideShowPettMsg}
         />
       ) : (
         <p></p>

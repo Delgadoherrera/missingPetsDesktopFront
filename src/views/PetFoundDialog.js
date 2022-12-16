@@ -53,13 +53,21 @@ const PetFoundDialog = ({
         <Dialog
           header="¿Donde encontraste la mascota?"
           visible={displayResponsive}
-          onHide={() => onHide("displayResponsive")}
+          onHide={() => {
+            onHide("displayResponsive");
+            closeDialog();
+          }}
           breakpoints={{ "300px": "75vw" }}
           footer={renderFooter("displayResponsive")}
           className="petFoundDialog"
           contentClassName="PetFoundDialogContent"
         >
-          <PetFound updatePets={updatePets} printToast={printToast} setRefreshPets={setRefreshPets} closeDialog={setDisplayResponsive} />
+          <PetFound
+            updatePets={updatePets}
+            printToast={printToast}
+            setRefreshPets={setRefreshPets}
+            closeDialog={closeDialog}
+          />
         </Dialog>
       </div>
     </div>

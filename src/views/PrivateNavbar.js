@@ -47,7 +47,6 @@ function ResponsiveAppBar({setSelector}) {
     setAnchorElUser(null);
   };
 
-  console.log(optSelected)
   return (
     <div>
       <AppBar position="static" className="appBarTop">
