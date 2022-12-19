@@ -39,6 +39,7 @@ const AddMyPet = ({
 
       <Button
         onClick={() => setManageViews("Adopta una mascota")}
+        
         label="Adopta una mascota"
         className="button-containerSidePanel"
       />

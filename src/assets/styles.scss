@@ -5,19 +5,20 @@
 //componentes
 
 @import "./components/home";
-@import './components/sideBar';
-@import './components/mainDisplay.scss';
-@import './components//cardMyPets';
-@import './components/petFound';
-@import './components/editPet';
-@import './components/petFoundDialog';
-@import './components/mascotasPerdidas';
-@import './components/_mensajes';
+@import "./components/sideBar";
+@import "./components/mainDisplay.scss";
+@import "./components//cardMyPets";
+@import "./components/petFound";
+@import "./components/editPet";
+@import "./components/petFoundDialog";
+@import "./components/mascotasPerdidas";
+@import "./components/_mensajes";
+@import "./components//mascotasPerdidasXL";
 
 //MOBILE
 
-@import './components/_mobileTabMenu';
+@import "./components/_mobileTabMenu";
 
-body{
-    margin: 0;
+body {
+  margin: 0;
 }

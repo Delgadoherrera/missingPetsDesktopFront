@@ -25,11 +25,13 @@
     margin-top: 0%;
   }
 
-  .adTextPetFound{
+  .adTextPetFound {
     text-align: center;
   }
+  .divIconFindPet {
+    text-align: center !important;
+  }
 }
-
 
 @media screen and (max-width: 800px) {
   .petFound_formPetFound {

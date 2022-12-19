@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Arsenal&family=Poiret+One&display=swap");
+
 .home_masterDiv {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
+
   .mascotaPerdidaButtonDialog {
     color: $white;
     font-size: 1rem;
@@ -55,9 +57,10 @@
   }
 }
 .home_container {
-  background-color: $white;
   font-family: "Arsenal", sans-serif;
   font-weight: 100;
+  margin: 0;
+
   p {
     color: $dark;
     /* 
@@ -66,6 +69,7 @@
     } */
   }
   display: flex;
+  
 }
 /* .p-button-icon, .p-c{
   color: $white;
@@ -154,4 +158,40 @@ input,
   .petFoundDialog {
     width: 100% !important;
   }
+}
+
+.bannerHome {
+  margin: auto;
+  width: 98%;
+  font-family: arsenal, sans-serif;
+  .bannerDiv {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    background-color: $thing;
+    width: 100%;
+    margin: 0;
+    margin-top: 10px;
+
+    /*     height: 40px; */
+
+    .bannerText {
+      width: 100%;
+      position: relative;
+      left: 10px;
+      border-radius: 20px;
+      padding: 50px;
+    }
+  }
+  .backgroundImage {
+    opacity: 70%;
+    height: 30vh;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+  }
+}
+
+.mainDisplayHome{
+  width: 100% !important;
 }

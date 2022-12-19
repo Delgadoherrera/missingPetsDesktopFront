@@ -50,6 +50,7 @@ export default function MascotasPerdidas() {
               "Access-Control-Allow-Origin": "*",
               longitude: position.coords.longitude,
               latitude: position.coords.latitude,
+              authorization: "Bearer {accessToken}",
             },
           })
           .then((res) => {
@@ -93,13 +94,11 @@ export default function MascotasPerdidas() {
               }
               alt={data.name}
               className="carouselImage"
-              
               onClick={(e) => {
                 petFounded({ e: data });
 
                 setDetailPetDialog(petDetail.idMascota);
               }}
-              
             />
             {detailPetDialog !== 0 ? (
               <PetDetailDialog
@@ -109,7 +108,7 @@ export default function MascotasPerdidas() {
             ) : (
               <p></p>
             )}
-          </div>    
+          </div>
         </div>
       </div>
     );

@@ -338,7 +338,7 @@ export default function ReactFinalFormDemo({
               <Field
                 name="fotoMascota"
                 render={({ input }) => (
-                  <div className="field">
+                  <div className="field divIconFindPet">
                     <input
                       required
                       onChange={(e) => {

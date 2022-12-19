@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Arsenal&family=Poiret+One&display=swap");
 
 .petCardContentThumbail {
-  background-color: $white;
   margin: 1%;
   text-align: center;
   border-radius: 5%;
@@ -9,8 +8,8 @@
 
   /*   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
  */
-  box-shadow: rgba(136, 136, 142, 0.25) 0px 50px 100px -20px,
-    rgba(50, 17, 17, 0.3) 0px 30px 60px -30px,
+  box-shadow: rgba(136, 136, 142, 0.25) 0px 20px 10px -20px,
+    rgba(50, 17, 17, 0.3) 0px 10px 10px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 
   .addPetButtonMyPets {
@@ -43,8 +42,8 @@
 }
 
 .contentPetThumbails {
-  background-color: $white;
-  width: 100%;
+/*   background-color: $white;
+ */  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

@@ -70,7 +70,7 @@ const DataScrollerLoaderDemo = ({ manageViews, refreshPets }) => {
 
   return (
     <>
-      <p className="tittleMascotasPerdidas"> Mascotas perdidas en tu zona</p>
+      <p className="tittleMascotasPerdidas"></p>
       <KnobDistanceLostPet setPetDistance={setPetDistance} />
       {pets.length > 0 ? (
         <div className="contentPetThumbails">
