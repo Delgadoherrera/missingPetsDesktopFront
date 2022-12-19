@@ -60,8 +60,8 @@ const buttonStyle = {
   borderColor: "white",
   borderRadius: "15px",
   /*   border: "1px solid rgb(123, 73, 137)",
-   */ fontSize: "0.8rem",
+   */ fontSize: "1rem",
   fontWeight: 100,
-  padding: "1.5%",
+  padding: "1%",
   border: "none",
 };
