@@ -62,6 +62,6 @@ const buttonStyle = {
   /*   border: "1px solid rgb(123, 73, 137)",
    */ fontSize: "0.8rem",
   fontWeight: 100,
-  padding: "0.5%",
+  padding: "1.5%",
   border: "none",
 };
