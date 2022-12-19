@@ -7,6 +7,7 @@ import KnobDistanceLostPet from "./KnobDistanceLostPet";
 import { Button } from "primereact/button";
 import axios from "axios";
 import ContactoAdopcion from "../views/ContactoAdopcion";
+import Fade from "react-reveal/Fade";
 
 import { useAuth0 } from "@auth0/auth0-react";
 const DataScrollerLoaderDemo = ({ manageViews, refreshPets }) => {
@@ -72,40 +73,45 @@ const DataScrollerLoaderDemo = ({ manageViews, refreshPets }) => {
   };
 
   return (
-    <>
-{/*       <p className="tittleMascotasPerdidas"> Mascotas en adopcion en tu zona</p>
- */}      <KnobDistanceLostPet setPetDistance={setPetDistance} />
-      {pets.length > 0 ? (
-        <div className="contentPetThumbails">
-          {pets.map((one, key) => {
-            return (
-              <div className="petCardContentThumbail mascotaAdoptar">
-                <div className="divPetImagePetLostThumbail">
-                  <img
-                    className="petImageThumbail"
-                    src={`data:image/jpeg;base64,${one.fotoMascota}`}
-                    alt="myPet"
-                  />
-                </div>
-                <div className="cardMascotaAdoptar">
-                  <div>
-                    <p className=" petCardContentThumbailName"> {one.nombre}</p>
+    <Fade>
+      <>
+        {/*       <p className="tittleMascotasPerdidas"> Mascotas en adopcion en tu zona</p>
+         */}{" "}
+        <KnobDistanceLostPet setPetDistance={setPetDistance} />
+        {pets.length > 0 ? (
+          <div className="contentPetThumbails">
+            {pets.map((one, key) => {
+              return (
+                <div className="petCardContentThumbail mascotaAdoptar">
+                  <div className="divPetImagePetLostThumbail">
+                    <img
+                      className="petImageThumbail"
+                      src={`data:image/jpeg;base64,${one.fotoMascota}`}
+                      alt="myPet"
+                    />
                   </div>
-                  <p className="petCardDetails">
-                    Color principal: {one.colorPrimario}
-                  </p>
-                  <p className="petCardDetails">
-                    Color secundario: {one.colorSecundario}
-                  </p>
-                  <p className="petCardDetails">
-                    Peso aproximado: {one.pesoAproximado}
-                  </p>
-                  <div>
-                    <p className="petCardDetailsDescription">
-                      {one.descripcion}
+                  <div className="cardMascotaAdoptar">
+                    <div>
+                      <p className=" petCardContentThumbailName">
+                        {" "}
+                        {one.nombre}
+                      </p>
+                    </div>
+                    <p className="petCardDetails">
+                      Color principal: {one.colorPrimario}
                     </p>
-                  </div>
-                  {/*   <div className="divGeoAdress">
+                    <p className="petCardDetails">
+                      Color secundario: {one.colorSecundario}
+                    </p>
+                    <p className="petCardDetails">
+                      Peso aproximado: {one.pesoAproximado}
+                    </p>
+                    <div>
+                      <p className="petCardDetailsDescription">
+                        {one.descripcion}
+                      </p>
+                    </div>
+                    {/*   <div className="divGeoAdress">
                     {one.geoAdress === "No está perdida" ? (
                       <p className="geoAdress">Perdida en: {one.geoAdress} </p>
                     ) : (
@@ -116,48 +122,51 @@ const DataScrollerLoaderDemo = ({ manageViews, refreshPets }) => {
                       </div>
                     )}
                   </div> */}
+                  </div>
+
+                  {one.status === 4 ? (
+                    <Button
+                      onClick={() => {
+                        petFounded({ e: one });
+                      }}
+                      className="buttonCardPetThumbail"
+                      label="Adoptar"
+                    />
+                  ) : (
+                    <p></p>
+                  )}
+
+                  {user === undefined ? (
+                    <>
+                      {dialogFounded === true ? loginWithRedirect() : <p></p>}
+                    </>
+                  ) : (
+                    <p></p>
+                  )}
+
+                  {user !== undefined ? (
+                    <>
+                      {dialogFounded === true ? (
+                        <ContactoAdopcion
+                          idMascotaPerdida={petDetail}
+                          setDialog={setDialogFounded}
+                        />
+                      ) : (
+                        console.log("logueate")
+                      )}
+                    </>
+                  ) : (
+                    <p></p>
+                  )}
                 </div>
-
-                {one.status === 4 ? (
-                  <Button
-                    onClick={() => {
-                      petFounded({ e: one });
-                    }}
-                    className="buttonCardPetThumbail"
-                    label="Adoptar"
-                  />
-                ) : (
-                  <p></p>
-                )}
-
-                {user === undefined ? (
-                  <>{dialogFounded === true ? loginWithRedirect() : <p></p>}</>
-                ) : (
-                  <p></p>
-                )}
-
-                {user !== undefined ? (
-                  <>
-                    {dialogFounded === true ? (
-                      <ContactoAdopcion
-                        idMascotaPerdida={petDetail}
-                        setDialog={setDialogFounded}
-                      />
-                    ) : (
-                      console.log("logueate")
-                    )}
-                  </>
-                ) : (
-                  <p></p>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      ) : (
-        <p> Cargando...</p>
-      )}
-    </>
+              );
+            })}
+          </div>
+        ) : (
+          <p> Cargando...</p>
+        )}
+      </>
+    </Fade>
   );
 };
 export default DataScrollerLoaderDemo;

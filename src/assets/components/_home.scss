@@ -169,6 +169,7 @@ input,
     text-align: center;
     background-color: $thing;
     width: 100%;
+
     margin: 0;
     margin-top: 10px;
 
@@ -179,12 +180,12 @@ input,
       position: relative;
       left: 10px;
       border-radius: 20px;
-      padding: 50px;
+      padding: 20px;
     }
   }
   .backgroundImage {
     opacity: 70%;
-    height: 30vh;
+    height: 40vh;
     width: 100%;
     object-fit: cover;
     position: relative;
@@ -207,11 +208,20 @@ input,
 }
 
 button:hover {
-  background-color: $main !important;
+  background-color: $thing !important;
   cursor: pointer;
 }
 button:active {
   background-color: $another !important;
   cursor: pointer;
   color: $dark !important;
+}
+.bannerDiv_homeButtons {
+  background-color: $another !important;
+}
+
+// P FIXES ALL PROJECT
+
+#root > div > p:nth-child(2) {
+  display: none;
 }

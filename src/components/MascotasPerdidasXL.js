@@ -1,9 +1,13 @@
+import Fade from "react-reveal/Fade";
+
 import PetLostThumbails from "../components/PetLostThumbails";
 const MascotasPerdidas = () => {
   return (
-    <div className="mascotasPerdidasXl">
-      <PetLostThumbails />
-    </div>
+    <Fade ssrFadeout>
+      <div className="mascotasPerdidasXl">
+        <PetLostThumbails />
+      </div>
+    </Fade>
   );
 };
 

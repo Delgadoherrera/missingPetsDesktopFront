@@ -52,6 +52,7 @@ export default function Home() {
 
       {viewPort > 800 ? (
         <>
+        
           {user ? (
             <p></p>
           ) : (
