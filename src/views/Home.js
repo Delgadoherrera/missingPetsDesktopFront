@@ -1,7 +1,6 @@
 import NavBar from "./PublicNavbar";
 import { useAuth0 } from "@auth0/auth0-react";
 import PrivateNavbar from "./PrivateNavbar";
-import PetsLost from "./PetsLost";
 import SideBar from "./SideBar";
 import { useEffect, useState, useRef } from "react";
 import { Toast } from "primereact/toast";

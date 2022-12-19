@@ -7,7 +7,7 @@ const KnobDistanceLostPet = ({ setPetDistance }) => {
 
   return (
     <div className="petDistanceKnob">
-      <h5>Kilometros: {value}</h5>
+      <h5>Radio de distancia: {value} Kilómetros</h5>
       <Slider
       max={100}
       min={1}

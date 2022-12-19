@@ -69,7 +69,6 @@
     } */
   }
   display: flex;
-  
 }
 /* .p-button-icon, .p-c{
   color: $white;
@@ -192,6 +191,27 @@ input,
   }
 }
 
-.mainDisplayHome{
+.mainDisplayHome {
   width: 100% !important;
+}
+
+.bannerText_homeButtons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+  background-color: $thing !important;
+  border-color: $secondary !important;
+  color: $secondary !important ;
+}
+
+button:hover {
+  background-color: $main !important;
+  cursor: pointer;
+}
+button:active {
+  background-color: $another !important;
+  cursor: pointer;
+  color: $dark !important;
 }
