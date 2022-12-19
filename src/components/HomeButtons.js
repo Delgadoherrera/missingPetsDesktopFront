@@ -41,8 +41,16 @@ const HomeButtons = () => {
         </Zoom>
       </div>
       {homeView === "Mascotas Perdidas" ? <MascotasPerdidasXL /> : <p></p>}
-      {homeView === "Mascotas en adopcion" ? <MascotasEnAdopcion handleCloseView={handleCloseView}/> : <p></p>}
-      {homeView === "Mis mascotas" ? <PleaseLogin handleCloseView={handleCloseView}/> : <p></p>}
+      {homeView === "Mascotas en adopcion" ? (
+        <MascotasEnAdopcion handleCloseView={handleCloseView} />
+      ) : (
+        <p></p>
+      )}
+      {homeView === "Mis mascotas" ? (
+        <PleaseLogin handleCloseView={handleCloseView} />
+      ) : (
+        <p></p>
+      )}
     </div>
   );
 };
@@ -51,8 +59,9 @@ export default HomeButtons;
 const buttonStyle = {
   borderColor: "white",
   borderRadius: "15px",
-  border: "1px solid rgb(123, 73, 137)",
-  fontSize: "0.8rem",
+  /*   border: "1px solid rgb(123, 73, 137)",
+   */ fontSize: "0.8rem",
   fontWeight: 100,
   padding: "0.5%",
+  border: "none",
 };
