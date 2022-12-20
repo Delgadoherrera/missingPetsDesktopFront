@@ -11,14 +11,15 @@ export default function Banner() {
         src={photoBanner}
         alt="backgroundImage"
       />
-      <div className="bannerDiv">
-        <Bounce>
+
+      <Bounce left>
+        <div className="bannerDiv">
           <div className="bannerText">
             <h2> Crea un perfil para tu mascota</h2>
             <p>Si se pierde te ayudamos a buscarla</p>
           </div>
-        </Bounce>
-      </div>
+        </div>
+      </Bounce>
     </div>
   );
 }

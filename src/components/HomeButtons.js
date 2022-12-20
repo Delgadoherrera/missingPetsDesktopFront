@@ -59,9 +59,10 @@ export default HomeButtons;
 const buttonStyle = {
   borderColor: "white",
   borderRadius: "15px",
-/*   border: "1px solid rgb(123, 73, 137)",
- */  fontSize: "1rem",
+  /*   border: "1px solid rgb(123, 73, 137)",
+   */ fontSize: "1rem",
   fontWeight: 100,
   padding: "1%",
   border: "none",
+  backgroundColor: "rgba(235, 239, 230, 0.986)",
 };

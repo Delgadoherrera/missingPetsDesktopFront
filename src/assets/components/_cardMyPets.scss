@@ -28,7 +28,8 @@
     color: $white;
     font-size: 1.3rem;
     margin: auto;
-    background-color: $thing;
+    /*     background-color: $thing;
+ */
     padding: 3px;
     height: 30px;
   }
@@ -74,6 +75,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: $thing;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  box-shadow: $thing 10px 20px px 1px;
 }
 .cardLostPetContentData {
   height: 95px;
@@ -102,20 +107,6 @@
   height: fit-content;
 }
 
-@media screen and (min-width: 800px) and (max-width: 1200px) {
-  .petCardContentThumbail {
-    width: 40% !important;
-    height: 100% !important;
-  }
-  .buttonCardPetThumbail {
-    background-color: $primary !important;
-    width: 120px;
-    height: 20px !important;
-    border-radius: 120px;
-    margin-top: 25% !important;
-    font-family: "Arsenal", sans-serif;
-  }
-}
 
 .bubbly-button {
   $fuschia: #ff0081;

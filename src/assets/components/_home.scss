@@ -163,12 +163,15 @@ input,
   margin: auto;
   width: 98%;
   font-family: arsenal, sans-serif;
+
   .bannerDiv {
     position: relative;
     display: inline-block;
     text-align: center;
     background-color: $thing;
     width: 100%;
+
+
 
     margin: 0;
     margin-top: 10px;
@@ -190,7 +193,7 @@ input,
     object-fit: cover;
     position: relative;
   }
-  button{
+  button {
     font-family: Arsenal !important;
   }
 }
@@ -220,7 +223,7 @@ button:active {
   color: $dark !important;
 }
 .bannerDiv_homeButtons {
-  background-color: $another !important;
+  background-color: transparent !important;
 }
 
 // P FIXES ALL PROJECT
